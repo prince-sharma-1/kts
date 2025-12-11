@@ -43,6 +43,8 @@
     .testimonial { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
     footer { padding:2rem 0; text-align:center; color:var(--muted); }
     @media(max-width:768px){ .grid-3,.stats{grid-template-columns:1fr;} }
+    .logo-container{flex-shrink: 0;}
+    .logo {  height: 60px;  width: auto;}
 
 
   </style>
@@ -50,7 +52,10 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">KTS Academy</div>
+       <div class="logo-container">
+    <img src="kts_slogo.png" alt="KTS Academy Logo" class="logo" />
+  </div>
+      <div class="brand"><h2>KTS Academy</h2></div>
       <nav>
         <ul>
           <li><a href="#jee">JEE</a></li>
