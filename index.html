@@ -28,6 +28,7 @@
     .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
     .brand { font-weight:700; font-size:1.2rem; }
     .nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+   .nav a:hover { text-decoration:underline; background-color: #38bdf8 ; color: #001427; padding: 0.2rem 0.5rem; border-radius: 5px; }
     .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
     .hero { padding:4rem 0; text-align:center; }
     .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
@@ -36,11 +37,14 @@
     .section h2 { font-size:2rem; margin-bottom:1rem; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
     .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
+    .card:hover { border-color:var(--primary); background-color: #001427; }
     .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1.5rem; }
     .stat { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
     .testimonial { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
     footer { padding:2rem 0; text-align:center; color:var(--muted); }
     @media(max-width:768px){ .grid-3,.stats{grid-template-columns:1fr;} }
+
+
   </style>
 </head>
 <body>
