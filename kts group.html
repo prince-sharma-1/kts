@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Central Enterprise — KTS Group</title>
+  <meta name="description" content="Central Enterprise Company uniting KTS Academy, KTS IT Solutions, and KTS Marketing." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --primary: #38bdf8;
+      --card: #1f2937;
+      --border: #334155;
+    }
+    body { margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text); }
+    a { color:var(--primary); text-decoration:none; }
+    .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
+    header { background:rgba(15,23,42,0.9); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:1000; }
+    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+    .brand { font-weight:700; font-size:1.2rem; }
+    .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
+    .hero { padding:4rem 0; text-align:center; }
+    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { color:var(--muted); max-width:700px; margin:0 auto 1.5rem; }
+    .section { padding:3rem 0; border-bottom:1px solid var(--border); }
+    .section h2 { font-size:2rem; margin-bottom:1rem; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
+    .card:hover { border-color:var(--primary); background-color:#001427; }
+    footer { padding:2rem 0; text-align:center; color:var(--muted); }
+
+    /* Hamburger styles */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      z-index:1100;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Full-screen overlay menu */
+    nav ul {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--card);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+      list-style: none;
+      margin:0;
+      padding:0;
+      z-index:1000;
+    }
+    nav ul.open {
+      transform: translateX(0);
+    }
+    nav ul li a {
+      font-size:1.5rem;
+      color:var(--text);
+    }
+    nav ul li a:hover {
+      background: var(--primary);
+      color:#001427;
+      padding:0.3rem 0.6rem;
+      border-radius:5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><h2>Central Enterprise</h2></div>
+      <!-- Hamburger -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#academy">KTS Academy</a></li>
+          <li><a href="#it">KTS IT Solutions</a></li>
+          <li><a href="#marketing">KTS Marketing</a></li>
+          <li><a href="#contact" class="cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <h1>Welcome to Central Enterprise</h1>
+      <p>Unifying education, IT solutions, and marketing under one powerful brand — KTS Group.</p>
+      <a href="#contact" class="cta">Get in Touch</a>
+    </section>
+
+    <!-- Academy -->
+    <section class="section container" id="academy">
+      <h2><a href="index.html">KTS Academy</a></h2>
+      <div class="grid-3">
+        <div class="card"><h3>JEE Coaching</h3><p>Structured courses for engineering aspirants.</p></div>
+        <div class="card"><h3>NEET Coaching</h3><p>Expert faculty guiding medical aspirants.</p></div>
+        <div class="card"><h3>Test Series</h3><p>Performance analysis with mock exams.</p></div>
+      </div>
+    </section>
+
+    <!-- IT Solutions -->
+    <section class="section container" id="it">
+      <h2><a href="kts_it_home.html">KTS IT Solutions</a></h2>
+      <div class="grid-3">
+        <div class="card"><h3>Software Development</h3><p>Custom applications for enterprises.</p></div>
+        <div class="card"><h3>Cloud Services</h3><p>Scalable AWS & Azure solutions.</p></div>
+        <div class="card"><h3>IT Staffing</h3><p>Connecting top talent with global firms.</p></div>
+      </div>
+    </section>
+
+    <!-- Marketing -->
+    <section class="section container" id="marketing">
+      <h2>KTS Marketing</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Digital Campaigns</h3><p>SEO, SEM, and social media strategies.</p></div>
+        <div class="card"><h3>Branding</h3><p>Creative design and brand identity.</p></div>
+        <div class="card"><h3>Content Strategy</h3><p>Engaging content to grow your audience.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact">
+      <h2>Contact Central Enterprise</h2>
+      <form>
+        <label>Name</label>
+        <input type="text" required />
+        <label>Email</label>
+        <input type="email" required />
+        <label>Message</label>
+        <textarea required></textarea>
+        <button type="submit" class="cta">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Central Enterprise — KTS Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector("nav ul");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
