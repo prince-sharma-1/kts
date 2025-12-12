@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KTS IT Solutions — IT Hiring Firm</title>
+  <meta name="description" content="KTS IT Solutions connects top IT talent with leading companies worldwide." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --primary: #38bdf8;
+      --accent: #22c55e;
+      --card: #1f2937;
+      --border: #334155;
+    }
+    body { margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text); }
+    a { color:var(--primary); text-decoration:none; }
+    .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
+    header { background:rgba(15,23,42,0.9); border-bottom:1px solid var(--border); position:sticky; top:0; }
+    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+    .brand { font-weight:700; font-size:1.2rem; }
+    nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+    .nav a:hover { text-decoration:underline; background-color: var(--primary); color:#001427; padding:0.2rem 0.5rem; border-radius:5px; }
+    .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
+    .hero { padding:4rem 0; text-align:center; }
+    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { color:var(--muted); max-width:700px; margin:0 auto 1.5rem; }
+    .section { padding:3rem 0; border-bottom:1px solid var(--border); }
+    .section h2 { font-size:2rem; margin-bottom:1rem; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
+    .card:hover { border-color:var(--primary); background-color:#001427; }
+    footer { padding:2rem 0; text-align:center; color:var(--muted); }
+
+    /* Hamburger styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Responsive menu */
+    @media(max-width:768px){
+      nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--card);
+        flex-direction: column;
+        width: 220px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        border-radius: 8px;
+      }
+      nav ul.open {
+        height: 220px;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><h2>KTS IT Solutions</h2></div>
+      <nav>
+        <ul>
+          <li><a href="#jobs">Jobs</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#contact" class="cta">Hire Talent</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <h1>Connecting IT Talent with Opportunity</h1>
+      <p>KTS IT Solutions specializes in IT recruitment, helping companies find the right developers, engineers, and tech leaders.</p>
+      <a href="#contact" class="cta">Request Candidates</a>
+    </section>
+
+    <!-- Jobs -->
+    <section class="section container" id="jobs">
+      <h2>Featured Jobs</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Frontend Developer</h3><p>React/Angular roles with leading startups.</p></div>
+        <div class="card"><h3>Backend Engineer</h3><p>Java, Node.js, and Python positions in enterprise firms.</p></div>
+        <div class="card"><h3>Cloud Architect</h3><p>AWS & Azure experts for global clients.</p></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section container" id="services">
+      <h2>Our Services</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Permanent Hiring</h3><p>Full-time placements for IT professionals.</p></div>
+        <div class="card"><h3>Contract Staffing</h3><p>Flexible IT talent for short-term projects.</p></div>
+        <div class="card"><h3>Executive Search</h3><p>Leadership hiring for CTOs, CIOs, and senior roles.</p></div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="section container" id="clients">
+      <h2>Trusted by Leading Companies</h2>
+      <p>We partner with startups, enterprises, and global tech firms to deliver top talent.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact">
+      <h2>Hire Talent Today</h2>
+      <form>
+        <label>Name</label>
+        <input type="text" required />
+        <label>Email</label>
+        <input type="email" required />
+        <label>Company</label>
+        <input type="text" required />
+        <label>Role Needed</label>
+        <input type="text" required />
+        <button type="submit" class="cta">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> KTS IT Solutions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector("nav ul");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
