@@ -45,7 +45,54 @@
     @media(max-width:768px){ .grid-3,.stats{grid-template-columns:1fr;} }
     .logo-container{flex-shrink: 0;}
     .logo {  height: 60px;  width: auto;}
+    /* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile menu */
+@media(max-width:768px){
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--card);
+    flex-direction: column;
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    border-radius: 8px;
+  }
+
+  nav ul.open {
+    height: 180px; /* enough for your 4 links */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
   </style>
 </head>
@@ -64,6 +111,13 @@
           <li><a href="#contact" class="cta">Enroll Now</a></li>
         </ul>
       </nav>
+      <!-- Hamburger Icon -->
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
     </div>
   </header>
 
@@ -210,11 +264,20 @@
     <p>© <span id="year"></span> KTS Academy. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector("nav ul");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    // Animate hamburger into "X"
+    hamburger.classList.toggle("active");
+  });
+</script>
 </body>
 </html>
-```
+
 
 
