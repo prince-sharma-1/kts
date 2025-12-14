@@ -7,94 +7,10 @@
   <title>KTS Academy — JEE & NEET Coaching</title>
   <meta name="description" content="KTS Academy helps students excel in JEE and NEET with expert faculty, structured courses, and proven results." />
   <link rel="canonical" href="https://www.ktsacademy.com/" />
+  <link rel="stylesheet" href="kts style.css">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #0f172a;
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --primary: #38bdf8;
-      --accent: #22c55e;
-      --card: #1f2937;
-      --border: #334155;
-    }
-    body { margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text); }
-    a { color:var(--primary); text-decoration:none; }
-    .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
-    header { background:rgba(15,23,42,0.9); border-bottom:1px solid var(--border); position:sticky; top:0; }
-    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
-    .brand { font-weight:700; font-size:1.2rem; }
-    .nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
-   .nav a:hover { text-decoration:underline; background-color: #38bdf8 ; color: #001427; padding: 0.2rem 0.5rem; border-radius: 5px; }
-    .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
-    .hero { padding:4rem 0; text-align:center; }
-    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
-    .hero p { color:var(--muted); max-width:700px; margin:0 auto 1.5rem; }
-    .section { padding:3rem 0; border-bottom:1px solid var(--border); }
-    .section h2 { font-size:2rem; margin-bottom:1rem; }
-    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
-    .card:hover { border-color:var(--primary); background-color: #001427; }
-    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1.5rem; }
-    .stat { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center; }
-    .testimonial { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
-    footer { padding:2rem 0; text-align:center; color:var(--muted); }
-    @media(max-width:768px){ .grid-3,.stats{grid-template-columns:1fr;} }
-    .logo-container{flex-shrink: 0;}
-    .logo {  height: 60px;  width: auto;}
-    /* Hamburger styles */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 25px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-/* Mobile menu */
-@media(max-width:768px){
-  nav ul {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--card);
-    flex-direction: column;
-    width: 200px;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-    border-radius: 8px;
-  }
-
-  nav ul.open {
-    height: 180px; /* enough for your 4 links */
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-  </style>
 </head>
 <body>
   <header>
@@ -133,8 +49,12 @@
 
     <!-- JEE Courses -->
     <section class="section container" id="jee">
-      <center><h2>JEE Courses</h2></center>
+      <h2>JEE Courses</h2>
       <div class="grid-3">
+        <div class="card">
+          <h3>Crash Course Batch</h3>
+          <p>Intensive 3-month program with mock tests and revision for last-minute prep.</p>
+        </div>
         <div class="card">
           <h3>Foundation (Class 9–10)</h3>
           <p>Strong basics in Physics, Chemistry, and Math with Olympiad-level problem solving.</p>
@@ -143,10 +63,7 @@
           <h3>Target JEE Batch (Class 11–12)</h3>
           <p>Comprehensive coverage of JEE syllabus with weekly tests and doubt sessions.</p>
         </div>
-        <div class="card">
-          <h3>Crash Course Batch</h3>
-          <p>Intensive 3-month program with mock tests and revision for last-minute prep.</p>
-        </div>
+        
         <div class="card">
           <h3>Test Series</h3>
           <p> Extensive JEE Main & Advanced test series with performance analysis and feedback.
@@ -165,7 +82,7 @@
 
     <!-- NEET Courses -->
     <section class="section container" id="neet">
-      <center><h2>NEET Courses</h2></center>
+      <h2>NEET Courses</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Vijay 1.0 </h3>
@@ -267,6 +184,25 @@
   <footer>
     <p>© <span id="year"></span> KTS Academy. All rights reserved.</p>
   </footer>
+ <div class="container1">
+    <div class="form-box">
+      <h1>Create Account</h1>
+      <p>Join KTS Academy and start learning today</p>
+      <form id="signupForm">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+          <input type="email" id="signupEmail" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="signupPassword" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -316,6 +252,18 @@
       await loginUser(email, password);
     });
   </script>
+    <script type="module">
+    import { signupUser } from "./firebase.js";
+
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+      await signupUser(email, password, username);
+    });
+  </script>
+
 
 </body>
 </html>
