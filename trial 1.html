@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trending Courses with Fade-In Animation</title>
+<style>
+  /* Basic styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<section id="trending-courses" class="fade-in">
+  <h2>Trending Courses</h2>
+  <ul>
+    <li>NEET-UG Online Classroom Course</li>
+    <li>JEE (Main+Advanced) Online Classroom Course</li>
+    <li>CBSE 10th Online Classroom Course</li>
+    <li>Olympiad Preparation Course</li>
+    <li>NTSE Preparation Course</li>
+  </ul>
+</section>
+
+<script>
+  // Function to check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  // On scroll, add 'visible' class to fade-in elements in viewport
+  function onScroll() {
+    const fadeElems = document.querySelectorAll('.fade-in');
+    fadeElems.forEach(elem => {
+      if (isInViewport(elem)) {
+        elem.classList.add('visible');
+      }
+    });
+  }
+
+  // Listen for scroll and load events
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('load', onScroll);
+</script>
+
+</body>
+</html>

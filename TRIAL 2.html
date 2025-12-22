@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Cards - ML & AI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .badge {
+      background-color: #28a745;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .level, .seats {
+      font-size: 0.85rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .promo {
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .promo:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+  <h1>ML & AI Career Courses</h1>
+  <div class="course-container">
+    <div class="course-card">
+      <div class="badge">LIVE COURSE</div>
+      <h3 class="title">Complete Data Science & Machine Learning</h3>
+      <p class="subtitle">Career Program with AI</p>
+      <div class="meta">
+        <span>169k+ Geeks</span>
+        <span>⭐ 4.3</span>
+      </div>
+      <p class="description">Complete Data Science and Machine Learning Career Program with AI - Live</p>
+      <p class="level">Beginner to Advanced</p>
+      <p class="seats">5 seats left</p>
+      <button class="promo">Extra 40% Off</button>
+    </div>
+
+    <div class="course-card">
+      <div class="badge">LIVE COURSE</div>
+      <h3 class="title">21 Projects in 21 Days</h3>
+      <p class="subtitle">Agentic AI, Deep Learning, GEN AI</p>
+      <div class="meta">
+        <span>66k+ Geeks</span>
+        <span>⭐ 4.7</span>
+      </div>
+      <p class="description">21 Projects, 21 Days: ML, Deep Learning & GenAI - Live</p>
+      <p class="level">Intermediate</p>
+      <p class="seats">Limited seats</p>
+      <button class="promo">Extra 40% Off</button>
+    </div>
+
+    <div class="course-card">
+      <div class="badge">LIVE COURSE</div>
+      <h3 class="title">Generative AI Training Program</h3>
+      <p class="subtitle">Hands-on with GenAI</p>
+      <div class="meta">
+        <span>30k+ Geeks</span>
+        <span>⭐ 4.5</span>
+      </div>
+      <p class="description">Generative AI Training Program - Live</p>
+      <p class="level">Beginner to Advanced</p>
+      <p class="seats">7 seats left</p>
+      <button class="promo">Extra 40% Off</button>
+    </div>
+
+    <div class="course-card">
+      <div class="badge">LIVE COURSE</div>
+      <h3 class="title">Data Analytics with AI</h3>
+      <p class="subtitle">Training Program</p>
+      <div class="meta">
+        <span>97k+ Geeks</span>
+        <span>⭐ 4.3</span>
+      </div>
+      <p class="description">Complete Data Analytics with AI - Live</p>
+      <p class="level">Beginner to Advanced</p>
+      <p class="seats">3 seats left</p>
+      <button class="promo">Extra 40% Off</button>
+    </div>
+  </div>
+</body>
+</html>
