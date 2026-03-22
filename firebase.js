@@ -1,24 +1,31 @@
 // firebase.js
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-// Import the functions you need from the SDKs you need
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-// Your Firebase config (replace with your own from Firebase Console)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc 
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// Firebase configuration
 const firebaseConfig = {
-     apiKey: "AIzaSyDbovkhsoXdtudKdY3Ixl3KIZ1NXo4KH4k",
-    authDomain: "kts-academy.firebaseapp.com",
-    projectId: "kts-academy",
-    storageBucket: "kts-academy.firebasestorage.app",
-    messagingSenderId: "474382144386",
-    appId: "1:474382144386:web:4969617fec5522ad52359b",
-    measurementId: "G-CRV48HGH35"
-  };
+  apiKey: "AIzaSyDbovkhsoXdtudKdY3Ixl3KIZ1NXo4KH4k",
+  authDomain: "kts-academy.firebaseapp.com",
+  projectId: "kts-academy",
+  storageBucket: "kts-academy.appspot.com",
+  messagingSenderId: "474382144386",
+  appId: "1:474382144386:web:4969617fec5522ad52359b",
+  measurementId: "G-CRV48HGH35"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Export services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
@@ -28,16 +35,15 @@ export async function signupUser(email, password, username) {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Save extra user info in Firestore
     await addDoc(collection(db, "users"), {
       uid: user.uid,
-      username: username,
-      email: email
+      username,
+      email
     });
 
     alert("Signup successful!");
   } catch (error) {
-    alert("Error: " + error.message);
+    alert(error.message);
   }
 }
 
@@ -47,19 +53,17 @@ export async function loginUser(email, password) {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login successful!");
   } catch (error) {
-    alert("Error: " + error.message);
+    alert(error.message);
   }
 }
-<script type="module">
-  
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = 
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  
-</script>   
+async function addCourse(course) {
+  await addDoc(collection(db, "courses"), {
+    title: course.title,
+    price: course.price,
+    description: course.description,
+    createdAt: new Date()
+  });
+}
