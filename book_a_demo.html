@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Free Demo - Velocity Batch | KTS Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .kts-blue { background-color: #007bff; }
+        .kts-dark { background-color: #0a192f; }
+        .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        
+        /* Modal Animation */
+        .modal-enter { opacity: 0; transform: scale(0.9); }
+        .modal-show { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900 leading-relaxed">
+
+    <nav class="kts-dark p-4 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center font-bold">K</div>
+                <span class="font-bold text-xl tracking-tight">KTS Academy</span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-blue-400 transition">JEE Program</a>
+                <a href="#" class="hover:text-blue-400 transition">NEET Program</a>
+                <a href="https://www.ktsacademy.in/velocity#demo" class="text-blue-400 border border-blue-400/30 px-4 py-1 rounded-full hover:bg-blue-400 hover:text-white transition">Return to Velocity Batch</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto py-12 px-6">
+        <header class="text-center mb-16">
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Trial Class Registration</span>
+            <h1 class="text-4xl md:text-5xl font-black mt-2 mb-4 text-slate-900">Experience the Velocity Edge</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Don't just take our word for it. Join a live session at our <strong>Sector 4 Main Campus</strong> and see how our IIT/NIT alumni faculty simplify the toughest JEE concepts.</p>
+        </header>
+
+        <div class="grid lg:grid-cols-5 gap-0 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+            
+            <div class="lg:col-span-2 kts-dark p-10 text-white flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-8">Why attend a demo?</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start group">
+                            <div class="bg-blue-500/20 p-2 rounded-lg mr-4 group-hover:bg-blue-500 transition">
+                                <i data-lucide="users" class="w-5 h-5 text-blue-400 group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-400">Live Interaction</h4>
+                                <p class="text-sm text-gray-400">Sit in a real class with current students and experience the pace.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start group">
+                            <div class="bg-blue-500/20 p-2 rounded-lg mr-4 group-hover:bg-blue-500 transition">
+                                <i data-lucide="book-open" class="w-5 h-5 text-blue-400 group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-400">Study Kit</h4>
+                                <p class="text-sm text-gray-400">Get a physical copy of our exclusive "Bridge Course" module.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start group">
+                            <div class="bg-blue-500/20 p-2 rounded-lg mr-4 group-hover:bg-blue-500 transition">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-blue-400 group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-400">Campus Tour</h4>
+                                <p class="text-sm text-gray-400">Inspect our 24/7 Doubt Solving Counters and Library.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-700 italic text-gray-400 text-sm">
+                    "The Velocity Batch is tailored for JEE 2028 aspirants aiming for a Top 100 AIR."
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-white p-10">
+                <form id="demoForm" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Student Name</label>
+                            <input type="text" id="name" placeholder="John Doe" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="9876543210" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Select Target Exam</label>
+                        <div class="flex space-x-4">
+                            <label class="flex-1 border rounded-xl p-3 flex items-center justify-center cursor-pointer hover:bg-blue-50 transition border-gray-200 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+                                <input type="radio" name="goal" class="hidden" checked> <span>JEE Main/Adv</span>
+                            </label>
+                            <label class="flex-1 border rounded-xl p-3 flex items-center justify-center cursor-pointer hover:bg-blue-50 transition border-gray-200 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+                                <input type="radio" name="goal" class="hidden"> <span>NEET-UG</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Preferred Demo Slot</label>
+                        <select id="slot" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition" required>
+                            <option value="">Choose a subject and date</option>
+                            <option>Physics: Kinematics (April 5, 4:30 PM)</option>
+                            <option>Maths: Fundamentals (April 7, 5:00 PM)</option>
+                            <option>Chemistry: Mole Concept (April 9, 4:30 PM)</option>
+                        </select>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full kts-blue text-white font-black py-4 rounded-xl hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300 shadow-xl flex items-center justify-center">
+                            Secure My Free Seat <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </button>
+                    </div>
+                    
+                    <p class="text-center text-[10px] text-gray-400 uppercase tracking-tighter">
+                        Limited to 20 seats per batch. We will call you within 2 hours to confirm.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="successModal" class="fixed inset-0 bg-slate-900/80 hidden items-center justify-center z-[100] p-6 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl modal-enter" id="modalContent">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check-circle-2" class="w-12 h-12 text-green-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Seat Reserved!</h3>
+            <p class="text-slate-600 mb-8">Hi <span id="userName" class="font-bold"></span>, your demo class for the <span class="font-bold text-blue-600">Velocity Batch</span> is scheduled. Check your phone for details.</p>
+            <button onclick="closeModal()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition">Great, thanks!</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const form = document.getElementById('demoForm');
+        const modal = document.getElementById('successModal');
+        const modalContent = document.getElementById('modalContent');
+        const userNameSpan = document.getElementById('userName');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get user name for personalization
+            const nameInput = document.getElementById('name').value;
+            userNameSpan.textContent = nameInput;
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                modalContent.classList.remove('modal-enter');
+                modalContent.classList.add('modal-show');
+            }, 10);
+
+            // Here you would typically send data to your server
+            console.log("Form Submitted Successfully");
+        });
+
+        function closeModal() {
+            modalContent.classList.remove('modal-show');
+            modalContent.classList.add('modal-enter');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                form.reset();
+            }, 300);
+        }
+    </script>
+</body>
+</html>
