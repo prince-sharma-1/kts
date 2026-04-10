@@ -24,3 +24,7 @@ kts enterprises ------->
                                             Digital Campaigning
                                             Brand Endorsement 
                                             Content Strategy
+
+
+Website should have a razor pay gateway.
+website should have a database system which include storage of data .

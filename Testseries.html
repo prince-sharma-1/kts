@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPIRE Test Portal | KTS Academy</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --accent-cyan: #0ea5e9;
+            --text-gray: #94a3b8;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Login Container */
+        .login-box {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .login-box h2 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .login-box p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-cyan);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+
+        /* Test Dashboard (Hidden by default) */
+        #dashboard {
+            display: none;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent-cyan);
+        }
+
+        .status-tag {
+            background: #065f46;
+            color: #34d399;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-container" class="login-box">
+        <h2>ASPIRE Portal</h2>
+        <p>Login to access your NEET/JEE Test Series</p>
+        
+        <div class="input-group">
+            <label>Enrollment ID</label>
+            <input type="text" id="studentId" placeholder="KTS-2024-XXXX">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="••••••••">
+        </div>
+
+        <button class="btn-login" onclick="handleLogin()">Sign In</button>
+    </div>
+
+    <div id="dashboard">
+        <h1 style="color: var(--accent-cyan)">Welcome, Scholar!</h1>
+        <p style="color: var(--text-gray)">Available Tests for Velocity Batch</p>
+        
+        <div class="test-card">
+            <div>
+                <h3>Full Syllabus Mock Test - 04</h3>
+                <p style="font-size: 0.8rem; color: var(--text-gray)">Duration: 180 Mins | Pattern: NEET</p>
+            </div>
+            <button class="btn-login" style="width: auto; padding: 10px 25px;">Start Test</button>
+        </div>
+
+        <div class="test-card" style="border-left-color: #4b5563; opacity: 0.7;">
+            <div>
+                <h3>Biology: Plant Physiology (Practice)</h3>
+                <p style="font-size: 0.8rem; color: var(--text-gray)">Completed on 25th March</p>
+            </div>
+            <span class="status-tag">Completed</span>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const id = document.getElementById('studentId').value;
+            const pass = document.getElementById('password').value;
+
+            // Simple logic for demonstration
+            if(id !== "" && pass !== "") {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            } else {
+                alert("Please enter your credentials");
+            }
+        }
+    </script>
+</body>
+</html>
