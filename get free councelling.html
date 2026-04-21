@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Free Counseling | KTS Academy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a; /* Matching your dark theme */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: white;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+<a href="index.html" class="floating-home" >
+    <div class="icon-wrapper">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </div>
+    <span></span>
+</a>
+<div class="container">
+    <h1 style="background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; margin-bottom: 10px;">
+        Book Your Free Counseling
+    </h1>
+     <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <p style="color: #94a3b8; margin-bottom: 30px;">Take the first step toward your IIT-JEE or NEET dream. Our experts are here to guide you.</p>
+
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+        
+        <select required>
+            <option value="" disabled selected>Select Your Goal</option>
+            <option value="jee">IIT-JEE</option>
+            <option value="neet">NEET</option>
+            <option value="foundation">Foundation (9th-10th)</option>
+        </select>
+
+        <textarea rows="4" placeholder="How can we help you? (Optional)"></textarea>
+
+        <button type="submit" class="submit-btn">REQUEST A CALL BACK</button>
+    </form>
+    
+    <p style="font-size: 12px; color: #64748b; margin-top: 20px;">
+        © KTS Academy Etawah. We respect your privacy.
+    </p>
+</div>
+
+</body>
+</html>

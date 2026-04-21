@@ -66,4 +66,7 @@ async function addCourse(course) {
     description: course.description,
     createdAt: new Date()
   });
+} 
+function goBack() {
+  window.history.back();
 }

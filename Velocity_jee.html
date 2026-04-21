@@ -134,10 +134,69 @@
             h1 { font-size: 2.2rem; }
             .cta-group { flex-direction: column; }
         }
+        .floating-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #00a8ff, #0072ff);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(0, 168, 255, 0.3);
+    z-index: 1000;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Entrance Animation */
+    animation: fadeInUp 0.8s ease-out forwards, pulse 3s infinite 1s;
+    opacity: 0; /* Starts hidden for the fade-in effect */
+}
+
+.floating-home:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 168, 255, 0.5);
+    background: linear-gradient(135deg, #00c2ff, #00a8ff);
+}
+
+/* Keyframes for the Entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle Pulse Animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 168, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .floating-home span { display: none; }
+    .floating-home { padding: 15px; border-radius: 50%; bottom: 20px; right: 20px; }
+}
     </style>
 </head>
 <body>
-
+<a href="index.html" class="floating-home" >
+    <div class="icon-wrapper">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </div>
+    <span></span>
+</a>
 <section class="hero">
     <div class="container">
         <span class="badge">Offline Admissions Open 2026-27</span>

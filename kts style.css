@@ -166,3 +166,88 @@ h2 { text-align: center;  color: #38bdf8; }
 .login-link a:hover {
   text-decoration: underline;
 }
+.back-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transition: left 0.4s ease;
+}
+
+.back-btn:hover::before {
+  left: 0;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(37,117,252,0.6);
+}
+
+.floating-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #00a8ff, #0072ff);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(0, 168, 255, 0.3);
+    z-index: 1000;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Entrance Animation */
+    animation: fadeInUp 0.8s ease-out forwards, pulse 3s infinite 1s;
+    opacity: 0; /* Starts hidden for the fade-in effect */
+}
+
+.floating-home:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 168, 255, 0.5);
+    background: linear-gradient(135deg, #00c2ff, #00a8ff);
+}
+
+/* Keyframes for the Entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle Pulse Animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 168, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .floating-home span { display: none; }
+    .floating-home { padding: 15px; border-radius: 50%; bottom: 20px; right: 20px; }
+}
