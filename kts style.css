@@ -11,10 +11,25 @@
     a { color:var(--primary); text-decoration:none; }
     .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
     header { background:rgba(15,23,42,0.9); border-bottom:1px solid var(--border); position:sticky; top:0; }
-    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
     .brand { font-weight:700; font-size:1.2rem; }
+    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
     .nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
-   .nav a:hover { text-decoration:underline; background-color: #38bdf8 ; color: #001427; padding: 0.2rem 0.5rem; border-radius: 5px; }
+    .nav ul li{ position:relative;}
+    .nav ul li a {color: #fff;text-decoration: none;padding: 8px 12px;display: block;transition: background 0.3s ease;}
+    .nav ul li a:hover { background-color: #38bdf8; color: #001427; border-radius: 5px; }
+    .nav a:hover { text-decoration:underline; background-color: #38bdf8 ; color: #001427; padding: 0.2rem 0.5rem; border-radius: 5px; }
+    /* Dropdown styling */
+    nav ul li ul {position: absolute;top: 100%;left: 0;background: #0a3d62;min-width: 180px;opacity: 0;visibility: hidden;transform: translateY(-10px);transition: all 0.3s ease;border-radius: 4px;z-index: 99;}
+    nav ul li:hover ul {opacity: 1;visibility: visible;transform: translateY(0);}
+    nav ul li ul li {margin: 0;}
+    nav ul li ul li a {padding: 10px;border-bottom: 1px solid #1e90ff;    }
+    nav ul li ul li a:hover {background: #1e90ff;    }
+       /* Simple arrow animation */
+    nav ul li > a::after {content: " ▼";
+      font-size: 0.7em;transition: transform 0.3s ease;}
+    nav ul li:hover > a::after {transform: rotate(180deg);}
+    
+    
     .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
     .hero { padding:4rem 0; text-align:center; }
     .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
@@ -34,6 +49,7 @@
     /*enquiry button*/
     .enquiry-button {  background-color: var(--accent);  color: #001427;  padding: 0.6rem 1rem;  border-radius: 4px;  font-weight: 700;  border: none;  cursor: pointer;  transition: background-color 0.3s; }
     .enquiry-button:hover {  background-color: #16a34a; }
+    h3 { text-align: center;  color: #D4AF37;}
     .btn1
     {
       flex: 1;
