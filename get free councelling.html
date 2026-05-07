@@ -65,11 +65,10 @@
     <h1 style="background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; margin-bottom: 10px;">
         Book Your Free Counseling
     </h1>
-     <button class="back-btn" onclick="goBack()">← Back</button>
 
     <p style="color: #94a3b8; margin-bottom: 30px;">Take the first step toward your IIT-JEE or NEET dream. Our experts are here to guide you.</p>
 
-    <form>
+    <form id="counselingForm">
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email Address" required>
         <input type="tel" placeholder="Phone Number" required>
@@ -90,6 +89,49 @@
         © KTS Academy Etawah. We respect your privacy.
     </p>
 </div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDbovkhsoXdtudKdY3Ixl3KIZ1NXo4KH4k",
+    authDomain: "kts-academy.firebaseapp.com",
+    projectId: "kts-academy",
+    storageBucket: "kts-academy.appspot.com",
+    messagingSenderId: "474382144386",
+    appId: "1:474382144386:web:4969617fec5522ad52359b",
+    measurementId: "G-CRV48HGH35"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  document.getElementById('counselingForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[placeholder="Email Address"]').value;
+    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
+    const goal = document.querySelector('select').value;
+    const message = document.querySelector('textarea').value;
+
+    try {
+      await addDoc(collection(db, "counseling_requests"), {
+        name,
+        email,
+        phone,
+        goal,
+        message,
+        timestamp: new Date()
+      });
+      alert("Your counseling request has been submitted successfully!");
+      e.target.reset();
+    } catch (error) {
+      alert("Error submitting request: " + error.message);
+    }
+  });
+</script>
 
 </body>
 </html>
