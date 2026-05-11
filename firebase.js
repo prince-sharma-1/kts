@@ -1,72 +1,69 @@
-// firebase.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { 
-  getAuth, 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword 
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { 
-  getFirestore, 
-  collection, 
-  addDoc 
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Firebase configuration
+// Import Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+
+// ✅ Your Firebase config (replace with your project’s values)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDbovkhsoXdtudKdY3Ixl3KIZ1NXo4KH4k",
-  authDomain: "kts-academy.firebaseapp.com",
-  projectId: "kts-academy",
-  storageBucket: "kts-academy.appspot.com",
-  messagingSenderId: "474382144386",
-  appId: "1:474382144386:web:4969617fec5522ad52359b",
-  measurementId: "G-CRV48HGH35"
+  apiKey: "AIzaSyA9e-RohUKRKvm7m_Nh0FexDIBEJiuYq5E",
+  authDomain: "kts-academy-16860.firebaseapp.com",
+  databaseURL: "https://kts-academy-16860-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "kts-academy-16860",
+  storageBucket: "kts-academy-16860.firebasestorage.app",
+  messagingSenderId: "193575636514",
+  appId: "1:193575636514:web:84e00a1386f731d084447b",
+  measurementId: "G-ZVMCBYYH1D"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-// Export services
+// ✅ Initialize Firebase services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// Signup function
+// 🔑 Generate Enrollment ID
+function generateEnrollmentID() {
+  const year = new Date().getFullYear();
+  const randomNum = Math.floor(1000 + Math.random() * 9000); 
+  return `KTS${year}-${randomNum}`;
+}
+
+// 📝 Signup Function
 export async function signupUser(email, password, username) {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    await addDoc(collection(db, "users"), {
-      uid: user.uid,
-      username,
-      email
+    // Save user profile in Firestore
+    await setDoc(doc(db, "users", user.uid), {
+      email: email,
+      username: username,
+      role: "student",          // default role
+      batch: "Unassigned",      // can be updated later
+      enrollmentID: generateEnrollmentID(),
+      createdAt: new Date(),
+      testsAttempted: [],
+      profileCompleted: false
     });
 
-    alert("Signup successful!");
+    alert("Signup successful! Account created.");
   } catch (error) {
-    alert(error.message);
+    alert("Signup Error: " + error.message);
   }
 }
 
-// Login function
+// 🔑 Login Function
 export async function loginUser(email, password) {
   try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Login successful!");
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    alert("Login successful! Welcome back.");
   } catch (error) {
-    alert(error.message);
+    alert("Login Error: " + error.message);
   }
-}
-
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-async function addCourse(course) {
-  await addDoc(collection(db, "courses"), {
-    title: course.title,
-    price: course.price,
-    description: course.description,
-    createdAt: new Date()
-  });
-} 
-function goBack() {
-  window.history.back();
 }

@@ -69,18 +69,18 @@
     <p style="color: #94a3b8; margin-bottom: 30px;">Take the first step toward your IIT-JEE or NEET dream. Our experts are here to guide you.</p>
 
     <form id="counselingForm">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone Number" required>
+        <input id="fullName" type="text" placeholder="Full Name" required>
+        <input id="emailAddress" type="email" placeholder="Email Address" required>
+        <input id="phoneNumber" type="tel" placeholder="Phone Number" required>
         
-        <select required>
+        <select id="goalSelect" required>
             <option value="" disabled selected>Select Your Goal</option>
             <option value="jee">IIT-JEE</option>
             <option value="neet">NEET</option>
             <option value="foundation">Foundation (9th-10th)</option>
         </select>
 
-        <textarea rows="4" placeholder="How can we help you? (Optional)"></textarea>
+        <textarea id="messageText" rows="4" placeholder="How can we help you? (Optional)"></textarea>
 
         <button type="submit" class="submit-btn">REQUEST A CALL BACK</button>
     </form>
@@ -91,30 +91,17 @@
 </div>
 
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDbovkhsoXdtudKdY3Ixl3KIZ1NXo4KH4k",
-    authDomain: "kts-academy.firebaseapp.com",
-    projectId: "kts-academy",
-    storageBucket: "kts-academy.appspot.com",
-    messagingSenderId: "474382144386",
-    appId: "1:474382144386:web:4969617fec5522ad52359b",
-    measurementId: "G-CRV48HGH35"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  import { db } from './firebase.js';
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
   document.getElementById('counselingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.querySelector('input[placeholder="Full Name"]').value;
-    const email = document.querySelector('input[placeholder="Email Address"]').value;
-    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
-    const goal = document.querySelector('select').value;
-    const message = document.querySelector('textarea').value;
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('emailAddress').value.trim();
+    const phone = document.getElementById('phoneNumber').value.trim();
+    const goal = document.getElementById('goalSelect').value;
+    const message = document.getElementById('messageText').value.trim();
 
     try {
       await addDoc(collection(db, "counseling_requests"), {
@@ -127,6 +114,7 @@
       });
       alert("Your counseling request has been submitted successfully!");
       e.target.reset();
+      window.location.href = 'index.html';
     } catch (error) {
       alert("Error submitting request: " + error.message);
     }
