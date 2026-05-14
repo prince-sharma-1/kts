@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buy Any Course | KTS Academy</title>
+  <meta name="description" content="Buy any course from KTS Academy and pay directly using UPI. Select a course to refresh the fee and proceed to payment." />
+  <link rel="stylesheet" href="kts style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .course-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .course-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.2rem; min-height:220px; display:flex; flex-direction:column; justify-content:space-between; }
+    .course-card h3 { margin-bottom:0.6rem; color:#38bdf8; }
+    .course-card p { color:var(--muted); margin-bottom:1rem; line-height:1.5; }
+    .course-card button { width:100%; margin-top:auto; padding:0.9rem; border:none; border-radius:10px; background:var(--primary); color:#001427; cursor:pointer; font-weight:700; }
+    .course-card button:hover { background:#22c55e; }
+    .summary { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-top:1rem; }
+    .summary h2 { margin-bottom:0.8rem; }
+    .summary p { color:var(--muted); margin-bottom:1rem; }
+    .summary strong { color:#fff; }
+    .payment-actions { display:grid; gap:1rem; }
+    .payment-actions a, .payment-actions button { display:inline-flex; justify-content:center; align-items:center; width:100%; padding:1rem; border-radius:10px; font-weight:700; text-decoration:none; border:none; cursor:pointer; }
+    .pay-button { background:linear-gradient(135deg,#38bdf8,#22c55e); color:#001427; }
+    .copy-button { background:#334155; color:#f8fafc; }
+    .payment-note { color:var(--muted); font-size:0.95rem; }
+    @media(max-width:768px){ .course-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo-container">
+        <img src="kts_slogo.png" alt="KTS Academy Logo" class="logo" />
+      </div>
+      <div class="brand"><h2>KTS Academy</h2></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kts education center.html">Courses</a></li>
+          <li><a href="get free councelling.html" class="cta">Counseling</a></li>
+          <li><a href="buy_course.html" class="cta">Buy Course</a></li>
+          <li><a href="login.html" class="cta">Login</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <h1>Buy Any Course with UPI</h1>
+      <p>Select a course and the fee will refresh automatically. Then pay instantly using your UPI app.</p>
+    </section>
+
+    <section class="section">
+      <h2>Choose Your Course</h2>
+      <div class="course-grid" id="courseGrid"></div>
+    </section>
+
+    <section class="section summary" id="selectedSummary">
+      <h2>Selected Course</h2>
+      <p id="selectionText">Please choose a course above to see the fee and payment link.</p>
+      <div class="payment-actions" id="paymentActions" style="display:none;">
+        <button class="pay-button" id="payButton">Pay with UPI</button>
+        <button class="copy-button" id="copyButton">Copy UPI ID</button>
+      </div>
+      <p class="payment-note">Note: UPI payment works best on mobile devices with a UPI app installed. If it does not open, copy the UPI ID and pay manually.</p>
+    </section>
+  </main>
+
+  <footer class="container" style="padding:2rem 0; text-align:center; color:var(--muted);">
+    <p>Need help? Call us at <a href="tel:+917983910795" style="color:#38bdf8;">+91 79839 10795</a></p>
+  </footer>
+
+  <script>
+    const upiId = 'sharmaprince768@okhdfc';
+    const payeeName = 'KTS Academy';
+    const upiNoteBase = 'Course payment for';
+
+    const courses = [
+      { name: 'JEE Velocity', fee: 150000 },
+      { name: 'JEE Momentum', fee: 125000 },
+      { name: 'JEE Power', fee: 95000 },
+      { name: 'JEE Impulse', fee: 65000 },
+      { name: 'NEET Velocity', fee: 150000 },
+      { name: 'NEET Momentum', fee: 125000 },
+      { name: 'NEET Power', fee: 95000 },
+      { name: 'NEET Impulse', fee: 65000 },
+      { name: 'CCC Course', fee: 3500 },
+      { name: 'Python Course', fee: 12000 },
+      { name: 'Web Development', fee: 18000 },
+      { name: 'Data Science', fee: 25000 },
+      { name: 'Cybersecurity', fee: 22000 },
+      { name: 'Digital Marketing', fee: 15000 }
+    ];
+
+    let selectedCourse = null;
+
+    const courseGrid = document.getElementById('courseGrid');
+    const selectionText = document.getElementById('selectionText');
+    const paymentActions = document.getElementById('paymentActions');
+    const payButton = document.getElementById('payButton');
+    const copyButton = document.getElementById('copyButton');
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+    }
+
+    function createUpiLink(course) {
+      const amount = course.fee.toFixed(2);
+      const note = encodeURIComponent(`${upiNoteBase} ${course.name}`);
+      return `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(payeeName)}&tn=${note}&am=${amount}&cu=INR`;
+    }
+
+    function renderCourses() {
+      courseGrid.innerHTML = courses.map((course, index) => `
+        <div class="course-card">
+          <h3>${course.name}</h3>
+          <p>${formatCurrency(course.fee)}<br /><span style="font-size:0.95rem; color:var(--muted);">One-time payment</span></p>
+          <button type="button" onclick="selectCourse(${index})">Select & Pay</button>
+        </div>
+      `).join('');
+    }
+
+    function selectCourse(index) {
+      selectedCourse = courses[index];
+      selectionText.innerHTML = `
+        <strong>${selectedCourse.name}</strong><br />
+        Fee: <strong>${formatCurrency(selectedCourse.fee)}</strong><br />
+        <span style="color:var(--muted);">Click Pay with UPI to continue.</span>
+      `;
+      paymentActions.style.display = 'grid';
+      payButton.onclick = () => {
+        if (!selectedCourse) return;
+        const upiUrl = createUpiLink(selectedCourse);
+        window.location.href = upiUrl;
+      };
+      copyButton.onclick = () => {
+        navigator.clipboard.writeText(upiId).then(() => {
+          alert(`UPI ID copied: ${upiId}`);
+        }).catch(() => {
+          alert('Unable to copy UPI ID. Please copy it manually: ' + upiId);
+        });
+      };
+    }
+
+    window.selectCourse = selectCourse;
+    renderCourses();
+  </script>
+</body>
+</html>
