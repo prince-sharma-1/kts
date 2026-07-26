@@ -1,182 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASPIRE Test Portal | KTS Academy</title>
-    <style>
-        :root {
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --accent-cyan: #0ea5e9;
-            --text-gray: #94a3b8;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-dark);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Login Container */
-        .login-box {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .login-box h2 {
-            color: var(--accent-cyan);
-            margin-bottom: 0.5rem;
-        }
-
-        .login-box p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            color: white;
-            box-sizing: border-box;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--accent-cyan);
-        }
-
-        .btn-login {
-            width: 100%;
-            padding: 12px;
-            background: var(--accent-cyan);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
-        }
-
-        .btn-login:hover {
-            background: #0284c7;
-            transform: translateY(-2px);
-        }
-
-        /* Test Dashboard (Hidden by default) */
-        #dashboard {
-            display: none;
-            width: 90%;
-            max-width: 1000px;
-        }
-
-        .test-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            border-left: 5px solid var(--accent-cyan);
-        }
-
-        .status-tag {
-            background: #065f46;
-            color: #34d399;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07182d">
+  <title>Score High | Banking Test Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#07182d; --navy-2:#0c2544; --blue:#1769e0; --sky:#eaf3ff; --orange:#ff9636; --ink:#13233a; --muted:#708097; --line:#e7edf4; --bg:#f5f8fc; --green:#179c72; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font-family:"DM Sans",sans-serif; }
+    button { font:inherit; cursor:pointer; } a { color:inherit; text-decoration:none; }
+    .topbar { height:32px; background:#061426; color:#b8cadf; font-size:12px; display:flex; align-items:center; }
+    .topbar-inner,.nav-inner,main { width:min(1180px, calc(100% - 40px)); margin:auto; }
+    .topbar-inner { display:flex; justify-content:space-between; }
+    .topbar strong { color:#fff; font-weight:600; }
+    nav { height:74px; background:#fff; border-bottom:1px solid var(--line); display:flex; align-items:center; }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .brand { display:flex; align-items:center; gap:10px; font-family:"Plus Jakarta Sans"; font-weight:800; font-size:20px; letter-spacing:-.8px; }
+    .brand-mark { width:35px; height:35px; border-radius:11px; background:linear-gradient(135deg,#247af2,#104ca9); color:white; display:grid; place-items:center; font-size:20px; box-shadow:0 5px 12px #1769e052; }
+    .brand span { color:var(--blue); }
+    .nav-links { display:flex; gap:25px; color:#53647b; font-size:14px; font-weight:600; margin-left:auto; }
+    .nav-links a.active { color:var(--blue); }
+    .profile { display:flex; align-items:center; gap:9px; padding-left:20px; border-left:1px solid var(--line); font-size:13px; font-weight:700; }
+    .avatar { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#1351ae; background:#dceaff; }
+    .profile small { display:block; color:var(--muted); font-size:11px; font-weight:500; }
+    main { padding:35px 0 52px; }
+    .welcome { display:flex; justify-content:space-between; align-items:end; margin-bottom:24px; }
+    h1,h2,h3,p { margin:0; } h1,h2,h3 { font-family:"Plus Jakarta Sans"; }
+    h1 { font-size:28px; letter-spacing:-1.1px; } .welcome p { color:var(--muted); margin-top:7px; font-size:14px; }
+    .date { color:#55677e; background:#fff; padding:9px 13px; border:1px solid var(--line); border-radius:9px; font-size:12px; font-weight:600; }
+    .hero { min-height:222px; border-radius:20px; padding:30px 34px; color:#fff; position:relative; overflow:hidden; background:linear-gradient(110deg,#0a2d57,#155daf); display:flex; align-items:center; }
+    .hero:after { content:""; position:absolute; width:330px; height:330px; border:40px solid #5aa0f241; border-radius:50%; right:-52px; top:-115px; box-shadow:-85px 110px 0 -29px #72aefa2e; }
+    .hero-content { position:relative; z-index:1; max-width:570px; }
+    .eyebrow { display:inline-flex; gap:7px; align-items:center; color:#c6ddff; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+    .live-dot { width:7px; height:7px; border-radius:50%; background:#7ef0bd; box-shadow:0 0 0 4px #7ef0bd2e; }
+    .hero h2 { font-size:27px; letter-spacing:-1px; margin:10px 0 9px; } .hero p { color:#d6e7ff; font-size:14px; line-height:1.55; }
+    .btn { border:0; border-radius:9px; padding:11px 17px; font-size:13px; font-weight:700; transition:.2s; }
+    .btn:hover { transform:translateY(-2px); } .btn-light { margin-top:18px; color:#0f4c9d; background:#fff; } .btn-blue { color:#fff; background:var(--blue); }
+    .grid { display:grid; grid-template-columns:1.65fr .95fr; gap:22px; margin-top:24px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:15px; }
+    .section-head { display:flex; justify-content:space-between; align-items:center; padding:22px 23px 15px; }
+    .section-head h2 { font-size:17px; letter-spacing:-.5px; } .section-head a { color:var(--blue); font-weight:700; font-size:12px; }
+    .tabs { display:flex; gap:8px; padding:0 23px 18px; border-bottom:1px solid var(--line); overflow:auto; }
+    .tab { border:1px solid #e2e9f2; background:#fff; color:#65748a; white-space:nowrap; padding:7px 11px; border-radius:7px; font-size:12px; font-weight:700; }
+    .tab.active { background:#eaf3ff; color:#1761cb; border-color:#cfe2ff; }
+    .tests { padding:4px 23px 10px; }
+    .test { display:grid; grid-template-columns:42px 1fr auto; gap:13px; align-items:center; padding:16px 0; border-bottom:1px solid var(--line); }
+    .test:last-child { border:0; } .test-icon { width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:#edf5ff; }
+    .test-icon.orange { background:#fff1e4; } .test-icon.green { background:#e7f8f1; }
+    .test h3 { font-size:13px; margin-bottom:4px; } .test p { font-size:11px; color:var(--muted); } .test .btn { padding:8px 13px; font-size:11px; }
+    .streak { padding:22px; background:linear-gradient(145deg,#fff 0%,#f4f9ff 100%); }
+    .streak-top { display:flex; align-items:center; justify-content:space-between; } .streak h2 { font-size:16px; }
+    .flame { padding:8px; background:#fff0e1; border-radius:9px; } .streak strong { font-family:"Plus Jakarta Sans"; font-size:31px; color:#f27c21; display:block; margin:17px 0 0; }
+    .streak p { font-size:12px; color:var(--muted); margin-top:3px; }
+    .week { margin-top:18px; display:flex; justify-content:space-between; } .day { color:#9ba9b8; text-align:center; font-size:10px; font-weight:600; } .day b { display:grid; place-items:center; width:24px;height:24px;margin-bottom:6px;border-radius:50%; background:#edf1f6; font-size:12px; } .day.done b { color:white;background:var(--green); } .day.today b { color:var(--blue); background:#dceaff; outline:2px solid #96c1ff; }
+    .performance { margin-top:22px; padding:22px; } .performance h2 { font-size:16px; }
+    .score { display:flex; align-items:end; gap:14px; margin:15px 0 13px; } .score strong { font-size:29px; color:var(--blue); letter-spacing:-1px; } .score span { font-size:11px; color:var(--green); font-weight:700; margin-bottom:5px; }
+    .bar-label { display:flex; justify-content:space-between; color:var(--muted); font-size:11px; margin-bottom:7px; } .bar { height:7px; border-radius:9px; background:#edf1f5; overflow:hidden; } .bar i { display:block;height:100%;width:68%;background:linear-gradient(90deg,#2075ed,#54a0ff);border-radius:inherit; }
+    .quick { margin-top:22px; padding:19px 22px; display:flex; gap:12px; align-items:center; } .quick-icon { width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#fff4e9; } .quick h3 { font-size:13px; margin-bottom:3px; } .quick p { font-size:11px;color:var(--muted); } .quick .btn { margin-left:auto; padding:9px 11px; }
+    .toast { position:fixed; right:20px; bottom:20px; background:#102b4b; color:#fff; padding:13px 17px; border-radius:10px; font-size:13px; box-shadow:0 9px 25px #07182d42; transform:translateY(90px); opacity:0; transition:.25s; } .toast.show { transform:none;opacity:1; }
+    @media (max-width:760px) { .topbar-inner,.nav-inner,main { width:min(100% - 28px,1180px); } .topbar { display:none; } nav {height:64px}.nav-links {display:none}.profile {padding-left:0;border:0}.profile div{display:none}.welcome{align-items:start}.date{display:none}.hero{padding:26px 23px}.hero h2{font-size:23px}.grid{grid-template-columns:1fr}.test{grid-template-columns:39px 1fr}.test .btn{grid-column:2; justify-self:start}.section-head,.tabs,.tests{padding-left:16px;padding-right:16px} }
+  </style>
 </head>
 <body>
-<a href="index.html" class="floating-home" >
-    <div class="icon-wrapper">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-    </div>
-    <span></span>
-</a>
-    <div id="login-container" class="login-box">
-        <h2>ASPIRE Portal</h2>
-        <p>Login to access your NEET/JEE Test Series</p>
-        
-        <div class="input-group">
-            <label>Enrollment ID</label>
-            <input type="text" id="studentId" placeholder="KTS-2024-XXXX">
-        </div>
-
-        <div class="input-group">
-            <label>Password</label>
-            <input type="password" id="password" placeholder="••••••••">
-        </div>
-
-        <button class="btn-login" onclick="handleLogin()">Sign In</button>
-    </div>
-
-    <div id="dashboard">
-        <h1 style="color: var(--accent-cyan)">Welcome, Scholar!</h1>
-        <p style="color: var(--text-gray)">Available Tests for Velocity Batch</p>
-        
-        <div class="test-card">
-            <div>
-                <h3>Full Syllabus Mock Test - 04</h3>
-                <p style="font-size: 0.8rem; color: var(--text-gray)">Duration: 180 Mins | Pattern: NEET</p>
-            </div>
-            <button class="btn-login" style="width: auto; padding: 10px 25px;">Start Test</button>
-        </div>
-
-        <div class="test-card" style="border-left-color: #4b5563; opacity: 0.7;">
-            <div>
-                <h3>Biology: Plant Physiology (Practice)</h3>
-                <p style="font-size: 0.8rem; color: var(--text-gray)">Completed on 25th March</p>
-            </div>
-            <span class="status-tag">Completed</span>
-        </div>
-    </div>
-
-    <script>
-        function handleLogin() {
-            const id = document.getElementById('studentId').value;
-            const pass = document.getElementById('password').value;
-
-            // Simple logic for demonstration
-            if(id !== "" && pass !== "") {
-                document.getElementById('login-container').style.display = 'none';
-                document.getElementById('dashboard').style.display = 'block';
-            } else {
-                alert("Please enter your credentials");
-            }
-        }
-    </script>
+  <div class="topbar"><div class="topbar-inner"><span>India's trusted platform for banking exam preparation</span><span>Need help? <strong>+91 98765 43210</strong></span></div></div>
+  <nav><div class="nav-inner"><a class="brand" href="Score High.html"><span class="brand-mark">S</span>Score <span>High</span></a><div class="nav-links"><a href="Score High.html">Home</a><a href="#tests" class="active">Test Series</a><a href="#performance">My Performance</a><a href="#study">Study Plan</a></div><div class="profile"><span class="avatar">AS</span><div>Arjun Sharma<small>SBI PO Aspirant</small></div></div></div></nav>
+  <main>
+    <section class="welcome"><div><h1>Good morning, Arjun! 👋</h1><p>Small steps every day lead to a big score. Let's make today count.</p></div><div class="date">SATURDAY, 26 JULY 2026</div></section>
+    <section class="hero"><div class="hero-content"><span class="eyebrow"><i class="live-dot"></i> Your next challenge</span><h2>SBI PO Prelims Mock Test #08</h2><p>Complete the full-length mock and see where you stand among thousands of serious aspirants.</p><button class="btn btn-light" onclick="startTest('SBI PO Prelims Mock Test #08')">Start Mock Test <span aria-hidden="true">→</span></button></div></section>
+    <section class="grid"><div class="card" id="tests"><div class="section-head"><h2>Recommended for you</h2><a href="#" onclick="showToast('All tests are now visible below.');return false;">View all tests →</a></div><div class="tabs"><button class="tab active" data-filter="all">All Tests</button><button class="tab" data-filter="SBI">SBI PO</button><button class="tab" data-filter="IBPS">IBPS PO</button><button class="tab" data-filter="Clerk">Clerk</button></div><div class="tests">
+      <article class="test" data-category="SBI"><div class="test-icon">✦</div><div><h3>SBI PO Prelims Mock Test #08</h3><p>100 Questions · 60 mins · Full Length</p></div><button class="btn btn-blue" onclick="startTest('SBI PO Prelims Mock Test #08')">Start test</button></article>
+      <article class="test" data-category="IBPS"><div class="test-icon orange">▣</div><div><h3>IBPS PO Mains: Reasoning</h3><p>45 Questions · 40 mins · Sectional Test</p></div><button class="btn btn-blue" onclick="startTest('IBPS PO Mains: Reasoning')">Start test</button></article>
+      <article class="test" data-category="Clerk"><div class="test-icon green">⌁</div><div><h3>Banking Awareness Weekly Quiz</h3><p>30 Questions · 15 mins · Current Affairs</p></div><button class="btn btn-blue" onclick="startTest('Banking Awareness Weekly Quiz')">Start test</button></article>
+    </div></div>
+    <aside><section class="card streak"><div class="streak-top"><h2>Study streak</h2><span class="flame">🔥</span></div><strong>7 days</strong><p>You're doing brilliantly. Keep it going!</p><div class="week"><div class="day done"><b>✓</b>M</div><div class="day done"><b>✓</b>T</div><div class="day done"><b>✓</b>W</div><div class="day done"><b>✓</b>T</div><div class="day done"><b>✓</b>F</div><div class="day today"><b>26</b>S</div><div class="day"><b>27</b>S</div></div></section>
+      <section class="card performance" id="performance"><h2>Your performance</h2><div class="score"><strong>68%</strong><span>↑ 8% this week</span></div><div class="bar-label"><span>Average score</span><span>Target: 75%</span></div><div class="bar"><i></i></div></section>
+      <section class="card quick" id="study"><div class="quick-icon">📊</div><div><h3>Daily practice plan</h3><p>2 tasks pending today</p></div><button class="btn btn-blue" onclick="showToast('Today’s practice plan opened.')">Open</button></section>
+    </aside></section>
+  </main><div class="toast" id="toast" role="status"></div>
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+    import { addDoc, collection, doc, getDoc, getDocs, query, serverTimestamp, where } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    const toast = document.getElementById('toast'); let toastTimer;
+    function showToast(message) { toast.textContent = message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2800); }
+    window.showToast = showToast;
+    window.startTest = async function(name, testId = null) {
+      const user = auth.currentUser;
+      if (!user) { showToast('Please sign in to start and save your test attempt.'); setTimeout(() => window.location.href = 'login.html', 1000); return; }
+      try {
+        await addDoc(collection(db, 'testAttempts'), { userId:user.uid, testId, testTitle:name, status:'started', startedAt:serverTimestamp() });
+        showToast('“' + name + '” has started. Your attempt is being saved.');
+      } catch (error) { console.error(error); showToast('Could not save your attempt. Please try again.'); }
+    };
+    let testsLoaded = false;
+    onAuthStateChanged(auth, async (user) => {
+      const profile = document.querySelector('.profile div');
+      if (!user) { profile.innerHTML = 'Guest learner<small>Sign in to save progress</small>'; return; }
+      try {
+        const snapshot = await getDoc(doc(db, 'users', user.uid));
+        const data = snapshot.exists() ? snapshot.data() : {};
+        const name = data.username || user.email.split('@')[0];
+        profile.innerHTML = name + '<small>' + (data.batch || 'Banking Aspirant') + '</small>';
+        document.querySelector('.avatar').textContent = name.slice(0,2).toUpperCase();
+        const hello = document.querySelector('.welcome h1'); hello.textContent = 'Good morning, ' + name.split(' ')[0] + '! 👋';
+      } catch (error) { console.error('Profile unavailable', error); }
+      if (!testsLoaded) { testsLoaded = true; loadPublishedTests(); }
+    });
+    async function loadPublishedTests() {
+      try {
+        const results = await getDocs(query(collection(db, 'tests'), where('published', '==', true)));
+        if (results.empty) return;
+        const list = document.querySelector('.tests'); list.innerHTML = '';
+        results.forEach(record => {
+          const test = record.data(); const item = document.createElement('article');
+          item.className = 'test'; item.dataset.category = test.exam || 'Other';
+          const icon = document.createElement('div'); icon.className = 'test-icon'; icon.textContent = '✦';
+          const details = document.createElement('div'); const title = document.createElement('h3'); title.textContent = test.title || 'Untitled Test';
+          const meta = document.createElement('p'); meta.textContent = `${test.questionCount || 0} Questions · ${test.durationMinutes || 0} mins · ${test.type || 'Practice Test'}`;
+          details.append(title, meta); const button = document.createElement('button'); button.className = 'btn btn-blue'; button.textContent = 'Start test';
+          button.addEventListener('click', () => window.startTest(title.textContent, record.id)); item.append(icon, details, button); list.append(item);
+        });
+      } catch (error) { console.error('Tests unavailable', error); }
+    }
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); tab.classList.add('active'); const filter=tab.dataset.filter; document.querySelectorAll('.test').forEach(test => test.style.display = filter==='all'||test.dataset.category===filter ? 'grid':'none'); }));
+  </script>
 </body>
 </html>

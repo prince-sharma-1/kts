@@ -1,117 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login | KTS Academy</title>
-  <meta name="description" content="Login to KTS Academy to access course purchases and student resources." />
-  <link rel="stylesheet" href="kts style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07182d">
+  <title>Student Login | Score High</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    .modal-overlay { position:fixed; inset:0; background:rgba(15,23,42,0.9); display:flex; align-items:center; justify-content:center; padding:1rem; z-index:100; }
-    .modal { width:100%; max-width:420px; background:var(--card); border:1px solid var(--border); border-radius:18px; padding:2rem; box-shadow:0 24px 60px rgba(0,0,0,0.35); position:relative; }
-    .modal h2 { margin-top:0; color:#38bdf8; text-align:center; }
-    .modal p { color:var(--muted); margin-bottom:1.5rem; text-align:center; }
-    .form-group { margin-bottom:1rem; display:flex; flex-direction:column; gap:0.5rem; }
-    .form-group label { color:#cbd5e1; font-weight:600; }
-    .form-group input { width:100%; padding:0.95rem 1rem; border-radius:12px; border:1px solid #334155; background:#0f172a; color:#f8fafc; }
-    .form-group input:focus { outline:none; border-color:#38bdf8; }
-    .btn { display:inline-flex; justify-content:center; align-items:center; width:100%; padding:1rem; border:none; border-radius:12px; background:linear-gradient(135deg,#38bdf8,#22c55e); color:#001427; font-weight:700; cursor:pointer; }
-    .btn:hover { opacity:0.95; }
-    .close-btn { position:absolute; top:1rem; right:1rem; background:transparent; border:none; color:#cbd5e1; font-size:1.7rem; cursor:pointer; }
-    .message { margin-top:1rem; text-align:center; color:#fde68a; }
-    .modal-footer { margin-top:1.5rem; color:var(--muted); font-size:0.95rem; text-align:center; }
-    @media(max-width:600px){ .modal { padding:1.5rem; } }
+    :root { --navy:#07182d; --blue:#1769e0; --pale:#eaf3ff; --ink:#17263c; --muted:#708097; --line:#e5edf6; --red:#d63d4d; --green:#098760; }
+    * { box-sizing:border-box; } body { min-height:100vh; margin:0; color:var(--ink); font-family:"DM Sans",sans-serif; background:#f4f8fd; }
+    .page { min-height:100vh; display:grid; grid-template-columns:minmax(300px,.93fr) minmax(440px,1.07fr); }
+    .brand-panel { color:#fff; padding:clamp(28px,5vw,72px); display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; position:relative; background:linear-gradient(145deg,#06182f 0%,#0c3c78 100%); }
+    .brand-panel:after,.brand-panel:before { content:""; position:absolute; border-radius:50%; border:1px solid #8fc3ff42; } .brand-panel:after { width:440px;height:440px;right:-180px;bottom:-145px; } .brand-panel:before { width:260px;height:260px;left:-135px;top:130px; }
+    .brand { display:flex;gap:10px;align-items:center;position:relative;z-index:1;font-family:"Plus Jakarta Sans";font-size:21px;font-weight:800;letter-spacing:-.8px; } .mark { width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#4393ff,#1760cb);box-shadow:0 8px 20px #0004; }
+    .welcome { position:relative;z-index:1;max-width:430px; } .welcome .tag { color:#a8ccff;font-weight:700;font-size:12px;letter-spacing:1.1px;text-transform:uppercase; } .welcome h1 { font:800 clamp(35px,4.5vw,58px)/1.08 "Plus Jakarta Sans";letter-spacing:-2.2px;margin:16px 0; } .welcome p { color:#c3dcff;line-height:1.65;font-size:15px;max-width:365px; }
+    .benefits { position:relative;z-index:1;display:flex;gap:20px;color:#dceaff;font-size:12px;font-weight:600; } .benefits span { display:flex;gap:6px;align-items:center; } .benefits i { width:7px;height:7px;border-radius:50%;background:#77e6be;box-shadow:0 0 0 4px #77e6be29; }
+    .form-panel { display:grid;place-items:center;padding:32px; } .form-wrap { width:min(100%,420px); } .mobile-brand { display:none; }
+    h2 { font:800 29px "Plus Jakarta Sans";letter-spacing:-1.2px;margin:0 0 7px; } .subtitle { color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 27px; }
+    .tabs { display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);margin-bottom:25px; } .tab { color:var(--muted);background:none;border:0;padding:11px 5px;font-weight:700;font-size:14px;border-bottom:2px solid transparent;margin-bottom:-1px; } .tab.active { color:var(--blue);border-color:var(--blue); }
+    form { display:none; } form.active { display:block; } .field { margin-bottom:17px; } label { font-size:12px;font-weight:700;display:block;margin:0 0 7px;color:#43536a; } input { width:100%;padding:13px 14px;border:1px solid #dbe5f0;border-radius:9px;font:14px "DM Sans";color:var(--ink);outline:none;transition:.2s; } input:focus { border-color:#4789ec;box-shadow:0 0 0 4px #1769e013; } .password-row { display:flex;justify-content:space-between;align-items:baseline; } .link { border:0;background:none;padding:0;color:var(--blue);font-size:12px;font-weight:700;cursor:pointer; }
+    .submit { width:100%;border:0;border-radius:9px;padding:14px;color:#fff;background:linear-gradient(100deg,#1769e0,#0e55bb);font-weight:700;font-size:14px;box-shadow:0 8px 17px #1769e034;cursor:pointer;transition:.2s; } .submit:hover { transform:translateY(-1px); } .submit:disabled { opacity:.65;cursor:wait;transform:none; }
+    .message { min-height:21px;margin:15px 0 0;font-size:13px;line-height:1.45;text-align:center;color:var(--muted); } .message.error { color:var(--red); } .message.success { color:var(--green); } .terms { text-align:center;color:#8492a5;font-size:11px;line-height:1.5;margin:20px 18px 0; }
+    @media(max-width:760px){ .page{display:block}.brand-panel{display:none}.form-panel{min-height:100vh;padding:24px}.mobile-brand{display:flex;margin-bottom:50px}.form-wrap{width:min(100%,420px)} }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo-container">
-        <img src="kts_slogo.png" alt="KTS Academy Logo" class="logo" />
-      </div>
-      <div class="brand"><h2>KTS Academy</h2></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="kts education center.html">Courses</a></li>
-          <li><a href="buy_course.html" class="cta">Buy Course</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-
-  <main class="container" style="padding-top:2rem;">
-    <section class="hero">
-      <h1>Login to access your course purchase</h1>
-      <p>Use your email and password to sign in. If you are not registered yet, contact support to create an account.</p>
+  <main class="page">
+    <section class="brand-panel" aria-label="Score High banking preparation">
+      <a class="brand" href="Score High.html"><span class="mark">S</span>Score High</a>
+      <div class="welcome"><span class="tag">Banking exam preparation</span><h1>Learn smart.<br>Score high.</h1><p>One secure place for your mock tests, progress reports, and daily preparation plan.</p></div>
+      <div class="benefits"><span><i></i> Full-length mocks</span><span><i></i> Detailed analysis</span><span><i></i> Daily practice</span></div>
     </section>
-
-    <div class="modal-overlay" id="loginOverlay">
-      <div class="modal">
-        <button class="close-btn" id="closeModal">&times;</button>
-        <h2>Sign In</h2>
-        <p>Enter your credentials to continue.</p>
-        <form id="loginForm">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Enter your password" required />
-          </div>
-          <button type="submit" class="btn">Sign In</button>
-        </form>
-        <p id="loginMessage" class="message"></p>
-        <p class="modal-footer">Need help? Call <a href="tel:+917983910795" style="color:#38bdf8;">+91 79839 10795</a></p>
-      </div>
-    </div>
+    <section class="form-panel"><div class="form-wrap">
+      <a class="brand mobile-brand" href="Score High.html"><span class="mark">S</span>Score High</a>
+      <h2 id="formTitle">Welcome back</h2><p class="subtitle" id="formSubtitle">Sign in to continue your banking exam preparation.</p>
+      <div class="tabs" role="tablist"><button class="tab active" data-target="signIn" role="tab">Sign in</button><button class="tab" data-target="signUp" role="tab">Create account</button></div>
+      <form id="signIn" class="active" novalidate>
+        <div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><div class="password-row"><label for="loginPassword">Password</label><button type="button" class="link" id="resetPassword">Forgot password?</button></div><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6"></div>
+        <button class="submit" type="submit">Sign in to portal →</button>
+      </form>
+      <form id="signUp" novalidate>
+        <div class="field"><label for="signupName">Full name</label><input id="signupName" type="text" autocomplete="name" placeholder="Your full name" required></div>
+        <div class="field"><label for="signupEmail">Email address</label><input id="signupEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="signupPassword">Create password</label><input id="signupPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" required minlength="6"></div>
+        <button class="submit" type="submit">Create my account →</button>
+      </form>
+      <p class="message" id="message" role="status"></p><p class="terms">By continuing, you agree to use this portal only for your own preparation.</p>
+    </div></section>
   </main>
-
   <script type="module">
-    import { auth } from './firebase.js';
-    import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-
-    const overlay = document.getElementById('loginOverlay');
-    const closeModal = document.getElementById('closeModal');
-    const loginForm = document.getElementById('loginForm');
-    const loginMessage = document.getElementById('loginMessage');
-
-    function showMessage(message, color = '#fde68a') {
-      loginMessage.textContent = message;
-      loginMessage.style.color = color;
-    }
-
-    closeModal.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
-
-    loginForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value.trim();
-      loginMessage.textContent = '';
-
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        showMessage('Login successful! Redirecting...', '#22c55e');
-        setTimeout(() => {
-          window.location.href = 'buy_course.html';
-        }, 900);
-      } catch (error) {
-        showMessage(error.message || 'Login failed. Please check your credentials.', '#f87171');
-      }
-    });
-
-    window.addEventListener('load', () => {
-      overlay.style.display = 'flex';
-    });
+    import { auth, db } from './firebase.js';
+    import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+    import { doc, serverTimestamp, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    const message = document.getElementById('message'); const title = document.getElementById('formTitle'); const subtitle = document.getElementById('formSubtitle');
+    const errorText = (error) => ({'auth/invalid-credential':'Incorrect email or password.','auth/email-already-in-use':'An account already exists for this email.','auth/weak-password':'Choose a password with at least 6 characters.','auth/invalid-email':'Enter a valid email address.','auth/too-many-requests':'Too many attempts. Please try again later.'}[error.code] || 'Something went wrong. Please try again.');
+    function showMessage(text, kind=''){ message.textContent=text; message.className='message '+kind; }
+    function loading(button, active){ button.disabled=active; button.textContent=active?'Please wait…':button.dataset.label; }
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => { const target=tab.dataset.target; document.querySelectorAll('.tab').forEach(item=>item.classList.toggle('active',item===tab)); document.querySelectorAll('form').forEach(form=>form.classList.toggle('active',form.id===target)); title.textContent=target==='signIn'?'Welcome back':'Start your journey'; subtitle.textContent=target==='signIn'?'Sign in to continue your banking exam preparation.':'Create your student profile and access the test portal.'; showMessage(''); }));
+    document.querySelectorAll('.submit').forEach(button=>button.dataset.label=button.textContent);
+    document.getElementById('signIn').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const email=document.getElementById('loginEmail').value.trim(); const password=document.getElementById('loginPassword').value; if(!email||!password){showMessage('Enter your email and password.','error');return;} loading(button,true); try { await signInWithEmailAndPassword(auth,email,password); showMessage('Signed in. Taking you to your portal…','success'); window.location.href='Testseries.html'; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('signUp').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const name=document.getElementById('signupName').value.trim(); const email=document.getElementById('signupEmail').value.trim(); const password=document.getElementById('signupPassword').value; if(!name||!email||password.length<6){showMessage('Complete all fields; passwords need at least 6 characters.','error');return;} loading(button,true); try { const credential=await createUserWithEmailAndPassword(auth,email,password); await setDoc(doc(db,'users',credential.user.uid),{username:name,email,role:'student',batch:'Banking Aspirant',createdAt:serverTimestamp(),profileCompleted:true}); showMessage('Your account is ready. Opening your portal…','success'); window.location.href='Testseries.html'; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('resetPassword').addEventListener('click', async () => { const email=document.getElementById('loginEmail').value.trim(); if(!email){showMessage('Enter your email address first, then choose Forgot password.','error');return;} try { await sendPasswordResetEmail(auth,email); showMessage('Password-reset link sent. Check your inbox.','success'); } catch(error){showMessage(errorText(error),'error');} });
+    onAuthStateChanged(auth,user=>{ if(user && !message.textContent) window.location.href='Testseries.html'; });
   </script>
 </body>
 </html>
