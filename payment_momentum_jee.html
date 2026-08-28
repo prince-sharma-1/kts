@@ -16,7 +16,7 @@
     <div class="max-w-4xl w-full grid md:grid-cols-2 gap-8">
         
         <div class="p-8 glass-card rounded-2xl">
-            <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+            <h1 class="text-2xl font-bold mb-6">Order Summary</h1>
             <div class="space-y-4">
                 <div class="flex justify-between items-center">
                     <span>Velocity Batch (JEE 2028)</span>
@@ -64,10 +64,11 @@
 
                 <div class="pt-6">
                     <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition transform hover:scale-[1.02]">
-                        Pay ₹10,000 Now
+                        Payment checkout coming soon
                     </button>
                 </div>
             </form>
+            <p id="payment-status" class="mt-4 text-sm text-slate-600" role="status" aria-live="polite">Online payments are not yet enabled. Please contact KTS Academy before making a registration payment.</p>
             
             <div class="mt-6 flex items-center justify-center space-x-2 text-gray-400 text-xs">
                 <i class="fa-solid fa-lock"></i>
@@ -80,8 +81,7 @@
     <script>
         document.getElementById('payment-form').onsubmit = (e) => {
             e.preventDefault();
-            alert('Redirecting to secure bank gateway...');
-            // Here you would integrate Razorpay, Stripe, or PayU API
+            document.getElementById('payment-status').textContent = 'Online payments are not yet enabled. Please contact KTS Academy for payment assistance.';
         };
     </script>
 </body>
