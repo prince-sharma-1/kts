@@ -88,11 +88,12 @@
     const toast = document.getElementById('toast'); let toastTimer;
     function showToast(message) { toast.textContent = message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2800); }
     window.showToast = showToast;
-    window.startTest = async function(name, testId = null) {
+    window.startTest = async function(name, testId = null, sourceUrl = null) {
       const user = auth.currentUser;
       if (!user) { showToast('Please sign in to start and save your test attempt.'); setTimeout(() => window.location.href = 'login.html', 1000); return; }
       try {
         await addDoc(collection(db, 'testAttempts'), { userId:user.uid, testId, testTitle:name, status:'started', startedAt:serverTimestamp() });
+        if (sourceUrl) { window.location.href = 'take-test.html?src=' + encodeURIComponent(sourceUrl); return; }
         showToast('“' + name + '” has started. Your attempt is being saved.');
       } catch (error) { console.error(error); showToast('Could not save your attempt. Please try again.'); }
     };
@@ -122,7 +123,7 @@
           const details = document.createElement('div'); const title = document.createElement('h3'); title.textContent = test.title || 'Untitled Test';
           const meta = document.createElement('p'); meta.textContent = `${test.questionCount || 0} Questions · ${test.durationMinutes || 0} mins · ${test.type || 'Practice Test'}`;
           details.append(title, meta); const button = document.createElement('button'); button.className = 'btn btn-blue'; button.textContent = 'Start test';
-          button.addEventListener('click', () => window.startTest(title.textContent, record.id)); item.append(icon, details, button); list.append(item);
+          button.addEventListener('click', () => window.startTest(title.textContent, record.id, test.sourceUrl || null)); item.append(icon, details, button); list.append(item);
         });
       } catch (error) { console.error('Tests unavailable', error); }
     }

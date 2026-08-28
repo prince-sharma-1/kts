@@ -1,0 +1,1311 @@
+{
+  "id": "bank-po-english-practice-01",
+  "title": "Bank PO English Practice Test",
+  "exam": "Bank PO",
+  "type": "English Language",
+  "durationMinutes": 60,
+  "questionCount": 100,
+  "totalMarks": 400,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Passage\nThe rapid growth of digital banking has transformed the financial sector. Customers can now perform transactions, pay bills, and manage investments through mobile applications. While digital banking has improved convenience and accessibility, concerns regarding cybersecurity and data privacy continue to pose challenges. Financial institutions are investing heavily in advanced security measures to maintain customer trust and ensure safe transactions.\nQ1.\nWhat is the main theme of the passage?",
+      "options": [
+        "A. Traditional banking methods",
+        "B. Growth of digital banking and its challenges",
+        "C. Mobile phone manufacturing",
+        "D. Government taxation"
+      ],
+      "answerIndex": 1,
+      "solution": "The main theme of the passage is the growth of digital banking, its benefits, and the challenges related to cybersecurity and data privacy.",
+      "marks": 4
+    },
+    {
+      "id": 2,
+      "question": "Passage\nThe rapid growth of digital banking has transformed the financial sector. Customers can now perform transactions, pay bills, and manage investments through mobile applications. While digital banking has improved convenience and accessibility, concerns regarding cybersecurity and data privacy continue to pose challenges. Financial institutions are investing heavily in advanced security measures to maintain customer trust and ensure safe transactions.\nQ2.\nAccording to the passage, digital banking has improved:",
+      "options": [
+        "Inflation",
+        "Accessibility and convenience",
+        "Unemployment",
+        "Production"
+      ],
+      "answerIndex": 1,
+      "solution": "According to the passage, digital banking has improved convenience and accessibility.",
+      "marks": 4
+    },
+    {
+      "id": 3,
+      "question": "Passage\nThe rapid growth of digital banking has transformed the financial sector. Customers can now perform transactions, pay bills, and manage investments through mobile applications. While digital banking has improved convenience and accessibility, concerns regarding cybersecurity and data privacy continue to pose challenges. Financial institutions are investing heavily in advanced security measures to maintain customer trust and ensure safe transactions.\nQ3.\nWhich concern is associated with digital banking?",
+      "options": [
+        "Transportation",
+        "Cybersecurity",
+        "Agriculture",
+        "Tourism"
+      ],
+      "answerIndex": 1,
+      "solution": "According to the passage, the concern associated with digital banking is cybersecurity and data privacy.",
+      "marks": 4
+    },
+    {
+      "id": 4,
+      "question": "Passage\nThe rapid growth of digital banking has transformed the financial sector. Customers can now perform transactions, pay bills, and manage investments through mobile applications. While digital banking has improved convenience and accessibility, concerns regarding cybersecurity and data privacy continue to pose challenges. Financial institutions are investing heavily in advanced security measures to maintain customer trust and ensure safe transactions.\nQ4.\nWhy are financial institutions investing in security measures?",
+      "options": [
+        "To reduce staff",
+        "To increase taxes",
+        "To maintain customer trust",
+        "To close branches"
+      ],
+      "answerIndex": 2,
+      "solution": "Financial institutions are investing in advanced security measures to maintain customer trust and ensure safe transactions.",
+      "marks": 4
+    },
+    {
+      "id": 5,
+      "question": "Passage\nThe rapid growth of digital banking has transformed the financial sector. Customers can now perform transactions, pay bills, and manage investments through mobile applications. While digital banking has improved convenience and accessibility, concerns regarding cybersecurity and data privacy continue to pose challenges. Financial institutions are investing heavily in advanced security measures to maintain customer trust and ensure safe transactions.\nQ5.\nChoose the synonym of \"pose\" as used in the passage.",
+      "options": [
+        "Create",
+        "Remove",
+        "Ignore",
+        "Destroy"
+      ],
+      "answerIndex": 0,
+      "solution": "In the sentence:\n\"...concerns regarding cybersecurity and data privacy continue to pose challenges.\"\nThe word \"pose\" means to present, create, or cause.",
+      "marks": 4
+    },
+    {
+      "id": 6,
+      "question": "Q6.\n(A) Neither of the candidates\n(B) were willing to withdraw\n(C) from the competition.\n(D) No error",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Neither of the candidates was willing to withdraw from the competition.",
+      "marks": 4
+    },
+    {
+      "id": 7,
+      "question": "Q7.\n(A) The committee have\n(B) submitted its report\n(C) to the government.\n(D) No error",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\n\"Committee\" is treated as a collective noun acting as a single unit here, so it should take the singular verb has.",
+      "marks": 4
+    },
+    {
+      "id": 8,
+      "question": "Q8.\n(A) One of the employees\n(B) have completed\n(C) the assignment successfully.\n(D) No error",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe subject is \"One\", which is singular, so it requires the singular verb has, not have.",
+      "marks": 4
+    },
+    {
+      "id": 9,
+      "question": "Q9.\n(A) Hardly had the train left\n(B) than it started raining.\n(C) heavily outside.\n(D) No error",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe correct correlative conjunction is \"Hardly... when...\", not \"Hardly... than...\".",
+      "marks": 4
+    },
+    {
+      "id": 10,
+      "question": "Q10.\n(A) The quality of these products\n(B) are superior to\n(C) those available earlier.\n(D) No error",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe subject is \"The quality\", which is singular, so the verb should be is, not are.\nAlso, the phrase \"superior to\" is grammatically correct.",
+      "marks": 4
+    },
+    {
+      "id": 11,
+      "question": "Q11.\nThe manager decided to ______ the proposal after careful consideration.",
+      "options": [
+        "Approve",
+        "Neglect",
+        "Abolish",
+        "Evade"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nThe sentence means the manager made a positive decision about the proposal after thinking carefully. Approve means to officially agree to or accept something.",
+      "marks": 4
+    },
+    {
+      "id": 12,
+      "question": "Q12.\nThe new policy is expected to ______ economic growth.",
+      "options": [
+        "Hamper",
+        "Stimulate",
+        "Avoid",
+        "Suppress"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe sentence implies that the new policy will promote or encourage economic growth. Stimulate means to encourage or boost development or activity.",
+      "marks": 4
+    },
+    {
+      "id": 13,
+      "question": "Q13.\nThe witness gave a very ______ description of the event.",
+      "options": [
+        "Vivid",
+        "Vacant",
+        "Vagueful",
+        "Volatile"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nVivid means clear, detailed, and producing strong, clear images in the mind, which fits the context of describing an event.",
+      "marks": 4
+    },
+    {
+      "id": 14,
+      "question": "Q14.\nThe government introduced several ______ to ______ inflation.",
+      "options": [
+        "Measures, control",
+        "Controls, measure",
+        "Steps, increase",
+        "Policies, raise"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nThe sentence requires a noun followed by a verb:\nMeasures = actions taken to solve a problem. \nControl = to keep inflation within limits.",
+      "marks": 4
+    },
+    {
+      "id": 15,
+      "question": "Q15.\nThe company aims to ______ customer satisfaction and ______ market share.",
+      "options": [
+        "Enhance, expand",
+        "Reduce, enlarge",
+        "Improve, decrease",
+        "Lower, broaden"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nEnhance = improve or increase the quality of something. \nExpand = increase or widen. \nBoth words fit the sentence perfectly.",
+      "marks": 4
+    },
+    {
+      "id": 16,
+      "question": "Q16.\nThe report was ______ prepared and ______ presented.",
+      "options": [
+        "Carefully, professionally",
+        "Careless, professionally",
+        "Carefully, careless",
+        "Rough, professionally"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nBoth blanks require adverbs describing how the report was prepared and presented.\nCarefully = with attention and accuracy. \nProfessionally = in a skilled and competent manner.",
+      "marks": 4
+    },
+    {
+      "id": 17,
+      "question": "Economic development depends on efficient utilization of resources. Governments often implement policies to promote investment and create employment opportunities. These initiatives help improve productivity and raise living standards.\nQ17.\nA. inefficient\nB. efficient\nC. accidental\nD. careless",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe passage states:\n\"Economic development depends on efficient utilization of resources.\"\nTherefore, the correct word is efficient.",
+      "marks": 4
+    },
+    {
+      "id": 18,
+      "question": "Economic development depends on efficient utilization of resources. Governments often implement policies to promote investment and create employment opportunities. These initiatives help improve productivity and raise living standards.\nQ18.\nA. discourage\nB. prevent\nC. promote\nD. destroy",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 2,
+      "solution": "Explanation:\nThe passage states:\n\"Governments often implement policies to promote investment and create employment opportunities.\"\nTherefore, the correct answer is promote.",
+      "marks": 4
+    },
+    {
+      "id": 19,
+      "question": "Economic development depends on efficient utilization of resources. Governments often implement policies to promote investment and create employment opportunities. These initiatives help improve productivity and raise living standards.\nQ19.\nA. unemployment\nB. employment\nC. retirement\nD. migration",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe passage states:\n\"Governments often implement policies to promote investment and create employment opportunities.\"\nTherefore, the correct answer is employment.",
+      "marks": 4
+    },
+    {
+      "id": 20,
+      "question": "Economic development depends on efficient utilization of resources. Governments often implement policies to promote investment and create employment opportunities. These initiatives help improve productivity and raise living standards.\nQ20.\nA. lower\nB. improve\nC. worsen\nD. reduce",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe passage states:\n\"These initiatives help improve productivity and raise living standards.\"\nTherefore, the correct answer is improve.",
+      "marks": 4
+    },
+    {
+      "id": 21,
+      "question": "A. These insights help businesses improve performance.\nB. Data analytics has become an essential business tool.\nC. It enables organizations to identify trends and patterns.\nD. Consequently, companies invest heavily in analytical software.\nE. Better decisions often result in increased profitability.\nQ21.\nFirst sentence:\nA. A\nB. B\nC. C\nD. D",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nThe opening sentence should introduce the main topic. Sentence B introduces data analytics before the other sentences explain its benefits and consequences.\nThe logical order is:\nB. Data analytics has become an essential business tool. \nC. It enables organizations to identify trends and patterns. \nA. These insights help businesses improve performance. \nE. Better decisions often result in increased profitability. \nD. Consequently, companies invest heavily in analytical software.",
+      "marks": 4
+    },
+    {
+      "id": 22,
+      "question": "A. These insights help businesses improve performance.\nB. Data analytics has become an essential business tool.\nC. It enables organizations to identify trends and patterns.\nD. Consequently, companies invest heavily in analytical software.\nE. Better decisions often result in increased profitability.\nQ22.\nWhich follows B?\nA. A\nB. C\nC. D\nD. E",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 1,
+      "solution": "Explanation:\nSentence B introduces the topic:\nData analytics has become an essential business tool.\nThe next sentence should explain what data analytics does, which is:\nC. It enables organizations to identify trends and patterns.\nThus, C logically follows B.",
+      "marks": 4
+    },
+    {
+      "id": 23,
+      "question": "A. These insights help businesses improve performance.\nB. Data analytics has become an essential business tool.\nC. It enables organizations to identify trends and patterns.\nD. Consequently, companies invest heavily in analytical software.\nE. Better decisions often result in increased profitability.\nQ23.\nWhich follows C?\nA. A\nB. D\nC. E\nD. B",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nThe logical sequence is:\nB. Data analytics has become an essential business tool. \nC. It enables organizations to identify trends and patterns. \nA. These insights help businesses improve performance. \nE. Better decisions often result in increased profitability. \nD. Consequently, companies invest heavily in analytical software. \nAfter C (\"It enables organizations to identify trends and patterns.\"), the phrase \"These insights\" in A naturally refers to the trends and patterns identified in C.",
+      "marks": 4
+    },
+    {
+      "id": 24,
+      "question": "A. These insights help businesses improve performance.\nB. Data analytics has become an essential business tool.\nC. It enables organizations to identify trends and patterns.\nD. Consequently, companies invest heavily in analytical software.\nE. Better decisions often result in increased profitability.\nQ24.\nWhich follows A?\nA. B\nB. C\nC. E\nD. D",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 2,
+      "solution": "Explanation:\nThe logical sequence is:\nB. Data analytics has become an essential business tool. \nC. It enables organizations to identify trends and patterns. \nA. These insights help businesses improve performance. \nE. Better decisions often result in increased profitability. \nD. Consequently, companies invest heavily in analytical software. \nAfter A, the next logical statement is E, which explains the result of improved business performance.",
+      "marks": 4
+    },
+    {
+      "id": 25,
+      "question": "A. These insights help businesses improve performance.\nB. Data analytics has become an essential business tool.\nC. It enables organizations to identify trends and patterns.\nD. Consequently, companies invest heavily in analytical software.\nE. Better decisions often result in increased profitability.\nQ25.\nLast sentence:\nA. A\nB. B\nC. C\nD. D",
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "answerIndex": 3,
+      "solution": "Explanation:\nThe logical arrangement is:\nB. Data analytics has become an essential business tool. \nC. It enables organizations to identify trends and patterns. \nA. These insights help businesses improve performance. \nE. Better decisions often result in increased profitability. \nD. Consequently, companies invest heavily in analytical software. \nSentence D begins with \"Consequently\", indicating a final result or conclusion. Therefore, it should be the last sentence.",
+      "marks": 4
+    },
+    {
+      "id": 26,
+      "question": "Q26.\nNo sooner had he reached the station when the train departed.",
+      "options": [
+        "Than",
+        "Then",
+        "That",
+        "No improvement"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nThe correct correlative conjunction is \"No sooner... than...\", not \"No sooner... when...\".",
+      "marks": 4
+    },
+    {
+      "id": 27,
+      "question": "Q27.\nIf I would have known the answer, I would have told you.",
+      "options": [
+        "Had known",
+        "Knew",
+        "Know",
+        "No improvement"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nIn a third conditional sentence, the if-clause should use the past perfect (had + past participle), not would have.\n❌ Incorrect:\nIf I would have known the answer, I would have told you.",
+      "marks": 4
+    },
+    {
+      "id": 28,
+      "question": "Q28.\nThe manager was (A) reluctant to accept the proposal because it seemed (B) feasible.",
+      "options": [
+        "Both correct",
+        "Swap A and B",
+        "Replace reluctant with eager",
+        "Replace feasible with impossible"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nThe sentence is:\nThe manager was reluctant to accept the proposal because it seemed feasible.\nThis is illogical because if the proposal seemed feasible (practical), the manager would not normally be reluctant.\nSwapping the words gives:\nThe manager was feasible to accept the proposal because it seemed reluctant. ❌\nThis is grammatically incorrect because feasible cannot describe a person, and reluctant cannot describe a proposal.\nSo, \"Swap A and B\" is not a valid correction.\nThe logically and grammatically correct sentence is:\nThe manager was reluctant to accept the proposal because it seemed impossible.",
+      "marks": 4
+    },
+    {
+      "id": 29,
+      "question": "Q29.\nChoose the synonym of Prudent.",
+      "options": [
+        "Wise",
+        "Foolish",
+        "Reckless",
+        "Weak"
+      ],
+      "answerIndex": 0,
+      "solution": "Explanation:\nPrudent means wise, careful, and showing good judgment, especially in practical matters.\n✅ Wise – Correct (synonym) \n❌ Foolish – Opposite \n❌ Reckless – Opposite \n❌ Weak – Unrelated",
+      "marks": 4
+    },
+    {
+      "id": 30,
+      "question": "Q30.\nChoose the antonym of Benevolent.",
+      "options": [
+        "Kind",
+        "Charitable",
+        "Malevolent",
+        "Generous"
+      ],
+      "answerIndex": 2,
+      "solution": "Explanation:\nBenevolent means kind, generous, and well-meaning.\nIts opposite is malevolent, which means evil, malicious, or wishing to do harm.\n❌ Kind – Synonym \n❌ Charitable – Synonym \n✅ Malevolent – Antonym \n❌ Generous – Synonym",
+      "marks": 4
+    },
+    {
+      "id": 31,
+      "question": "Q1. 36 ÷ 6 x 8 + 12 = ?",
+      "options": [
+        "50",
+        "60",
+        "72",
+        "84"
+      ],
+      "answerIndex": 1,
+      "solution": "Using the BODMAS/DMAS rule (Division and Multiplication from left to right, then addition):\n36 ÷ 6 x 8 + 12\nStep1: Division\n36 ÷ 6 = 6\nStep2: Multiplication\n6 x 8 = 48\nStep3: Addition\n48 + 12 = 60",
+      "marks": 4
+    },
+    {
+      "id": 32,
+      "question": "Q2.  + 152 ÷ 25 = ?",
+      "options": [
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
+      "answerIndex": 1,
+      "solution": "Evaluate using BODMAS\n\nStep1: Square root\n\nStep2: Exponent\n\nStep3: Division\n225 ÷ 25 = 9\nStep4: Addition\n25 + 9 = 34",
+      "marks": 4
+    },
+    {
+      "id": 33,
+      "question": "Q3. 45% of 800 + 25% of 400 = ?",
+      "options": [
+        "440",
+        "450",
+        "460",
+        "470"
+      ],
+      "answerIndex": 2,
+      "solution": "Calculate each part:\n45% of 800\n\n25% of 400\n\nNow add them: \n360 + 100 = 460",
+      "marks": 4
+    },
+    {
+      "id": 34,
+      "question": "Q4. (18 x 12) ÷ 9 + 16 = ?",
+      "options": [
+        "36",
+        "38",
+        "40",
+        "42"
+      ],
+      "answerIndex": 2,
+      "solution": "Using BODMAS:\n(18 x 12) ÷ 9 + 16\nStep1: Multiplication inside brackets\n18 x 12 = 216\nStep2: Division\n216 ÷ 9 = 24\nStep3: Addition\n24 + 16 = 40",
+      "marks": 4
+    },
+    {
+      "id": 35,
+      "question": "Q5. 2400 ÷ 40 x 5 = ?",
+      "options": [
+        "250",
+        "300",
+        "350",
+        "400"
+      ],
+      "answerIndex": 1,
+      "solution": "Using BODMAS/DMAS (Division and Multiplication from left to right):\n2400 ÷ 40 x 5\nStep1: Division\n2400 ÷ 40 = 60\nStep2: Multiplication\n60 x 5 = 300",
+      "marks": 4
+    },
+    {
+      "id": 36,
+      "question": "Q6. 49.8 x 10.2  ?",
+      "options": [
+        "509",
+        "508",
+        "510",
+        "511"
+      ],
+      "answerIndex": 1,
+      "solution": "Estimate the product:\n49.8 x 10.2\nApproximate:\n49.8  50\n10.2  10\nSo, \n50 x 10 = 500\nThe exact value is:\n49.8 x 10.2 = 507.96  508",
+      "marks": 4
+    },
+    {
+      "id": 37,
+      "question": "Q7. 699.7 + 299.8 – 200.3  ?",
+      "options": [
+        "700",
+        "800",
+        "900",
+        "1000"
+      ],
+      "answerIndex": 1,
+      "solution": "Estimate by rounding :\n699.7  700\n299.8  300\n200.3  200\nNow calculate:\n700 + 300 – 200 = 800\nThe exact value is:\n699.7 + 299.8 – 200.3 = 799.2  800",
+      "marks": 4
+    },
+    {
+      "id": 38,
+      "question": "Q8. 999 ÷ 24.8  ?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "answerIndex": 1,
+      "solution": "Estimate by rounding :\n999 ≈ 1000\n24.8 ≈ 25\nNow calculate:\n1000 ÷ 25 = 40\nThe exact value is :\n999 ÷ 24.8 ≈ 40.28\nSo the approximate value is 40",
+      "marks": 4
+    },
+    {
+      "id": 39,
+      "question": "Q9. 4, 9, 16, 25, 36, ?",
+      "options": [
+        "45",
+        "47",
+        "49",
+        "51"
+      ],
+      "answerIndex": 2,
+      "solution": "Observe the pattern:\n4, 9, 16, 25, 36\nThese are perfect squares:\n22 = 4\n32 = 9\n42 = 16\n52 = 25\n62 = 36\nThe next term is :\n72 = 49",
+      "marks": 4
+    },
+    {
+      "id": 40,
+      "question": "Q10. 3, 7, 15, 31, 63, ?",
+      "options": [
+        "95",
+        "127",
+        "135",
+        "143"
+      ],
+      "answerIndex": 1,
+      "solution": "Observe the pattern:\n3, 7, 15, 31, 63, ?\nEach term is obtained by:\n3 x 2 + 1 = 7\n7 x 2 + 1 = 15\n15 x 2 + 1 = 31\n31 x 2 + 1 = 63\nSo the next term is :\n63 x 2 + 1 = 127",
+      "marks": 4
+    },
+    {
+      "id": 41,
+      "question": "Q11. 2, 5, 10, 17, 26, ?",
+      "options": [
+        "35",
+        "37",
+        "40",
+        "42"
+      ],
+      "answerIndex": 1,
+      "solution": "Observe the pattern:\n2, 5, 10, 17, 26, ?\nFind the differences:\n5 – 2 = 3\n10 – 5 = 5\n17 – 10 = 7\n26 – 17 = 9\nThe differences are consecutive odd numbers:\n3, 5, 7, 9, 11\nSo the next term is :\n26 + 11 = 37",
+      "marks": 4
+    },
+    {
+      "id": 42,
+      "question": "Q12. 1, 8, 27, 64, 125, ?",
+      "options": [
+        "196",
+        "216",
+        "225",
+        "256"
+      ],
+      "answerIndex": 1,
+      "solution": "The sequence is:\n1, 8, 27, 64, 125, ?\nThese are consecutive cubes:\n1 = 13\n8 = 23\n27 = 33\n64 = 43\n125 = 53\nSo the next term is:\n63 = 216",
+      "marks": 4
+    },
+    {
+      "id": 43,
+      "question": "Q13. \nX2 – 11x + 24 = 0\nY2 – 9y + 20 = 0",
+      "options": [
+        "X > y",
+        "X < y",
+        "X  y",
+        "Cannot determine"
+      ],
+      "answerIndex": 3,
+      "solution": "Given: \nX2 – 11x + 24 = 0\nFactorizing: \n(x – 3) (x – 8) = 0\nSo, \nX = 3 or 8\nNow, \nY2 – 9y + 20 = 0\nFactorizing:\n(y – 4) (y – 5) = 0\nSo, \nY = 4 or 5\nPossible comparisons:\nX = 3, y = 4  x < y\nX = 3, y = 5  x < y\nX = 8, y = 4  x > y\nX = 8, y = 5  x > y\nSince both x > y and x < y are possible, no definite relationship can be established.\nCannot determine",
+      "marks": 4
+    },
+    {
+      "id": 44,
+      "question": "Q14. \nX2 – 12x + 35 = 0\nY2 – 13y + 42 = 0",
+      "options": [
+        "X > y",
+        "X < y",
+        "X = y or no relation",
+        "X  y"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nX2 – 12x + 35 = 0\nFactorizing:\n(x – 5)(x – 7) = 0\nSo, x = 5 or 7\nNow,\nY2 – 13y + 42 = 0\nFactorizing: \n(y – 6)(y – 7) = 0\nSo, \nY = 6 or 7\nPossible comparisons:\nX = 5, y = 6 x < y\nX = 5, y = 7  x < y\nX = 7, y = 6  x > y\nX = 7, y = 7  x = y\nSince different relationship are possible (<, >, and =), no single definite relation can be established.",
+      "marks": 4
+    },
+    {
+      "id": 45,
+      "question": "Q15.\nX2 – 15x + 54 = 0\nY2 – 17y + 72 = 0",
+      "options": [
+        "X > y",
+        "X < y",
+        "X = y",
+        "Cannot determine"
+      ],
+      "answerIndex": 3,
+      "solution": "Given:\nX2 – 15x + 54 = 0\nFactorizing:\n(x – 6)(x – 9) = 0\nSo,\nX = 6 or 9\nNow, \nY2 – 17y + 72 = 0\nFactorizing:\n(y – 8) ( y – 9) = 0\nSo, \ny = 8 or 9\nPossible comparisons:\nX = 6, y = 8  x < y\nX = 6, y = 9  x < y\nX = 9, y = 8  x > y\nX = 9, y = 9  x = y\nSince the relationship can be x < y, x > y, or x = y, no definite comparison can be established.",
+      "marks": 4
+    },
+    {
+      "id": 46,
+      "question": "Q16. Population increased from 40,000 to 46,000. Increase % ?",
+      "options": [
+        "12%",
+        "15%",
+        "18%",
+        "20%"
+      ],
+      "answerIndex": 1,
+      "solution": "Given: \nInitial population = 40,000\nFinal population = 46,000\nIncrease in population:\n46,000 – 40,000 = 6,000\nPercentage increase:\n x 100 = 15%",
+      "marks": 4
+    },
+    {
+      "id": 47,
+      "question": "Q17. A student scored 405 out of 500. Percentage ?",
+      "options": [
+        "79%",
+        "80%",
+        "81%",
+        "82%"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nMarks obtained = 405\nTotal Marks = 500\nPercentage:\n x 100 = 81%",
+      "marks": 4
+    },
+    {
+      "id": 48,
+      "question": "Q18. CP = ₹1500, SP = ₹1800. Profit %?",
+      "options": [
+        "15%",
+        "18%",
+        "20%",
+        "25%"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nCost price (CP) = ₹1500\nSelling Price (SP) = ₹1800\nProfit:\nProfit = SP – CP = 1800 – 1500 = ₹300\nProfit percentage:\n x 100 = 20%",
+      "marks": 4
+    },
+    {
+      "id": 49,
+      "question": "Q19. An article sold at ₹720 incurs 10% loss. Find CP.",
+      "options": [
+        "₹700",
+        "₹750",
+        "₹800",
+        "₹850"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nSelling Price (SP) = ₹720\nLoss = 10%\nSince there is a 10% loss, \nSP = 90% of CP\nCP =  = ₹800",
+      "marks": 4
+    },
+    {
+      "id": 50,
+      "question": "Q20. SI on ₹6000 at 8% for 4 years?",
+      "options": [
+        "₹1760",
+        "₹1820",
+        "₹1920",
+        "₹2000"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nPrincipal (P) = ₹6000\nRate (R) = 8% per annum\nTime (T) = 4 years\nSimple Interest (SI): \nSI = \nSI =  = ₹1920",
+      "marks": 4
+    },
+    {
+      "id": 51,
+      "question": "Q21. CI on ₹2000 at 10% for 2 years ?",
+      "options": [
+        "₹400",
+        "₹420",
+        "₹440",
+        "₹460"
+      ],
+      "answerIndex": 1,
+      "solution": "Given:\nPrincipal(P) = ₹2000\nRate (R) = 10% per annum\nTime (T) = 2 years\nAmount after 2 years:\nA = P \nA = 2000  = 2000(1.1)2 = 2000 X 1.21 = ₹2420\nCompound Interest (CI) :\nCI = A – P = 2420 – 2000 = ₹420",
+      "marks": 4
+    },
+    {
+      "id": 52,
+      "question": "Q22. Ratio of A:B = 7.5. Total = 144. B = ?",
+      "options": [
+        "50",
+        "60",
+        "70",
+        "80"
+      ],
+      "answerIndex": 1,
+      "solution": "The ratio is written as 7 : 5 (the notation “7.5” means 7 : 5)\nGiven:\nRatio of A : B = 7 : 5\nTotal = 144\nTotal Parts:\n7 + 5 = 12\nValue of one part:\n = 12\nValue of B:\n5 x 12 = 60",
+      "marks": 4
+    },
+    {
+      "id": 53,
+      "question": "Q23. A invests ₹30,000 and B ₹50,000 for the same time. Profit ₹32,000.  B’s share ?",
+      "options": [
+        "₹18,000",
+        "₹20,000",
+        "₹22,000",
+        "₹24,000"
+      ],
+      "answerIndex": 1,
+      "solution": "Given: \nA’s investment = ₹30,000\nB’s investment = ₹50,000\nTotal Profit = ₹32,000\nTime is the same, so profit is divided in the ratio of investments.\nRatio of investments:\n30000 : 50000 = 3 : 5\nTotal parts = 3 + 5 = 8 \nB’s share: \n x 32000 = 20000",
+      "marks": 4
+    },
+    {
+      "id": 54,
+      "question": "Q24. Average of 24, 28, 32, 36, 40?",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "answerIndex": 1,
+      "solution": "Solution:\nNumbers: 24, 28, 32, 36, 40\nStep 1: Find the sum.\n24 + 28 + 32 + 36 + 40 = 160\nStep 2: Divide by the total number of terms (5).\nAverage =  = 32",
+      "marks": 4
+    },
+    {
+      "id": 55,
+      "question": "Q25. Father’s age is 3 times son’s age. After 10 years, ratio becomes 2:1. Son’s present age ?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "15"
+      ],
+      "answerIndex": 1,
+      "solution": "Let the son’s present age = x years.\nThen the father’s present age = 3x years\nAfter 10 years:\nSon’s age = x + 10\nFather’s age = 3x + 10\nGiven that their age ratio becomes 2 : 1\n\nSolve: \n3x + 10 = 2(x + 10)\n3x + 10 = 2x + 20\nX = 10\nSon’s present age = 10 years",
+      "marks": 4
+    },
+    {
+      "id": 56,
+      "question": "Q26. A can do a work in 15 days, B in 10 days. Together ?",
+      "options": [
+        "5 days",
+        "6 days",
+        "7 days",
+        "8 days"
+      ],
+      "answerIndex": 1,
+      "solution": "Given :\nA can complete the work in 15 days.\nB can complete the work in 10 days.\nStep 1: Find their one day work.\nA’s one day work = \nB’s one day work = \nStep 2: Add their one day work.\n\nTogether they complete  of the work in one day\nStep 3: Total time\nTime =  = 6 days",
+      "marks": 4
+    },
+    {
+      "id": 57,
+      "question": "Q27. A complete 1/5 work in 4 days. Total time?",
+      "options": [
+        "16 days",
+        "18 days",
+        "20 days",
+        "25 days"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nA complete  of the work in 4 days.\nStep 1: Find A’s one day work\n\nSo, A complete  of the work in one day.\nStep 2: Time to complete the whole work\nTotal time =  = 20 days",
+      "marks": 4
+    },
+    {
+      "id": 58,
+      "question": "Q28. Pipe A fills tank in 12 hrs, Pipe B in 18 hrs. Together?",
+      "options": [
+        "6.2 hrs",
+        "7.2 hrs",
+        "8 hrs",
+        "9 hrs"
+      ],
+      "answerIndex": 1,
+      "solution": "Given:\nPipe A fills the tank in 12 hours.\nPipe B fills the tank in 18 hours.\nStep 1: Find their one hour work\nPipe A = \nPipe B = \nStep 2 : Add their rates.\n = \nTogether, they fill  of the tank in one hour.\nStep 3:Find total time \nTime =",
+      "marks": 4
+    },
+    {
+      "id": 59,
+      "question": "Q29. A train covers 540 km in 6 hrs. speed ?",
+      "options": [
+        "80 km/h",
+        "85 km/h",
+        "90 km/h",
+        "95 km/h"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nDistance = 540 km\nTime = 6 hours\nFormula:\nSpeed = \nCalculation:\nSpeed =  = 90 km/h",
+      "marks": 4
+    },
+    {
+      "id": 60,
+      "question": "Q30. A car travels at 72 km/h. Distance in 2.5 hrs ?",
+      "options": [
+        "160 km",
+        "170 km",
+        "180 km",
+        "190 km"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nSpeed = 72 km/h\nTime = 2.5 hours\nFormula:\nDistance = speed x Time\nCalculation:\n72 x 2.5 = 180 km",
+      "marks": 4
+    },
+    {
+      "id": 61,
+      "question": "Q31. Boat speed = 15 km/h, stream = 4 km/h. Upstream speed?",
+      "options": [
+        "9 km/h",
+        "10 km/h",
+        "11 km/h",
+        "12 km/h"
+      ],
+      "answerIndex": 2,
+      "solution": "Given:\nSpeed of boat in still water = 15 km/h\nSpeed of stream = 4 km/h\nFormula: \nUpstream speed = Boat speed – stream speed\nCalculation:\n15 – 4 = 11 km/h",
+      "marks": 4
+    },
+    {
+      "id": 62,
+      "question": "Q32. Total employees?",
+      "options": [
+        "430",
+        "440",
+        "450",
+        "460"
+      ],
+      "answerIndex": 2,
+      "solution": "Total employees:\n80 + 120 + 100 + 150 = 450",
+      "marks": 4
+    },
+    {
+      "id": 63,
+      "question": "Q33. IT employees exceed HR employees by:",
+      "options": [
+        "60",
+        "70",
+        "80",
+        "90"
+      ],
+      "answerIndex": 1,
+      "solution": "Difference between IT and HR employees:\n150 – 80 = 70",
+      "marks": 4
+    },
+    {
+      "id": 64,
+      "question": "Q34. Finance employees are what percent of Sales employees ?",
+      "options": [
+        "75%",
+        "80%",
+        "83.33%",
+        "90%"
+      ],
+      "answerIndex": 2,
+      "solution": "Given :\nFinance employees = 100\nSales employees = 120\nFormula: \nPercentage =  x 100\nCalculation:\n x 100 = 83.33%",
+      "marks": 4
+    },
+    {
+      "id": 65,
+      "question": "Q35. Average employees per department ?",
+      "options": [
+        "110",
+        "112.5",
+        "115",
+        "117.5"
+      ],
+      "answerIndex": 1,
+      "solution": "Step 1: Find the total employees \n80 + 120 + 100 + 150 = 450\nStep 2: Number of departments = 4\nAverage employees per department:",
+      "marks": 4
+    },
+    {
+      "id": 66,
+      "question": "Directions: Study the information and answer.\nP > Q ≥ R = S < T ≤ U\nQ1.\nWhich of the following is definitely true?",
+      "options": [
+        "P > S",
+        "U < P",
+        "R > T",
+        "T < R"
+      ],
+      "answerIndex": 0,
+      "solution": "Given:\nP > Q ≥ R = S < T ≤ U\nLet's analyze each option:\nP > Q\nQ ≥ R\nR = S \nS < T\nT ≤ U \nOption A: P > S\nSince:\nP > Q \nQ ≥ R \nR = S \nTherefore,\nP > Q ≥ R = S ⇒ P > S \n✅ Definitely true\nOption B: U < P\nNo definite relation between P and U.\n❌ Cannot be determined.\nOption C: R > T\nGiven R = S and S < T,\nR < T\n❌ False.\nOption D: T < R\nAgain, R < T.\n❌ False.",
+      "marks": 4
+    },
+    {
+      "id": 67,
+      "question": "Directions: Study the information and answer.\nP > Q ≥ R = S < T ≤ U\nQ2.\nWhich is definitely false?",
+      "options": [
+        "U > R",
+        "P > T",
+        "S < U",
+        "Q < R"
+      ],
+      "answerIndex": 3,
+      "solution": "Given:\nP > Q ≥ R = S < T ≤ U \nFrom this, we know:\nP > Q \nQ ≥ R \nR = S \nS < T \nT ≤ U \nNow check each option:\nA) U > R\nSince R = S < T ≤ U,\nU > R \n✅ Definitely true.\nB) P > T\nThere is no definite relation between P and T.\n❌ Cannot be determined.\nC) S < U\nSince S < T ≤ U,\nS < U \n✅ Definitely true.\nD) Q < R\nGiven Q ≥ R, Q cannot be less than R.\n❌ Definitely false.",
+      "marks": 4
+    },
+    {
+      "id": 68,
+      "question": "Directions: Study the information and answer.\nP > Q ≥ R = S < T ≤ U\nQ3.\nWhich relation is true?",
+      "options": [
+        "Q > S",
+        "Q < S",
+        "T < S",
+        "U < T"
+      ],
+      "answerIndex": 0,
+      "solution": "Given:\nP > Q ≥ R = S < T ≤ U\nFrom the relations:\nQ ≥ R \nR = S \nSo, \nQ ≥ S \nThis means Q may be equal to S or greater than S.\nNow check the options:\nA) Q > S → Can be true (when Q > R = S). This is the intended answer in such reasoning questions. \nB) Q < S → Impossible because Q ≥ S. ❌ \nC) T < S → Given S < T. ❌ \nD) U < T → Given T ≤ U. ❌ \n✅ Correct Answer: A) Q > S",
+      "marks": 4
+    },
+    {
+      "id": 69,
+      "question": "If BANK = 214111, then\nQ4.\nCODE = ?",
+      "options": [
+        "A. 31545",
+        "B. 31544",
+        "C. 31554",
+        "D. 31445"
+      ],
+      "answerIndex": 0,
+      "solution": "The code is formed by replacing each letter with its alphabetical position.\nB = 2 \nA = 1 \nN = 14 \nK = 11 \nSo,\nBANK → 2 1 14 11 → 214111 ✔️\nNow apply the same rule to CODE:\nC = 3 \nO = 15 \nD = 4 \nE = 5 \nSo,\nCODE → 3 15 4 5 → 31545\n✅ Correct Answer: A. 31545",
+      "marks": 4
+    },
+    {
+      "id": 70,
+      "question": "Q5.\nWhich letter is represented by 11?",
+      "options": [
+        "J",
+        "K",
+        "L",
+        "M"
+      ],
+      "answerIndex": 1,
+      "solution": "Using the alphabetical position code:\nA = 1 \nB = 2 \nC = 3 \n... \nK = 11 \nTherefore, 11 represents K.\n✅ Correct Answer: B) K",
+      "marks": 4
+    },
+    {
+      "id": 71,
+      "question": "Q6.\nIf LOAN = 1215114, then the code follows:",
+      "options": [
+        "Position values",
+        "Reverse order values",
+        "Alphabetical rank",
+        "None"
+      ],
+      "answerIndex": 2,
+      "solution": "For LOAN:\nL = 12 \nO = 15 \nA = 1 \nN = 14 \nSo,\nLOAN → 12 15 1 14 → 1215114\nThe code is based on the alphabetical positions (ranks) of the letters.\n✅ Correct Answer: C) Alphabetical rank",
+      "marks": 4
+    },
+    {
+      "id": 72,
+      "question": "Q7.\nA is the brother of B. B is the mother of C. C is the sister of D. How is A related to D?",
+      "options": [
+        "Father",
+        "Uncle",
+        "Brother",
+        "Grandfather"
+      ],
+      "answerIndex": 1,
+      "solution": "Let's trace the relationships:\nA is the brother of B. \nB is the mother of C. \nC is the sister of D.\n⇒ Therefore, B is also the mother of D. \nSo, A is the brother of D's mother.\nHence, A is D's maternal uncle.\n✅ Correct Answer: B) Uncle",
+      "marks": 4
+    },
+    {
+      "id": 73,
+      "question": "Q8.\nPointing to a woman, Rahul said, \"She is the daughter of my mother's only daughter.\"\nThe woman is Rahul's:",
+      "options": [
+        "Sister",
+        "Daughter",
+        "Mother",
+        "Niece"
+      ],
+      "answerIndex": 3,
+      "solution": "Let's analyze the statement step by step:\n\"My mother's only daughter\" refers to Rahul himself if female? Since Rahul is male, his mother's only daughter must be Rahul's sister. \nSo the statement becomes: \n\"She is the daughter of my sister.\" \nThe daughter of Rahul's sister is Rahul's niece.\n✅ Correct Answer: D) Niece",
+      "marks": 4
+    },
+    {
+      "id": 74,
+      "question": "Q9.\nA man introduces a woman as the daughter of the only son of his grandfather. The woman is his:",
+      "options": [
+        "Sister",
+        "Cousin",
+        "Daughter",
+        "Niece"
+      ],
+      "answerIndex": 0,
+      "solution": "Let's solve it step by step:\nHis grandfather's only son = his father. \nThe daughter of his father = his sister (assuming the woman is not the man himself). \nTherefore, the woman is his sister.\n✅ Correct Answer: A) Sister",
+      "marks": 4
+    },
+    {
+      "id": 75,
+      "question": "Q10.\nA person walks 10 m north, then 10 m east, then 10 m south. How far is he from the starting point?",
+      "options": [
+        "0 m",
+        "10 m",
+        "20 m",
+        "30 m"
+      ],
+      "answerIndex": 1,
+      "solution": "Step-by-step:\nWalks 10 m North → Position: (0, 10) \nWalks 10 m East → Position: (10, 10) \nWalks 10 m South → Position: (10, 0) \nHe is now 10 m east of the starting point.\nDistance from the starting point = 10 m\n✅ Correct Answer: B) 10 m",
+      "marks": 4
+    },
+    {
+      "id": 76,
+      "question": "Q11.\nA person walks 5 km east, then 12 km north. Distance from start?",
+      "options": [
+        "13 km",
+        "15 km",
+        "17 km",
+        "19 km"
+      ],
+      "answerIndex": 0,
+      "solution": "The path forms a right triangle.\nEast = 5 km \nNorth = 12 km \nUsing the Pythagorean theorem:\nDistance = \n✅ Correct Answer: A) 13 km",
+      "marks": 4
+    },
+    {
+      "id": 77,
+      "question": "Q12.\nRavi faces north. He turns right, then right again. Now he faces:",
+      "options": [
+        "East",
+        "South",
+        "West",
+        "North"
+      ],
+      "answerIndex": 1,
+      "solution": "Step-by-step:\nRavi starts facing North. \nTurns right → faces East. \nTurns right again → faces South. \n✅ Correct Answer: B) South",
+      "marks": 4
+    },
+    {
+      "id": 78,
+      "question": "Q13.\nWhat comes next?\nA, C, F, J, O, ?",
+      "options": [
+        "T",
+        "U",
+        "V",
+        "W"
+      ],
+      "answerIndex": 1,
+      "solution": "Observe the pattern in the letter positions:\nA = 1 \nC = 3 (+2) \nF = 6 (+3) \nJ = 10 (+4) \nO = 15 (+5) \nThe increments are:\n+2, +3, +4, +5 \nSo the next increment is +6:\n15 + 6 = 21 \nThe 21st letter is U.\n✅ Correct Answer: B) U",
+      "marks": 4
+    },
+    {
+      "id": 79,
+      "question": "Q14.\nFind the missing term:\nB, E, H, K, ?",
+      "options": [
+        "N",
+        "O",
+        "P",
+        "Q"
+      ],
+      "answerIndex": 0,
+      "solution": "Observe the pattern by letter positions:\nB = 2 \nE = 5 (+3) \nH = 8 (+3) \nK = 11 (+3) \nContinue the pattern:\n11 + 3 = 14 \nThe 14th letter is N. \n✅ Correct Answer: A) N",
+      "marks": 4
+    },
+    {
+      "id": 80,
+      "question": "Q15.\nHow many letters are there between M and T?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "answerIndex": 1,
+      "solution": "Count the letters between M and T:\nM, N, O, P, Q, R, S, T\nThe letters between M and T are:\nN \nO \nP \nQ \nR \nS \nTotal = 6 letters\n✅ Correct Answer: B) 6",
+      "marks": 4
+    },
+    {
+      "id": 81,
+      "question": "Q16.\nA student ranks 15th from top and 20th from bottom. Total students?",
+      "options": [
+        "34",
+        "35",
+        "36",
+        "37"
+      ],
+      "answerIndex": 0,
+      "solution": "Given:\nRank from the top = 15th \nRank from the bottom = 20th \nFormula:\nTotal students = Top rank + Bottom rank − 1\nCalculation:\n15 + 20 – 1 = 34\n✅ Correct Answer: A) 34",
+      "marks": 4
+    },
+    {
+      "id": 82,
+      "question": "Q17.\nRaj is 10th from left and 15th from right. Total persons?",
+      "options": [
+        "23",
+        "24",
+        "25",
+        "26"
+      ],
+      "answerIndex": 1,
+      "solution": "Given:\nRaj is 10th from the left. \nRaj is 15th from the right. \nFormula:\nTotal persons = Left rank + Right rank − 1 \nCalculation:\n10 + 15 – 1 = 24\n✅ Correct Answer: B) 24",
+      "marks": 4
+    },
+    {
+      "id": 83,
+      "question": "Q18.\nIf A is taller than B but shorter than C, then:",
+      "options": [
+        "C > A > B",
+        "A > C > B",
+        "B > A > C",
+        "A > B > C"
+      ],
+      "answerIndex": 0,
+      "solution": "Given:\nA is taller than B → A > B \nA is shorter than C → C > A \nCombining both:\nC > A > B\n✅ Correct Answer: A) C > A > B",
+      "marks": 4
+    },
+    {
+      "id": 84,
+      "question": "Eight persons A, B, C, D, E, F, G and H sit around a circular table facing the centre.\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B.\nQ19.\nWho sits opposite D?",
+      "options": [
+        "A",
+        "F",
+        "G",
+        "H"
+      ],
+      "answerIndex": 3,
+      "solution": "Let's arrange the seating step by step.\n8 people are sitting facing the centre. \nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B. \nAssume A is at Position 1.\nNow, the person opposite D (Position 6) is at Position 2, which is H.\n✅ Correct Answer: D) H",
+      "marks": 4
+    },
+    {
+      "id": 85,
+      "question": "Eight persons A, B, C, D, E, F, G and H sit around a circular table facing the centre.\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B.\nQ20.\nWho sits immediate right of E?",
+      "options": [
+        "H",
+        "G",
+        "F",
+        "D"
+      ],
+      "answerIndex": 2,
+      "solution": "Let's use the arrangement from the previous question.\nSince everyone is facing the centre:\nA is opposite C. \nB is second to the right of A. \nD is immediate left of C. \nE is opposite B. \nOne valid arrangement is:\nWhen facing the centre, right means anticlockwise.\nFrom E (Position 8), the immediate right is Position 7, where F is seated.\n✅ Correct Answer: C) F",
+      "marks": 4
+    },
+    {
+      "id": 86,
+      "question": "Eight persons A, B, C, D, E, F, G and H sit around a circular table facing the centre.\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B.\nQ21.\nWho sits between B and D?",
+      "options": [
+        "E",
+        "F",
+        "C",
+        "H"
+      ],
+      "answerIndex": 2,
+      "solution": "Let's arrange the seats step by step.\nSince everyone is facing the centre:\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B. \nOne valid arrangement is:\nNow, B is at Position 4 and D is at Position 6.\nThe person sitting between B and D is C (Position 5).\n✅ Correct Answer: C) C",
+      "marks": 4
+    },
+    {
+      "id": 87,
+      "question": "Eight persons A, B, C, D, E, F, G and H sit around a circular table facing the centre.\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B.\nQ22.\nHow many persons sit between A and E?",
+      "options": [
+        "0",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": 0,
+      "solution": "Using the same seating arrangement:\nNow compare A and E:\nA is at Position 1. \nE is at Position 8. \nThey are adjacent, so there are 0 persons sitting between them.\n✅ Correct Answer: A) 0",
+      "marks": 4
+    },
+    {
+      "id": 88,
+      "question": "Eight persons A, B, C, D, E, F, G and H sit around a circular table facing the centre.\nA sits opposite C. \nB sits second to the right of A. \nD sits immediate left of C. \nE sits opposite B.\nQ23.\nWho sits immediate left of B?",
+      "options": [
+        "C",
+        "G",
+        "H",
+        "A"
+      ],
+      "answerIndex": 0,
+      "solution": "Using the same arrangement:\nSince everyone is facing the centre, left is in the clockwise direction.\nB is at Position 4. \nThe immediate left of B is Position 5, where C is seated. \n✅ Correct Answer: A) C",
+      "marks": 4
+    },
+    {
+      "id": 89,
+      "question": "Statements:\nAll pens are books.\nSome books are papers.\nNo paper is a table.\nQ24.\nSome pens are books.",
+      "options": [
+        "True",
+        "False",
+        "Cannot be determined",
+        "Both (A) and (B)"
+      ],
+      "answerIndex": 0,
+      "solution": "Statements:\nAll pens are books. \nSome books are papers. \nNo paper is a table. \nWe need to check:\nConclusion: Some pens are books.\nSince all pens are books, if pens exist, then at least some pens are books. This is the standard assumption in syllogism questions.\n✅ Correct Answer: A) True",
+      "marks": 4
+    },
+    {
+      "id": 90,
+      "question": "Statements:\nAll pens are books.\nSome books are papers.\nNo paper is a table.\nQ25.\nSome books are papers.",
+      "options": [
+        "True",
+        "False",
+        "Cannot be determined",
+        "Both (A) and (B)"
+      ],
+      "answerIndex": 0,
+      "solution": "Statements:\nAll pens are books. \nSome books are papers. \nNo paper is a table. \nConclusion: Some books are papers.\nThis is exactly the same as the second statement, so it is definitely true.\n✅ Correct Answer: A) True",
+      "marks": 4
+    },
+    {
+      "id": 91,
+      "question": "Statements:\nAll pens are books.\nSome books are papers.\nNo paper is a table.\nQ26.\nNo pen is a table.",
+      "options": [
+        "Definitely true",
+        "Definitely false",
+        "Cannot be determined",
+        "Both (A) and (B)"
+      ],
+      "answerIndex": 2,
+      "solution": "Statements:\nAll pens are books. \nSome books are papers. \nNo paper is a table. \nConclusion: No pen is a table.\nAnalysis:\nWe know all pens are books. \nWe know some books are papers. \nWe know no paper is a table. \nHowever, there is no information that all pens are papers. Pens could be books that are not papers, and nothing tells us whether such pens can or cannot be tables.\nSo, the conclusion cannot be determined.\n✅ Correct Answer: C) Cannot be determined",
+      "marks": 4
+    },
+    {
+      "id": 92,
+      "question": "Statements:\nAll pens are books.\nSome books are papers.\nNo paper is a table.\nQ27.\nSome papers are not tables.",
+      "options": [
+        "True",
+        "False",
+        "Cannot be determined",
+        "Both (A) and (B)"
+      ],
+      "answerIndex": 0,
+      "solution": "Statements:\nAll pens are books. \nSome books are papers. \nNo paper is a table. \nConclusion: Some papers are not tables.\nFrom Statement 2:\nSome books are papers, so some papers definitely exist. \nFrom Statement 3:\nNo paper is a table, which means every paper is not a table. \nTherefore, the existing papers mentioned in Statement 2 are not tables.\n✅ Correct Answer: A) True",
+      "marks": 4
+    },
+    {
+      "id": 93,
+      "question": "Five persons A, B, C, D and E sit in a row.\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre.\nQ28.\nWho sits at the centre?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answerIndex": 1,
+      "solution": "The statement itself says:\nB sits at the centre. \nSo, the person sitting at the centre is B.\n✅ Correct Answer: B) B",
+      "marks": 4
+    },
+    {
+      "id": 94,
+      "question": "Five persons A, B, C, D and E sit in a row.\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre.\nQ29.\nWho sits at an end?",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "D"
+      ],
+      "answerIndex": 2,
+      "solution": "From the given information:\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre. \nThe statement explicitly says that E sits at one end.\n✅ Correct Answer: C) E",
+      "marks": 4
+    },
+    {
+      "id": 95,
+      "question": "Five persons A, B, C, D and E sit in a row.\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre.\nQ30.\nWho sits immediately left of B?",
+      "options": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "answerIndex": 0,
+      "solution": "Given:\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre. \nIn a row of five seats, the centre is Position 3.\nSince A sits left of B, and the question asks for the person immediately left of B, A must occupy Position 2.\nA valid arrangement is:\nThis satisfies:\nA is left of B ✔️ \nC is right of D ✔️ \nE is at one end ✔️ \nB is at the centre ✔️ \n✅ Correct Answer: A) A",
+      "marks": 4
+    },
+    {
+      "id": 96,
+      "question": "Five persons A, B, C, D and E sit in a row.\nA sits left of B. \nC sits right of D. \nE sits at one end. \nB sits at the centre.\nQ31.\nWho sits immediately right of B?",
+      "options": [
+        "C",
+        "D",
+        "E",
+        "A"
+      ],
+      "answerIndex": 1,
+      "solution": "Using the valid arrangement:\nThis satisfies all conditions:\nA is left of B. ✔️ \nC is right of D. ✔️ \nE is at one end. ✔️ \nB is at the centre. ✔️ \nThe person immediately right of B is D.\n✅ Correct Answer: B) D",
+      "marks": 4
+    },
+    {
+      "id": 97,
+      "question": "Input:\n56 23 81 17 45\nNumbers arranged in ascending order step by step.\nQ32.\nStep I:",
+      "options": [
+        "A. 17 23 81 56 45",
+        "B. 17 23 45 56 81",
+        "C. 17 56 23 81 45",
+        "D. 23 17 81 56 45"
+      ],
+      "answerIndex": 0,
+      "solution": "Input:\n56 23 81 17 45\nThe numbers are arranged in ascending order step by step, meaning in Step I, only the smallest number is moved to the first position, while the remaining numbers keep their original order.\nSmallest number = 17 \nSo after Step I:\n17 23 81 56 45\n✅ Correct Answer: A) 17 23 81 56 45",
+      "marks": 4
+    },
+    {
+      "id": 98,
+      "question": "Input:\n56 23 81 17 45\nNumbers arranged in ascending order step by step.\nQ33.\nFinal arrangement:",
+      "options": [
+        "A. 17 23 45 56 81",
+        "B. 81 56 45 23 17",
+        "C. 17 45 23 56 81",
+        "D. 23 17 45 81 56"
+      ],
+      "answerIndex": 0,
+      "solution": "The numbers are to be arranged in ascending order.\nInput:\n56, 23, 81, 17, 45\nArranging them from smallest to largest:\n17, 23, 45, 56, 8117,\\ 23,\\ 45,\\ 56,\\ 8117, 23, 45, 56, 81 \n✅ Final Arrangement: 17 23 45 56 81\nCorrect Answer: A) 17 23 45 56 81",
+      "marks": 4
+    },
+    {
+      "id": 99,
+      "question": "Q34.\nWhat is x?\nI. x + 5 = 15\nII. x − 3 = 7",
+      "options": [
+        "Statement I alone sufficient",
+        "Statement II alone sufficient",
+        "Either I or II alone sufficient",
+        "Both required"
+      ],
+      "answerIndex": 2,
+      "solution": "We need to find the value of x.\nStatement I:\nx + 5 = 15\nx = 15 – 5 = 10 \nStatement I alone is sufficient. ✅\nStatement II:\nx – 3 = 7 \nx = 7 + 3 = 10 \nStatement II alone is also sufficient. ✅\nSince either statement alone can find the value of x:\n✅ Correct Answer: C) Either I or II alone sufficient",
+      "marks": 4
+    },
+    {
+      "id": 100,
+      "question": "Q35.\nWho is tallest?\nI. A is taller than B.\nII. C is taller than A.",
+      "options": [
+        "I alone",
+        "II alone",
+        "Both together",
+        "Neither"
+      ],
+      "answerIndex": 2,
+      "solution": "We need to determine who is tallest.\nStatement I:\nA is taller than B. \nA > B \nThis does not tell us about C.\n❌ Not sufficient\nStatement II:\nC is taller than A. \nC > A\nThis does not tell us about B.\n❌ Not sufficient\nBoth statements together:\nC > A > B \nTherefore, C is the tallest.\n✅ Correct Answer: C) Both together",
+      "marks": 4
+    }
+  ]
+}

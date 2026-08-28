@@ -12,6 +12,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="seo.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,8 +21,8 @@
     <img src="kts_slogo.png" alt="KTS Academy Logo" class="logo" />
   </div>
       <div class="brand"><h2>KTS Academy</h2></div>
-      <nav>
-      <ul>  
+      <nav id="primary-navigation" aria-label="Primary navigation">
+      <ul class="nav-menu">
           
         <li><a href="#">JEE</a>
             <ul>
@@ -46,7 +47,8 @@
             
             <li><a href="#">Previous Year Papers</a></li>
             <li><a href="#">Online Doubt Clearing</a></li>
-            <li><ul><a href="#">Download Brouchure</a>
+              <li><a href="#">Download Brouchure</a>
+              <ul>
             <li><a href="Velocity Batch NEET Brochure.pdf">download brouchure for NEET </a></li>
             <li><a href="velocity_neet.html">Explore the Velocity NEET batch</a></li>
             <li><a href="Velocity_jee.html">Explore the Velocity JEE batch</a></li>
@@ -56,7 +58,7 @@
             <li><a href="power_jee.html">Explore the Power JEE batch</a></li>
             <li><a href="impulse_neet.html">Explore the Impulse NEET batch</a></li>
             
-            </ul>
+              </ul>
             </li>
             <li><a href="#">Test Series</a></li>
             <li><a href="#">Doubt Clearing</a></li>
@@ -68,14 +70,13 @@
           <li><a href="buy_course.html" class="cta">Buy Now</a></li> 
           <li><a href="kts group.html" class="cta">KTS Enterprise</a></li>
                 </ul>
-                </ul>
       </nav>
       <!-- Hamburger Icon -->
-<div class="hamburger">
+<button class="hamburger" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
   <span></span>
   <span></span>
   <span></span>
-</div>
+</button>
 
     </div>
   </header>
@@ -107,7 +108,7 @@
          
             _
            </p>
-                <div class=".enquiry-button">
+                <div class="enquiry-actions">
                   <a href="velocity_neet.html" class="btn1">Explore</a>      
                   <a href="tel:+917983910795" class="btn1">Buy Now</a>
                 </div>
@@ -117,7 +118,7 @@
           <h3>Momentum Batch(Class 12 Appearing)</h3>
           <p> Momentum – 1-Year NEET Program for Class 12 (Appearing) is designed to maintain your pace and maximize your performance in the final year of preparation. This batch focuses on advanced problem-solving, intensive practice, smart revision strategies, and full syllabus coverage aligned with NEET. With expert mentorship, regular tests, and performance tracking, Momentum ensures you stay consistent, confident, and exam-ready.</p>
          _
-          <div class=".enquiry-button">
+          <div class="enquiry-actions">
             <a href="momentum_neet.html" class="btn1">Explore</a>
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
            </div> 
@@ -132,7 +133,7 @@
           <li>Includes Regular Tests, Doubt Clearing Sessions, and Personalized Mentoring.</li>
           <li>Focus on NCERT Syllabus with Extensive Practice Questions.</li>
           <li>Experienced Faculty with Proven Track Record.</li>
-          <div class=".enquiry-button">
+          <div class="enquiry-actions">
             <a href="power_neet.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
           </div>
@@ -152,7 +153,7 @@
               <li>Previous year question analysis for better exam insight</li>
             </ol>
             <p>Time management & exam strategy sessions</p>
-              <div class=".enquiry-button">
+              <div class="enquiry-actions">
             <a href="impulse_neet.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
           </div>
@@ -167,7 +168,7 @@
             <li>Detailed Solutions and Performance Reviews to Identify Improvement Areas.</li>
             <li>Designed by Experienced Faculty to Simulate Actual Exam Conditions.</li>
             <li>Flexible Schedules to Accommodate Different Study Plans.</li>
-             <p>_</p> <div class=".enquiry-button">
+             <p>_</p> <div class="enquiry-actions">
                 <a href="aspire_ts.html" class="btn1">Explore</a>      
                 <a href="tel:+917983910795" class="btn1">Buy Now</a>
               </div>
@@ -179,7 +180,7 @@
             <li>Flexible timings to suit your schedule.</li>
             <li>Recorded sessions for later review.</li>
             <li>Interactive doubt-solving sessions.</li>
-              <p>_</p><div class=".enquiry-button">
+              <p>_</p><div class="enquiry-actions">
                 <a href="#" class="btn1">Explore</a>      
                 <a href="tel:+917983910795" class="btn1">Buy Now</a>
             </div>
@@ -197,7 +198,7 @@
           <div class="badge">Offline Batch</div>
                     <h3 >Velocity Batch (Class 11–12)</h3>
                         <p>“Our 2-Year JEE Foundation Batch for Class 11 students is designed to build strong concepts from the ground up and ensure complete preparation for both JEE Main and Advanced. With expert faculty, structured study plans, regular tests, and personalized guidance, we focus on developing problem-solving skills, speed, and accuracy to help students achieve top ranks.”</p>
-           <p>_</p> <div class=".enquiry-button">
+           <p>_</p> <div class="enquiry-actions">
             <a href="Velocity_jee.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
       </div> 
@@ -209,7 +210,7 @@
           <h3>Momentum Batch (Class 12th appearing)</h3>
           <p> Momentum – 1-Year JEE Program for Class 12 (Appearing) is designed to maintain your pace and maximize your performance in the final year of preparation. This batch focuses on advanced problem-solving, intensive practice, smart revision strategies, and full syllabus coverage aligned with JEE Main & Advanced. With expert mentorship, regular tests, and performance tracking, Momentum ensures you stay consistent, confident, and exam-ready.</p>
         <p>_</p>
-          <div class=".enquiry-button">
+          <div class="enquiry-actions">
             <a href="momentum_jee.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
       </div>
@@ -220,7 +221,7 @@
           <p>  “Power – 1-Year JEE Dropper Program is designed for Class 12 pass students aiming for a top rank in JEE Main & Advanced. This batch focuses on complete syllabus mastery, high-level problem solving, intensive practice, and strategic revision. With expert faculty, rigorous testing, and personalized mentorship, Power helps you eliminate weaknesses, boost confidence, and achieve your full potential.
             ”</p>
             <p>_</p>
-        <div class=".enquiry-button">
+        <div class="enquiry-actions">
             <a href="power_jee.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
       </div>
@@ -231,7 +232,7 @@
             <div class="badge">LIVE COURSE</div>
           <h3>Impulse{Crash Course Batch}</h3>
           <p>Intensive 3-month program with mock tests and revision for last-minute prep.</p>
-          <div class=".enquiry-button">
+          <div class="enquiry-actions">
             <a href="get free councelling.html" class="btn1">Book Free Counseling</a>
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
       </div>
@@ -241,7 +242,7 @@
                      <div class="badge"> Test Series </div>
                   <h3>Test Series</h3>
           <p> Extensive JEE Main & Advanced test series with performance analysis and feedback.
-          <div class=".enquiry-button">
+          <div class="enquiry-actions">
             <a href="momentum_jee.html" class="btn1">Explore</a>      
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
       </div> </p>
@@ -250,7 +251,7 @@
           <h3 >  Online Classes </h3>
           <p>Live interactive sessions with expert faculty accessible from anywhere. </p>
             <div>
-        <div class=".enquiry-button">
+        <div class="enquiry-actions">
             <a href="Testseries.html" class="btn1">Explore Test Series</a>
               <a href="tel:+917983910795" class="btn1">Buy Now</a>
             </div>
@@ -311,7 +312,77 @@
   <footer>
     <p>© <span id="year"></span> KTS Academy. All rights reserved.</p>
   </footer> 
+  <script>
+    (() => {
+      const header = document.querySelector('header');
+      const menuButton = document.querySelector('.hamburger');
+      const menu = document.querySelector('.nav-menu');
+      const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+        document.body.classList.remove('menu-open');
+        menu.querySelectorAll('.submenu-open').forEach(item => item.classList.remove('submenu-open'));
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        menuButton.classList.toggle('active', isOpen);
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        document.body.classList.toggle('menu-open', isOpen);
+      });
+
+      menu.querySelectorAll(':scope > li > a').forEach(link => {
+        const submenu = link.nextElementSibling;
+        if (!submenu || submenu.tagName !== 'UL') return;
+        link.setAttribute('aria-haspopup', 'true');
+        link.addEventListener('click', event => {
+          if (!mobileQuery.matches) return;
+          event.preventDefault();
+          const item = link.parentElement;
+          const willOpen = !item.classList.contains('submenu-open');
+          menu.querySelectorAll(':scope > li.submenu-open').forEach(openItem => {
+            if (openItem !== item) openItem.classList.remove('submenu-open');
+          });
+          item.classList.toggle('submenu-open', willOpen);
+        });
+      });
+
+      menu.addEventListener('click', event => {
+        if (mobileQuery.matches && event.target.closest('a') && !event.target.nextElementSibling?.matches('ul')) closeMenu();
+      });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', event => {
+        if (mobileQuery.matches && menu.classList.contains('open') && !header.contains(event.target)) closeMenu();
+      });
+      mobileQuery.addEventListener('change', closeMenu);
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const animatedItems = document.querySelectorAll('.hero > *, .section > h2, .card, .stat, .testimonial');
+      animatedItems.forEach(item => item.classList.add('reveal'));
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -36px' });
+        animatedItems.forEach((item, index) => {
+          item.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 80}ms`);
+          observer.observe(item);
+        });
+      } else {
+        animatedItems.forEach(item => item.classList.add('is-visible'));
+      }
+    })();
+  </script>
  
 </body>
 </html>
-

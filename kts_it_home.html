@@ -1,180 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KTS IT Solutions — IT Hiring Firm</title>
-  <meta name="description" content="KTS IT Solutions connects top IT talent with leading companies worldwide." />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #0f172a;
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --primary: #38bdf8;
-      --accent: #22c55e;
-      --card: #1f2937;
-      --border: #334155;
-    }
-    body { margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text); }
-    a { color:var(--primary); text-decoration:none; }
-    .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
-    header { background:rgba(15,23,42,0.9); border-bottom:1px solid var(--border); position:sticky; top:0; }
-    .nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
-    .brand { font-weight:700; font-size:1.2rem; }
-    nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
-    .nav a:hover { text-decoration:underline; background-color: var(--primary); color:#001427; padding:0.2rem 0.5rem; border-radius:5px; }
-    .cta { background:var(--primary); color:#001427; padding:0.6rem 1rem; border-radius:8px; font-weight:700; }
-    .hero { padding:4rem 0; text-align:center; }
-    .hero h1 { font-size:2.5rem; margin-bottom:1rem; }
-    .hero p { color:var(--muted); max-width:700px; margin:0 auto 1.5rem; }
-    .section { padding:3rem 0; border-bottom:1px solid var(--border); }
-    .section h2 { font-size:2rem; margin-bottom:1rem; }
-    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
-    .card:hover { border-color:var(--primary); background-color:#001427; }
-    footer { padding:2rem 0; text-align:center; color:var(--muted); }
-
-    /* Hamburger styles */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    /* Responsive menu */
-    @media(max-width:768px){
-      nav ul {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: var(--card);
-        flex-direction: column;
-        width: 220px;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
-        border-radius: 8px;
-      }
-      nav ul.open {
-        height: 220px;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-       <div class="logo-container">
-    <img src="KTS IT SOL.png" height="50" alt="KTS IT Solutions Logo" class="logo" />
-  </div>
-    <div class="container nav">
-      <div class="brand"><h2>KTS IT Solutions</h2></div>
-      <nav>
-        <ul>
-          <li><a href="#jobs">Jobs</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#clients">Clients</a></li>
-          <li><a href="#contact" class="cta">Hire Talent</a></li>
-          <li><a href="kts group.html" class="cta">KTS Enterprise</a></li>
-        </ul>
-      </nav>
-      <!-- Hamburger -->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero container">
-      <h1>Connecting IT Talent with Opportunity</h1>
-      <p>KTS IT Solutions specializes in IT recruitment, helping companies find the right developers, engineers, and tech leaders.</p>
-      <a href="#contact" class="cta">Request Candidates</a>
-    </section>
-
-    <!-- Jobs -->
-    <section class="section container" id="jobs">
-      <h2>Featured Jobs</h2>
-      <div class="grid-3">
-        <div class="card"><h3>Frontend Developer</h3><p>React/Angular roles with leading startups.</p></div>
-        <div class="card"><h3>Backend Engineer</h3><p>Java, Node.js, and Python positions in enterprise firms.</p></div>
-        <div class="card"><h3>Cloud Architect</h3><p>AWS & Azure experts for global clients.</p></div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="section container" id="services">
-      <h2>Our Services</h2>
-      <div class="grid-3">
-        <div class="card"><h3>Permanent Hiring</h3><p>Full-time placements for IT professionals.</p></div>
-        <div class="card"><h3>Contract Staffing</h3><p>Flexible IT talent for short-term projects.</p></div>
-        <div class="card"><h3>Executive Search</h3><p>Leadership hiring for CTOs, CIOs, and senior roles.</p></div>
-      </div>
-    </section>
-
-    <!-- Clients -->
-    <section class="section container" id="clients">
-      <h2>Trusted by Leading Companies</h2>
-      <p>We partner with startups, enterprises, and global tech firms to deliver top talent.</p>
-    </section>
-
-    <!-- Contact -->
-    <section class="section container" id="contact">
-      <h2>Hire Talent Today</h2>
-      <form>
-        <label>Name</label>
-        <input type="text" required />
-        <label>Email</label>
-        <input type="email" required />
-        <label>Company</label>
-        <input type="text" required />
-        <label>Role Needed</label>
-        <input type="text" required />
-        <button type="submit" class="cta">Submit</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span id="year"></span> KTS IT Solutions. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector("nav ul");
-
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("active");
-    });
-  </script>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KTS IT Solutions | IT Recruitment & Technology Staffing</title><meta name="description" content="KTS IT Solutions helps companies hire screened technology professionals and helps IT talent find meaningful opportunities across India."><meta name="theme-color" content="#071426"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script src="seo.js" defer></script>
+<style>
+:root{--ink:#071426;--navy:#102845;--paper:#f7f9fc;--white:#fff;--text:#172439;--muted:#617087;--cyan:#15c4d8;--cyan-dark:#087f96;--gold:#f3be2e;--line:#dce4ee;--success:#0f8b68;--shadow:0 22px 60px rgba(7,20,38,.12);--radius:22px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;font-family:Manrope,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.65}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.skip-link{position:fixed;left:16px;top:-60px;background:var(--gold);color:var(--ink);padding:10px 16px;border-radius:0 0 8px 8px;font-weight:800;z-index:200}.skip-link:focus{top:0}.topbar{background:var(--ink);color:#cbd7e7;font-size:.82rem}.topbar .wrap{min-height:38px;display:flex;align-items:center;justify-content:space-between}.topbar a{color:#fff;font-weight:700}.topbar a:hover{text-decoration:underline}header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(220,228,238,.85);backdrop-filter:blur(14px)}.navbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--ink);color:var(--gold);font-weight:800}.brand-text{font-weight:800;color:var(--ink);line-height:1.08}.brand-text small{display:block;color:var(--cyan-dark);font-size:.62rem;letter-spacing:.14em;margin-top:5px}.navlinks{display:flex;align-items:center;gap:24px}.navlinks>a{font-weight:700;font-size:.88rem;color:#344258}.navlinks>a:not(.btn):hover{color:var(--cyan-dark)}.menu-btn{display:none;border:0;background:var(--paper);width:44px;height:44px;border-radius:12px;color:var(--ink);font-size:1.35rem;cursor:pointer}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 20px;border:1px solid transparent;border-radius:12px;background:var(--cyan);color:var(--ink)!important;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(21,196,216,.24);background:#41d6e4}.btn.secondary{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.28)}.btn.secondary:hover{background:rgba(255,255,255,.08);box-shadow:none}.btn.dark{background:var(--ink);color:#fff!important}.btn.dark:hover{background:var(--navy)}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:92px 0 84px}.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-180px;top:-240px;background:radial-gradient(circle,rgba(21,196,216,.25),transparent 68%)}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to right,#000,transparent)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}.eyebrow:before{content:"";width:28px;height:2px;background:currentColor}.hero h1{font-size:clamp(2.65rem,5vw,4.75rem);line-height:1.04;letter-spacing:-.055em;margin:18px 0 22px}.hero h1 span{color:var(--cyan)}.hero-copy{font-size:1.1rem;color:#b9c7d9;max-width:650px;margin:0 0 32px}.actions{display:flex;flex-wrap:wrap;gap:12px}.hero-proof{display:flex;flex-wrap:wrap;gap:20px 30px;margin-top:34px;color:#cbd7e7;font-size:.88rem;font-weight:700}.hero-proof span:before{content:"✓";color:var(--gold);margin-right:8px}.talent-card{background:linear-gradient(150deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:28px;box-shadow:0 28px 70px rgba(0,0,0,.22)}.talent-card>p{color:#b9c7d9;margin:4px 0 22px}.mini-profile{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);padding:15px;border-radius:16px;margin-top:11px}.avatar{display:grid;place-items:center;flex:0 0 45px;height:45px;border-radius:50%;background:var(--cyan);color:var(--ink);font-weight:800}.mini-profile strong{display:block}.mini-profile small{color:#a9b9cf}.available{margin-left:auto;width:9px;height:9px;border-radius:50%;background:#46df9e;box-shadow:0 0 0 5px rgba(70,223,158,.12)}
+.trust-strip{border-bottom:1px solid var(--line);background:var(--paper)}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}.trust-item{padding:25px 26px;border-right:1px solid var(--line)}.trust-item:first-child{border-left:1px solid var(--line)}.trust-item strong{display:block;color:var(--ink)}.trust-item span{color:var(--muted);font-size:.82rem}section{padding:94px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.15;letter-spacing:-.04em;color:var(--ink);margin:12px 0 0}.section-head p{max-width:530px;color:var(--muted);margin:0}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:30px;overflow:hidden;transition:.25s}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#b7e8ed}.icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#e8fafd;color:var(--cyan-dark);font-weight:800}.service-card h3{color:var(--ink);font-size:1.18rem;margin:23px 0 9px}.service-card p{color:var(--muted);margin:0}.service-card .number{position:absolute;right:22px;top:18px;color:#e9eef4;font-size:2.5rem;font-weight:800}.process{background:var(--paper)}.process-grid{display:grid;grid-template-columns:repeat(4,1fr)}.step{position:relative;padding:0 28px}.step:first-child{padding-left:0}.step:last-child{padding-right:0}.step:not(:last-child):after{content:"";position:absolute;top:24px;right:-15px;width:30px;border-top:1px dashed #9aaabd}.step-num{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font-weight:800}.step h3{color:var(--ink);margin:20px 0 8px}.step p{color:var(--muted);font-size:.9rem;margin:0}
+.jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.job{border:1px solid var(--line);border-radius:18px;padding:24px}.job-top{display:flex;justify-content:space-between;gap:12px}.job h3{margin:0;color:var(--ink);font-size:1.06rem}.tag{font-size:.7rem;font-weight:800;color:var(--success);background:#e7f7f1;border-radius:999px;padding:5px 9px;height:max-content}.job p{color:var(--muted);font-size:.86rem;margin:8px 0 18px}.skills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}.skills span{font-size:.72rem;background:var(--paper);color:#44536a;padding:5px 9px;border-radius:7px}.text-link{color:var(--cyan-dark);font-weight:800;font-size:.86rem}.text-link:hover{text-decoration:underline}.candidate-banner{padding-top:0}.banner{border-radius:28px;background:linear-gradient(120deg,var(--cyan-dark),#075067);color:#fff;padding:46px 50px;display:flex;align-items:center;justify-content:space-between;gap:40px;box-shadow:var(--shadow)}.banner h2{font-size:clamp(1.75rem,3vw,2.6rem);line-height:1.2;letter-spacing:-.035em;margin:0 0 8px}.banner p{margin:0;color:#c8eef3}.banner .btn{background:#fff;min-width:max-content}
+.contact{background:var(--ink);color:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}.contact h2{font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.12;letter-spacing:-.045em;margin:14px 0 18px}.contact-copy>p{color:#b9c7d9}.contact-points{margin:28px 0 0;padding:0;list-style:none}.contact-points li{margin:13px 0;color:#d4deea}.contact-points li:before{content:"✓";color:var(--gold);font-weight:800;margin-right:10px}.direct-contact{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:23px}.direct-contact a{display:block;color:var(--cyan);font-weight:800}.form-card{background:#fff;color:var(--text);border-radius:24px;padding:32px;box-shadow:0 28px 70px rgba(0,0,0,.2)}.form-card h3{color:var(--ink);font-size:1.3rem;margin:0 0 4px}.form-card>p{color:var(--muted);font-size:.86rem;margin:0 0 23px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field.full{grid-column:1/-1}.field label{display:block;font-size:.78rem;font-weight:800;color:#344258;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid #cfd9e5;border-radius:10px;padding:11px 13px;color:var(--ink);background:#fff;outline:none}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan-dark);box-shadow:0 0 0 3px rgba(21,196,216,.15)}.form-card .btn{width:100%;margin-top:18px}.form-note{font-size:.72rem!important;text-align:center;margin:10px 0 0!important}.form-status{display:none;margin-top:14px;border-radius:10px;padding:11px 13px;font-size:.84rem;background:#e7f7f1;color:#096649}.form-status.show{display:block}footer{background:#04101f;color:#91a2b8;padding:56px 0 24px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}.footer-brand p{max-width:420px;font-size:.88rem}.footer-title{color:#fff;font-weight:800;margin-bottom:13px}.footer-links{display:grid;gap:9px;font-size:.86rem}.footer-links a:hover{color:var(--cyan)}.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;display:flex;justify-content:space-between;font-size:.78rem}
+@media(max-width:960px){.topbar{display:none}.menu-btn{display:grid;place-items:center}.navlinks{display:none;position:fixed;top:76px;left:0;right:0;height:calc(100vh - 76px);background:#fff;padding:30px 20px;align-items:stretch;flex-direction:column;gap:6px}.navlinks.open{display:flex}.navlinks>a{font-size:1.05rem;padding:12px;border-bottom:1px solid var(--line)}.navlinks .btn{margin-top:10px}.hero-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{gap:48px}.talent-card{max-width:600px}.service-grid,.jobs-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr);gap:40px 0}.step:nth-child(2):after{display:none}.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(3){border-left:1px solid var(--line)}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+@media(max-width:640px){.wrap{width:min(100% - 28px,1160px)}.brand-text small{display:none}.hero{padding:64px 0 58px}.hero h1{font-size:2.6rem}.hero-proof{display:grid;gap:10px}.talent-card{padding:20px}.section-head{display:block}.section-head p{margin-top:16px}section{padding:68px 0}.service-grid,.jobs-grid,.process-grid,.trust-grid,.form-grid,.footer-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(3){border-left:1px solid var(--line)}.process-grid{gap:34px}.step,.step:first-child,.step:last-child{padding:0}.step:after{display:none}.banner{padding:34px 26px;display:block}.banner .btn{margin-top:24px;width:100%}.contact-grid{gap:42px}.form-card{padding:24px 19px}.field.full{grid-column:auto}.copyright{display:block}.copyright span{display:block;margin-top:7px}.actions .btn{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><div class="topbar"><div class="wrap"><span>Technology recruitment built around your business</span><a href="tel:+917983910795">Talk to us: +91 79839 10795</a></div></div>
+<header><div class="wrap navbar"><a class="brand" href="kts_it_home.html" aria-label="KTS IT Solutions home"><span class="brand-mark">KTS</span><span class="brand-text">KTS IT Solutions<small>TALENT • TECHNOLOGY • GROWTH</small></span></a><nav class="navlinks" id="primary-nav" aria-label="Primary navigation"><a href="#services">Services</a><a href="#process">How we hire</a><a href="#jobs">Open roles</a><a href="#contact">Employers</a><a href="kts group.html">KTS Enterprise</a><a class="btn" href="#contact">Hire IT talent →</a></nav><button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">☰</button></div></header>
+<main id="main"><section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">IT recruitment partner</span><h1>Build the team that builds <span>your future.</span></h1><p class="hero-copy">We connect growing companies with carefully screened developers, engineers, analysts and technology leaders—without the hiring noise.</p><div class="actions"><a class="btn" href="#contact">Tell us who you need →</a><a class="btn secondary" href="#jobs">I’m looking for a job</a></div><div class="hero-proof"><span>Role-specific screening</span><span>Flexible hiring models</span><span>Human support throughout</span></div></div><aside class="talent-card" aria-label="Talent network preview"><span class="eyebrow">Talent network</span><h2>Specialists for every stage of growth</h2><p>From a critical first hire to a complete technology team.</p><div class="mini-profile"><span class="avatar">FE</span><div><strong>Frontend engineers</strong><small>React · Angular · UI systems</small></div><i class="available" aria-label="Available talent"></i></div><div class="mini-profile"><span class="avatar">BE</span><div><strong>Backend engineers</strong><small>Java · Node.js · Python</small></div><i class="available"></i></div><div class="mini-profile"><span class="avatar">CL</span><div><strong>Cloud & DevOps</strong><small>AWS · Azure · CI/CD</small></div><i class="available"></i></div></aside></div></section>
+<div class="trust-strip"><div class="wrap trust-grid"><div class="trust-item"><strong>Relevant shortlists</strong><span>Profiles matched to the role</span></div><div class="trust-item"><strong>Structured screening</strong><span>Skills, experience and intent</span></div><div class="trust-item"><strong>Flexible engagement</strong><span>Permanent, contract or leadership</span></div><div class="trust-item"><strong>One point of contact</strong><span>Clear communication throughout</span></div></div></div>
+<section id="services"><div class="wrap"><div class="section-head"><div><span class="eyebrow">What we do</span><h2>Hiring support designed<br>around your needs.</h2></div><p>Whether you are building a new product team or filling a specialist position, we adapt the search to your role, timeline and culture.</p></div><div class="service-grid">
+<article class="service-card"><span class="number">01</span><span class="icon">FT</span><h3>Permanent hiring</h3><p>Find long-term team members who match both the technical brief and the way your company works.</p></article><article class="service-card"><span class="number">02</span><span class="icon">CS</span><h3>Contract staffing</h3><p>Add capable professionals for project delivery, specialist needs or changing workloads.</p></article><article class="service-card"><span class="number">03</span><span class="icon">ES</span><h3>Executive search</h3><p>Focused, discreet search for technology managers, architects, CTOs and senior leaders.</p></article><article class="service-card"><span class="number">04</span><span class="icon">TH</span><h3>Team hiring</h3><p>Build cross-functional engineering, product and support teams through one coordinated process.</p></article><article class="service-card"><span class="number">05</span><span class="icon">TA</span><h3>Talent advisory</h3><p>Shape realistic role briefs, skills requirements and candidate evaluation before the search starts.</p></article><article class="service-card"><span class="number">06</span><span class="icon">EC</span><h3>Early-career talent</h3><p>Connect with trainable, career-ready candidates through the wider KTS learning ecosystem.</p></article></div></div></section>
+<section class="process" id="process"><div class="wrap"><div class="section-head"><div><span class="eyebrow">A clearer hiring process</span><h2>From requirement to<br>the right conversation.</h2></div><p>You stay informed at every stage while we handle sourcing, initial screening and coordination.</p></div><div class="process-grid"><div class="step"><span class="step-num">1</span><h3>Define the role</h3><p>We learn the outcomes, skills, experience, budget and working model that matter.</p></div><div class="step"><span class="step-num">2</span><h3>Search & screen</h3><p>We identify relevant candidates and check experience, communication and interest.</p></div><div class="step"><span class="step-num">3</span><h3>Meet the shortlist</h3><p>You review focused profiles and interview promising candidates with our coordination.</p></div><div class="step"><span class="step-num">4</span><h3>Close with confidence</h3><p>We support feedback, offer coordination and joining follow-up for a smoother finish.</p></div></div></div></section>
+<section id="jobs"><div class="wrap"><div class="section-head"><div><span class="eyebrow">For technology professionals</span><h2>Explore talent categories.</h2></div><p>Tell us what you do and what you want next. We’ll contact you when a suitable opportunity is available.</p></div><div class="jobs-grid">
+<article class="job"><div class="job-top"><h3>Frontend Development</h3><span class="tag">Talent pool</span></div><p>Web interfaces, design systems and modern JavaScript applications.</p><div class="skills"><span>React</span><span>Angular</span><span>JavaScript</span></div><a class="text-link apply-link" href="#" data-role="Frontend Development">Share your profile →</a></article><article class="job"><div class="job-top"><h3>Backend Engineering</h3><span class="tag">Talent pool</span></div><p>Reliable APIs, services, databases and enterprise applications.</p><div class="skills"><span>Java</span><span>Node.js</span><span>Python</span></div><a class="text-link apply-link" href="#" data-role="Backend Engineering">Share your profile →</a></article><article class="job"><div class="job-top"><h3>Cloud & DevOps</h3><span class="tag">Talent pool</span></div><p>Cloud platforms, infrastructure automation and delivery systems.</p><div class="skills"><span>AWS</span><span>Azure</span><span>CI/CD</span></div><a class="text-link apply-link" href="#" data-role="Cloud & DevOps">Share your profile →</a></article><article class="job"><div class="job-top"><h3>Data & AI</h3><span class="tag">Talent pool</span></div><p>Analytics, data platforms, machine learning and applied AI.</p><div class="skills"><span>SQL</span><span>Python</span><span>ML</span></div><a class="text-link apply-link" href="#" data-role="Data & AI">Share your profile →</a></article><article class="job"><div class="job-top"><h3>Cybersecurity</h3><span class="tag">Talent pool</span></div><p>Security operations, application security and governance.</p><div class="skills"><span>SOC</span><span>AppSec</span><span>GRC</span></div><a class="text-link apply-link" href="#" data-role="Cybersecurity">Share your profile →</a></article><article class="job"><div class="job-top"><h3>Technology Leadership</h3><span class="tag">Talent pool</span></div><p>Engineering management, architecture and technology strategy.</p><div class="skills"><span>CTO</span><span>Architect</span><span>EM</span></div><a class="text-link apply-link" href="#" data-role="Technology Leadership">Share your profile →</a></article></div></div></section>
+<section class="candidate-banner"><div class="wrap"><div class="banner"><div><h2>Ready for your next technology role?</h2><p>Send your profile on WhatsApp and tell us what opportunity you’re looking for.</p></div><a class="btn" href="https://wa.me/917983910795?text=Hello%20KTS%20IT%20Solutions%2C%20I%20would%20like%20to%20share%20my%20profile%20for%20technology%20opportunities." target="_blank" rel="noopener">Join the talent network →</a></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div class="contact-copy"><span class="eyebrow">Start a conversation</span><h2>What role are you trying to fill?</h2><p>Share the basics and we’ll continue the conversation on WhatsApp. No long forms, no obligation—just a practical first discussion.</p><ul class="contact-points"><li>A clearer role and search approach</li><li>Access to screened technology talent</li><li>Support from first brief to joining</li></ul><div class="direct-contact"><span>Prefer to speak directly?</span><a href="tel:+917983910795">+91 79839 10795</a></div></div>
+<form class="form-card" id="hiring-form"><h3>Request IT talent</h3><p>Fields marked * are required.</p><div class="form-grid"><div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="company">Company *</label><input id="company" name="company" autocomplete="organization" required></div><div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+ ()-]{8,18}" required></div><div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email"></div><div class="field"><label for="role">Role needed *</label><input id="role" name="role" placeholder="e.g. Java Developer" required></div><div class="field"><label for="model">Hiring model *</label><select id="model" name="model" required><option value="">Select one</option><option>Permanent hiring</option><option>Contract staffing</option><option>Executive search</option><option>Team hiring</option><option>Not sure yet</option></select></div><div class="field full"><label for="details">Anything else we should know?</label><textarea id="details" name="details" placeholder="Skills, experience, location, work model or expected timeline"></textarea></div></div><button class="btn dark" type="submit">Continue on WhatsApp →</button><p class="form-note">By submitting, you agree to be contacted about this hiring request.</p><div class="form-status" id="form-status" role="status" aria-live="polite">Your request is ready. Opening WhatsApp…</div></form></div></section></main>
+<footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="kts_it_home.html"><span class="brand-mark">KTS</span><span class="brand-text" style="color:#fff">KTS IT Solutions<small>TALENT • TECHNOLOGY • GROWTH</small></span></a><p>Practical recruitment support for companies building technology teams and professionals building technology careers.</p></div><div><div class="footer-title">Navigate</div><div class="footer-links"><a href="#services">Services</a><a href="#process">How we hire</a><a href="#jobs">Talent network</a><a href="#contact">Hire talent</a></div></div><div><div class="footer-title">KTS network</div><div class="footer-links"><a href="kts group.html">KTS Enterprise</a><a href="kts education center.html">KTS Education Center</a><a href="tel:+917983910795">+91 79839 10795</a><span>India</span></div></div></div><div class="copyright">© <span id="year"></span> KTS IT Solutions. All rights reserved.<span>Talent. Technology. Growth.</span></div></div></footer>
+<script>const menuButton=document.querySelector('.menu-btn'),nav=document.querySelector('.navlinks');function closeMenu(){nav.classList.remove('open');document.body.classList.remove('menu-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');document.body.classList.toggle('menu-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});document.getElementById('year').textContent=new Date().getFullYear();const waPhone='917983910795';document.querySelectorAll('.apply-link').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();window.open(`https://wa.me/${waPhone}?text=${encodeURIComponent(`Hello KTS IT Solutions, I would like to share my profile for ${link.dataset.role} opportunities.`)}`,'_blank','noopener')}));document.getElementById('hiring-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const d=new FormData(form),message=`Hello KTS IT Solutions, I would like help with an IT hiring requirement.\n\nName: ${d.get('name')}\nCompany: ${d.get('company')}\nPhone: ${d.get('phone')}\nEmail: ${d.get('email')||'Not provided'}\nRole needed: ${d.get('role')}\nHiring model: ${d.get('model')}\nDetails: ${d.get('details')||'Not provided'}`;document.getElementById('form-status').classList.add('show');window.open(`https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`,'_blank','noopener')});</script></body></html>

@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Private, transactional, and authenticated pages should not appear in search.
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /test%20paper.html
+Disallow: /Testseries.html
+Disallow: /buy_course.html
+Disallow: /book_a_demo.html
+Disallow: /book_a_demo_neet.html
+Disallow: /get%20free%20councelling.html
+Disallow: /enroll_now_impulse_jee.html
+Disallow: /enroll_now_impulse_neet.html
+Disallow: /enroll_now_momentum_jee.html
+Disallow: /enroll_now_momentum_neet.html
+Disallow: /enroll_now_power_jee.html
+Disallow: /enroll_now_power_neet.html
+Disallow: /enroll_now_velocity_jee.html
+Disallow: /enroll_now_velocity_neet.html
+Disallow: /payment_momentum_jee.html
+Disallow: /payment_momentum_neet.html
+Disallow: /payment_velocity_jee.html
+Disallow: /payment_velocity_neet.html
+
+Sitemap: https://www.ktsacademy.in/sitemap.xml
