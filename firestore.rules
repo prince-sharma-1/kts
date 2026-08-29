@@ -1,20 +1,66 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function belongsTo(ventureId) {
+      return request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.venture == ventureId;
+    }
+
+    function validVenture(ventureId) {
+      return ventureId in ['academy', 'education', 'scorehigh', 'it', 'marketing'];
+    }
+
     match /users/{userId} {
-      allow create: if request.auth != null && request.auth.uid == userId;
-      allow read, update: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && validVenture(request.resource.data.venture);
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null
+        && request.auth.uid == userId
+        && validVenture(request.resource.data.venture)
+        && (
+          !('venture' in resource.data)
+          || request.resource.data.venture == resource.data.venture
+        );
     }
 
     match /tests/{testId} {
-      allow read: if request.auth != null && resource.data.published == true;
+      allow read: if belongsTo('scorehigh') && resource.data.published == true;
       allow write: if false;
     }
 
     match /testAttempts/{attemptId} {
-      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
-      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if belongsTo('scorehigh') && request.resource.data.userId == request.auth.uid;
+      allow read: if belongsTo('scorehigh') && resource.data.userId == request.auth.uid;
       allow update, delete: if false;
+    }
+
+    match /paymentRequests/{requestId} {
+      allow create: if belongsTo('academy')
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.venture == 'academy'
+        && request.resource.data.status == 'pending';
+      allow read: if belongsTo('academy') && resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /courseEntitlements/{entitlementId} {
+      allow read: if belongsTo('academy')
+        && resource.data.userId == request.auth.uid
+        && resource.data.venture == 'academy';
+      allow write: if false;
+    }
+
+    match /courseProgress/{progressId} {
+      allow read: if belongsTo('academy') && resource.data.userId == request.auth.uid;
+      allow create: if belongsTo('academy')
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.venture == 'academy';
+      allow update: if belongsTo('academy')
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.venture == 'academy';
+      allow delete: if false;
     }
   }
 }

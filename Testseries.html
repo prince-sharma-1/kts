@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-venture="scorehigh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07182d">
   <title>Score High | Banking Test Portal</title>
+  <script type="module" src="auth-guard.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -90,7 +91,7 @@
     window.showToast = showToast;
     window.startTest = async function(name, testId = null, sourceUrl = null) {
       const user = auth.currentUser;
-      if (!user) { showToast('Please sign in to start and save your test attempt.'); setTimeout(() => window.location.href = 'login.html', 1000); return; }
+      if (!user) { showToast('Please sign in to start and save your test attempt.'); setTimeout(() => window.location.href = 'score-high-login.html?redirect=Testseries.html', 1000); return; }
       try {
         await addDoc(collection(db, 'testAttempts'), { userId:user.uid, testId, testTitle:name, status:'started', startedAt:serverTimestamp() });
         if (sourceUrl) { window.location.href = 'take-test.html?src=' + encodeURIComponent(sourceUrl); return; }

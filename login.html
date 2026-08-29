@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>window.location.replace('academy-login.html' + window.location.search + window.location.hash);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07182d">
-  <title>Student Login | Score High</title>
+  <title>Student Login & Registration | KTS Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -28,14 +29,14 @@
 </head>
 <body>
   <main class="page">
-    <section class="brand-panel" aria-label="Score High banking preparation">
-      <a class="brand" href="Score High.html"><span class="mark">S</span>Score High</a>
-      <div class="welcome"><span class="tag">Banking exam preparation</span><h1>Learn smart.<br>Score high.</h1><p>One secure place for your mock tests, progress reports, and daily preparation plan.</p></div>
-      <div class="benefits"><span><i></i> Full-length mocks</span><span><i></i> Detailed analysis</span><span><i></i> Daily practice</span></div>
+    <section class="brand-panel" aria-label="KTS Academy student portal">
+      <a class="brand" href="index.html"><span class="mark">K</span>KTS Academy</a>
+      <div class="welcome"><span class="tag">JEE &amp; NEET preparation</span><h1>Learn with purpose.<br>Achieve with confidence.</h1><p>One secure place for your courses, test series, progress, and personalized preparation journey.</p></div>
+      <div class="benefits"><span><i></i> Expert faculty</span><span><i></i> Mock tests</span><span><i></i> Personal mentoring</span></div>
     </section>
     <section class="form-panel"><div class="form-wrap">
-      <a class="brand mobile-brand" href="Score High.html"><span class="mark">S</span>Score High</a>
-      <h2 id="formTitle">Welcome back</h2><p class="subtitle" id="formSubtitle">Sign in to continue your banking exam preparation.</p>
+      <a class="brand mobile-brand" href="index.html"><span class="mark">K</span>KTS Academy</a>
+      <h2 id="formTitle">Welcome back</h2><p class="subtitle" id="formSubtitle">Sign in to continue your JEE or NEET preparation.</p>
       <div class="tabs" role="tablist"><button class="tab active" data-target="signIn" role="tab">Sign in</button><button class="tab" data-target="signUp" role="tab">Create account</button></div>
       <form id="signIn" class="active" novalidate>
         <div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
@@ -56,15 +57,30 @@
     import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
     import { doc, serverTimestamp, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
     const message = document.getElementById('message'); const title = document.getElementById('formTitle'); const subtitle = document.getElementById('formSubtitle');
+    const params = new URLSearchParams(window.location.search);
+    const requestedRedirect = params.get('redirect');
+    const safeRedirect = (() => {
+      if (!requestedRedirect) return 'index.html';
+      if (/^tel:\+?[0-9]+$/.test(requestedRedirect)) return requestedRedirect;
+      try {
+        const destination = new URL(requestedRedirect, window.location.href);
+        if (destination.origin !== window.location.origin) return 'index.html';
+        return `${destination.pathname}${destination.search}${destination.hash}`;
+      } catch {
+        return 'index.html';
+      }
+    })();
     const errorText = (error) => ({'auth/invalid-credential':'Incorrect email or password.','auth/email-already-in-use':'An account already exists for this email.','auth/weak-password':'Choose a password with at least 6 characters.','auth/invalid-email':'Enter a valid email address.','auth/too-many-requests':'Too many attempts. Please try again later.','auth/unauthorized-domain':'Open this portal through the local web address, not by double-clicking the HTML file.'}[error.code] || `Something went wrong: ${error.code || error.message}`);
     function showMessage(text, kind=''){ message.textContent=text; message.className='message '+kind; }
     function loading(button, active){ button.disabled=active; button.textContent=active?'Please wait…':button.dataset.label; }
-    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => { const target=tab.dataset.target; document.querySelectorAll('.tab').forEach(item=>item.classList.toggle('active',item===tab)); document.querySelectorAll('form').forEach(form=>form.classList.toggle('active',form.id===target)); title.textContent=target==='signIn'?'Welcome back':'Start your journey'; subtitle.textContent=target==='signIn'?'Sign in to continue your banking exam preparation.':'Create your student profile and access the test portal.'; showMessage(''); }));
+    function selectTab(target) { document.querySelectorAll('.tab').forEach(item=>item.classList.toggle('active',item.dataset.target===target)); document.querySelectorAll('form').forEach(form=>form.classList.toggle('active',form.id===target)); title.textContent=target==='signIn'?'Welcome back':'Start your journey'; subtitle.textContent=target==='signIn'?'Sign in to continue your JEE or NEET preparation.':'Create your KTS student profile and access your courses.'; showMessage(''); }
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => selectTab(tab.dataset.target)));
+    if (params.get('mode') === 'signup') selectTab('signUp');
     document.querySelectorAll('.submit').forEach(button=>button.dataset.label=button.textContent);
-    document.getElementById('signIn').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const email=document.getElementById('loginEmail').value.trim(); const password=document.getElementById('loginPassword').value; if(!email||!password){showMessage('Enter your email and password.','error');return;} loading(button,true); try { await signInWithEmailAndPassword(auth,email,password); showMessage('Signed in. Taking you to your portal…','success'); window.location.href='Testseries.html'; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
-    document.getElementById('signUp').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const name=document.getElementById('signupName').value.trim(); const email=document.getElementById('signupEmail').value.trim(); const password=document.getElementById('signupPassword').value; if(!name||!email||password.length<6){showMessage('Complete all fields; passwords need at least 6 characters.','error');return;} loading(button,true); try { const credential=await createUserWithEmailAndPassword(auth,email,password); await setDoc(doc(db,'users',credential.user.uid),{username:name,email,role:'student',batch:'Banking Aspirant',createdAt:serverTimestamp(),profileCompleted:true}); showMessage('Your account is ready. Opening your portal…','success'); window.location.href='Testseries.html'; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('signIn').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const email=document.getElementById('loginEmail').value.trim(); const password=document.getElementById('loginPassword').value; if(!email||!password){showMessage('Enter your email and password.','error');return;} loading(button,true); try { await signInWithEmailAndPassword(auth,email,password); showMessage('Signed in. Opening your course…','success'); window.location.href=safeRedirect; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('signUp').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const name=document.getElementById('signupName').value.trim(); const email=document.getElementById('signupEmail').value.trim(); const password=document.getElementById('signupPassword').value; if(!name||!email||password.length<6){showMessage('Complete all fields; passwords need at least 6 characters.','error');return;} loading(button,true); try { const credential=await createUserWithEmailAndPassword(auth,email,password); await setDoc(doc(db,'users',credential.user.uid),{username:name,email,role:'student',batch:'KTS Academy Student',createdAt:serverTimestamp(),profileCompleted:true}); showMessage('Your account is ready. Opening your course…','success'); window.location.href=safeRedirect; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
     document.getElementById('resetPassword').addEventListener('click', async () => { const email=document.getElementById('loginEmail').value.trim(); if(!email){showMessage('Enter your email address first, then choose Forgot password.','error');return;} try { await sendPasswordResetEmail(auth,email); showMessage('Password-reset link sent. Check your inbox.','success'); } catch(error){showMessage(errorText(error),'error');} });
-    onAuthStateChanged(auth,user=>{ if(user && !message.textContent) window.location.href='Testseries.html'; });
+    onAuthStateChanged(auth,user=>{ if(user && !message.textContent) window.location.href=safeRedirect; });
   </script>
 </body>
 </html>
