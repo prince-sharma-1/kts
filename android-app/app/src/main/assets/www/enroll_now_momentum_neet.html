@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - Momentum NEET Batch 2026-27 | KTS Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .kts-blue { background-color: #007bff; }
+        .kts-dark { background-color: #0a192f; }
+        .step-active { border-color: #007bff; color: #007bff; }
+        .bg-gradient-kts { background: linear-gradient(135deg, #0a192f 0%, #001f3f 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <div class="bg-gradient-kts text-white py-12 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-black mb-2">Secure Your Future in NEET-UG 2028</h1>
+            <p class="text-blue-200">Finalize your admission for the Momentum NEET Batch starting April 15, 2026.</p>
+        </div>
+    </div>
+
+    <main class="max-w-5xl mx-auto -mt-10 px-6 pb-20">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid lg:grid-cols-3">
+            
+            <div class="bg-slate-50 p-8 border-r border-gray-100 lg:col-span-1">
+                <h3 class="font-bold text-lg mb-6 border-b pb-2">Batch Summary</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <i data-lucide="calendar" class="w-5 h-5 text-blue-600 mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Start Date</p>
+                            <p class="font-semibold text-sm">April 15, 2026</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="clock" class="w-5 h-5 text-blue-600 mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Timings</p>
+                            <p class="font-semibold text-sm">3:30 PM - 7:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-blue-600 mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold">Location</p>
+                            <p class="font-semibold text-sm">KTS Academy, 3 RR Sales Near SBI BANK , Chougurgi , Etawah ,206001.  </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-4 bg-green-50 rounded-2xl border border-green-100">
+                    <p class="text-xs text-green-700 leading-relaxed">
+                        <i data-lucide="shield-check" class="inline w-3 h-3 mr-1"></i> 
+                        Your seat is only confirmed once the initial registration fee is processed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 p-10">
+                <form id="enrollmentForm" class="space-y-8">
+                    <section>
+                        <h2 class="text-xl font-bold flex items-center mb-6">
+                            <span class="w-8 h-8 rounded-full kts-blue text-white flex items-center justify-center text-sm mr-3">1</span>
+                            Personal Information
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Full Name" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <input type="email" placeholder="Email Address" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <input type="tel" placeholder="Guardian's Contact No." class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <select class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition">
+                                <option>Targeting JEE 2028</option>
+                                <option>Targeting NEET 2028</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-bold flex items-center mb-6">
+                            <span class="w-8 h-8 rounded-full kts-blue text-white flex items-center justify-center text-sm mr-3">2</span>
+                            Choose Payment Plan
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="relative border-2 rounded-2xl p-4 cursor-pointer hover:border-blue-500 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
+                                <input type="radio" name="plan" value="full" class="absolute right-4 top-4" checked>
+                                <p class="font-bold text-lg">One-Time Payment</p>
+                                <p class="text-sm text-gray-500">Save 15% on total fees</p>
+                                <p class="mt-2 text-blue-600 font-bold text-xl">₹1,45,000</p>
+                            </label>
+                            <label class="relative border-2 rounded-2xl p-4 cursor-pointer hover:border-blue-500 transition has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50">
+                                <input type="radio" name="plan" value="installment" class="absolute right-4 top-4">
+                                <p class="font-bold text-lg">Installments</p>
+                                <p class="text-sm text-gray-500">Quarterly payments</p>
+                                <p class="mt-2 text-blue-600 font-bold text-xl">₹40,000 <span class="text-xs font-normal text-gray-400">/qtr</span></p>
+                            </label>
+                        </div>
+                    </section>
+
+                    <div class="bg-gray-900 rounded-2xl p-6 text-white flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <p class="text-gray-400 text-sm italic">Immediate Registration Amount:</p>
+                            <h4 class="text-3xl font-black">₹10,000</h4>
+                        </div>
+                        <button type="submit" class="mt-4 md:mt-0 kts-blue px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
+                            <a href="payment_momentum_neet.html" class="text-white no-underline">Proceed to Payment</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="enrollSuccess" class="fixed inset-0 bg-slate-900/95 hidden items-center justify-center z-[100] p-6 text-center text-white">
+        <div class="max-w-md">
+            <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+                <i data-lucide="party-popper" class="w-12 h-12 text-white"></i>
+            </div>
+            <h2 class="text-4xl font-black mb-4">Welcome to the Batch!</h2>
+            <p class="text-blue-200 mb-8 leading-relaxed">Your registration for the [Velocity Batch](https://www.ktsacademy.in/velocity#demo) is complete. Our academic head will call you to schedule your orientation.</p>
+            <button onclick="window.location.reload()" class="bg-white text-slate-900 font-bold px-8 py-3 rounded-full hover:bg-blue-100 transition">Download Receipt</button>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const form = document.getElementById('enrollmentForm');
+        const success = document.getElementById('enrollSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate payment processing
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = 'Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                success.classList.remove('hidden');
+                success.classList.add('flex');
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

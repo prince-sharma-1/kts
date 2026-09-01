@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment - KTS Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <a href="index.html" class="floating-home" >
+    <div class="icon-wrapper">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </div>
+    <span></span>
+</a>
+
+    <div class="max-w-4xl w-full grid md:grid-cols-2 gap-8">
+        
+        <div class="p-8 glass-card rounded-2xl">
+            <h1 class="text-2xl font-bold mb-6">Order Summary</h1>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span>Velocity Batch (JEE 2028)</span>
+                    <span class="font-semibold text-blue-400">Registration</span>
+                </div>
+                <hr class="border-gray-700">
+                <div class="flex justify-between text-xl font-bold">
+                    <span>Total Amount</span>
+                    <span class="text-white">₹10,000</span>
+                </div>
+                <p class="text-gray-400 text-sm italic mt-4">
+                    *This is a non-refundable registration fee to secure your seat.
+                </p>
+            </div>
+            
+            <div class="mt-10 p-4 bg-blue-900/30 rounded-lg border border-blue-500/30">
+                <h4 class="text-sm font-semibold uppercase text-blue-400 mb-2">Batch Details</h4>
+                <p class="text-xs text-gray-300">Start Date: April 15, 2026</p>
+                <p class="text-xs text-gray-300">Location: Chougurgi, Etawah</p>
+            </div>
+        </div>
+
+        <div class="p-8 bg-white text-slate-900 rounded-2xl shadow-2xl">
+            <h2 class="text-2xl font-bold mb-6">Payment Method</h2>
+            
+            <form id="payment-form" class="space-y-4">
+                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-slate-50 transition border-blue-500 bg-blue-50">
+                    <input type="radio" name="method" checked class="w-4 h-4 text-blue-600">
+                    <div class="ml-4 flex items-center justify-between w-full">
+                        <span class="font-medium">UPI (GPay, PhonePe, Paytm)</span>
+                        <i class="fa-solid fa-mobile-screen-button text-blue-600"></i>
+                    </div>
+                </label>
+
+                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-slate-50 transition">
+                    <input type="radio" name="method" class="w-4 h-4 text-blue-600">
+                    <div class="ml-4 flex items-center justify-between w-full">
+                        <span class="font-medium">Credit / Debit Card</span>
+                        <div class="space-x-1">
+                            <i class="fa-brands fa-cc-visa text-gray-400"></i>
+                            <i class="fa-brands fa-cc-mastercard text-gray-400"></i>
+                        </div>
+                    </div>
+                </label>
+
+                <div class="pt-6">
+                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition transform hover:scale-[1.02]">
+                        Payment checkout coming soon
+                    </button>
+                </div>
+            </form>
+            <p id="payment-status" class="mt-4 text-sm text-slate-600" role="status" aria-live="polite">Online payments are not yet enabled. Please contact KTS Academy before making a registration payment.</p>
+            
+            <div class="mt-6 flex items-center justify-center space-x-2 text-gray-400 text-xs">
+                <i class="fa-solid fa-lock"></i>
+                <span>SSL Encrypted Secure Payment</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('payment-form').onsubmit = (e) => {
+            e.preventDefault();
+            document.getElementById('payment-status').textContent = 'Online payments are not yet enabled. Please contact KTS Academy for payment assistance.';
+        };
+    </script>
+</body>
+</html>

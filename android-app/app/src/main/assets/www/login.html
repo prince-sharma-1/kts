@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>window.location.replace('academy-login.html' + window.location.search + window.location.hash);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07182d">
+  <title>Student Login & Registration | KTS Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#07182d; --blue:#1769e0; --pale:#eaf3ff; --ink:#17263c; --muted:#708097; --line:#e5edf6; --red:#d63d4d; --green:#098760; }
+    * { box-sizing:border-box; } body { min-height:100vh; margin:0; color:var(--ink); font-family:"DM Sans",sans-serif; background:#f4f8fd; }
+    .page { min-height:100vh; display:grid; grid-template-columns:minmax(300px,.93fr) minmax(440px,1.07fr); }
+    .brand-panel { color:#fff; padding:clamp(28px,5vw,72px); display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; position:relative; background:linear-gradient(145deg,#06182f 0%,#0c3c78 100%); }
+    .brand-panel:after,.brand-panel:before { content:""; position:absolute; border-radius:50%; border:1px solid #8fc3ff42; } .brand-panel:after { width:440px;height:440px;right:-180px;bottom:-145px; } .brand-panel:before { width:260px;height:260px;left:-135px;top:130px; }
+    .brand { display:flex;gap:10px;align-items:center;position:relative;z-index:1;font-family:"Plus Jakarta Sans";font-size:21px;font-weight:800;letter-spacing:-.8px; } .mark { width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,#4393ff,#1760cb);box-shadow:0 8px 20px #0004; }
+    .welcome { position:relative;z-index:1;max-width:430px; } .welcome .tag { color:#a8ccff;font-weight:700;font-size:12px;letter-spacing:1.1px;text-transform:uppercase; } .welcome h1 { font:800 clamp(35px,4.5vw,58px)/1.08 "Plus Jakarta Sans";letter-spacing:-2.2px;margin:16px 0; } .welcome p { color:#c3dcff;line-height:1.65;font-size:15px;max-width:365px; }
+    .benefits { position:relative;z-index:1;display:flex;gap:20px;color:#dceaff;font-size:12px;font-weight:600; } .benefits span { display:flex;gap:6px;align-items:center; } .benefits i { width:7px;height:7px;border-radius:50%;background:#77e6be;box-shadow:0 0 0 4px #77e6be29; }
+    .form-panel { display:grid;place-items:center;padding:32px; } .form-wrap { width:min(100%,420px); } .mobile-brand { display:none; }
+    h2 { font:800 29px "Plus Jakarta Sans";letter-spacing:-1.2px;margin:0 0 7px; } .subtitle { color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 27px; }
+    .tabs { display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);margin-bottom:25px; } .tab { color:var(--muted);background:none;border:0;padding:11px 5px;font-weight:700;font-size:14px;border-bottom:2px solid transparent;margin-bottom:-1px; } .tab.active { color:var(--blue);border-color:var(--blue); }
+    form { display:none; } form.active { display:block; } .field { margin-bottom:17px; } label { font-size:12px;font-weight:700;display:block;margin:0 0 7px;color:#43536a; } input { width:100%;padding:13px 14px;border:1px solid #dbe5f0;border-radius:9px;font:14px "DM Sans";color:var(--ink);outline:none;transition:.2s; } input:focus { border-color:#4789ec;box-shadow:0 0 0 4px #1769e013; } .password-row { display:flex;justify-content:space-between;align-items:baseline; } .link { border:0;background:none;padding:0;color:var(--blue);font-size:12px;font-weight:700;cursor:pointer; }
+    .submit { width:100%;border:0;border-radius:9px;padding:14px;color:#fff;background:linear-gradient(100deg,#1769e0,#0e55bb);font-weight:700;font-size:14px;box-shadow:0 8px 17px #1769e034;cursor:pointer;transition:.2s; } .submit:hover { transform:translateY(-1px); } .submit:disabled { opacity:.65;cursor:wait;transform:none; }
+    .message { min-height:21px;margin:15px 0 0;font-size:13px;line-height:1.45;text-align:center;color:var(--muted); } .message.error { color:var(--red); } .message.success { color:var(--green); } .terms { text-align:center;color:#8492a5;font-size:11px;line-height:1.5;margin:20px 18px 0; }
+    @media(max-width:760px){ .page{display:block}.brand-panel{display:none}.form-panel{min-height:100vh;padding:24px}.mobile-brand{display:flex;margin-bottom:50px}.form-wrap{width:min(100%,420px)} }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="brand-panel" aria-label="KTS Academy student portal">
+      <a class="brand" href="index.html"><span class="mark">K</span>KTS Academy</a>
+      <div class="welcome"><span class="tag">JEE &amp; NEET preparation</span><h1>Learn with purpose.<br>Achieve with confidence.</h1><p>One secure place for your courses, test series, progress, and personalized preparation journey.</p></div>
+      <div class="benefits"><span><i></i> Expert faculty</span><span><i></i> Mock tests</span><span><i></i> Personal mentoring</span></div>
+    </section>
+    <section class="form-panel"><div class="form-wrap">
+      <a class="brand mobile-brand" href="index.html"><span class="mark">K</span>KTS Academy</a>
+      <h2 id="formTitle">Welcome back</h2><p class="subtitle" id="formSubtitle">Sign in to continue your JEE or NEET preparation.</p>
+      <div class="tabs" role="tablist"><button class="tab active" data-target="signIn" role="tab">Sign in</button><button class="tab" data-target="signUp" role="tab">Create account</button></div>
+      <form id="signIn" class="active" novalidate>
+        <div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><div class="password-row"><label for="loginPassword">Password</label><button type="button" class="link" id="resetPassword">Forgot password?</button></div><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6"></div>
+        <button class="submit" type="submit">Sign in to portal →</button>
+      </form>
+      <form id="signUp" novalidate>
+        <div class="field"><label for="signupName">Full name</label><input id="signupName" type="text" autocomplete="name" placeholder="Your full name" required></div>
+        <div class="field"><label for="signupEmail">Email address</label><input id="signupEmail" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="signupPassword">Create password</label><input id="signupPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" required minlength="6"></div>
+        <button class="submit" type="submit">Create my account →</button>
+      </form>
+      <p class="message" id="message" role="status"></p><p class="terms">By continuing, you agree to use this portal only for your own preparation.</p>
+    </div></section>
+  </main>
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+    import { doc, serverTimestamp, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    const message = document.getElementById('message'); const title = document.getElementById('formTitle'); const subtitle = document.getElementById('formSubtitle');
+    const params = new URLSearchParams(window.location.search);
+    const requestedRedirect = params.get('redirect');
+    const safeRedirect = (() => {
+      if (!requestedRedirect) return 'index.html';
+      if (/^tel:\+?[0-9]+$/.test(requestedRedirect)) return requestedRedirect;
+      try {
+        const destination = new URL(requestedRedirect, window.location.href);
+        if (destination.origin !== window.location.origin) return 'index.html';
+        return `${destination.pathname}${destination.search}${destination.hash}`;
+      } catch {
+        return 'index.html';
+      }
+    })();
+    const errorText = (error) => ({'auth/invalid-credential':'Incorrect email or password.','auth/email-already-in-use':'An account already exists for this email.','auth/weak-password':'Choose a password with at least 6 characters.','auth/invalid-email':'Enter a valid email address.','auth/too-many-requests':'Too many attempts. Please try again later.','auth/unauthorized-domain':'Open this portal through the local web address, not by double-clicking the HTML file.'}[error.code] || `Something went wrong: ${error.code || error.message}`);
+    function showMessage(text, kind=''){ message.textContent=text; message.className='message '+kind; }
+    function loading(button, active){ button.disabled=active; button.textContent=active?'Please wait…':button.dataset.label; }
+    function selectTab(target) { document.querySelectorAll('.tab').forEach(item=>item.classList.toggle('active',item.dataset.target===target)); document.querySelectorAll('form').forEach(form=>form.classList.toggle('active',form.id===target)); title.textContent=target==='signIn'?'Welcome back':'Start your journey'; subtitle.textContent=target==='signIn'?'Sign in to continue your JEE or NEET preparation.':'Create your KTS student profile and access your courses.'; showMessage(''); }
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => selectTab(tab.dataset.target)));
+    if (params.get('mode') === 'signup') selectTab('signUp');
+    document.querySelectorAll('.submit').forEach(button=>button.dataset.label=button.textContent);
+    document.getElementById('signIn').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const email=document.getElementById('loginEmail').value.trim(); const password=document.getElementById('loginPassword').value; if(!email||!password){showMessage('Enter your email and password.','error');return;} loading(button,true); try { await signInWithEmailAndPassword(auth,email,password); showMessage('Signed in. Opening your course…','success'); window.location.href=safeRedirect; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('signUp').addEventListener('submit', async event => { event.preventDefault(); const button=event.submitter; const name=document.getElementById('signupName').value.trim(); const email=document.getElementById('signupEmail').value.trim(); const password=document.getElementById('signupPassword').value; if(!name||!email||password.length<6){showMessage('Complete all fields; passwords need at least 6 characters.','error');return;} loading(button,true); try { const credential=await createUserWithEmailAndPassword(auth,email,password); await setDoc(doc(db,'users',credential.user.uid),{username:name,email,role:'student',batch:'KTS Academy Student',createdAt:serverTimestamp(),profileCompleted:true}); showMessage('Your account is ready. Opening your course…','success'); window.location.href=safeRedirect; } catch(error){showMessage(errorText(error),'error');loading(button,false);} });
+    document.getElementById('resetPassword').addEventListener('click', async () => { const email=document.getElementById('loginEmail').value.trim(); if(!email){showMessage('Enter your email address first, then choose Forgot password.','error');return;} try { await sendPasswordResetEmail(auth,email); showMessage('Password-reset link sent. Check your inbox.','success'); } catch(error){showMessage(errorText(error),'error');} });
+    onAuthStateChanged(auth,user=>{ if(user && !message.textContent) window.location.href=safeRedirect; });
+  </script>
+</body>
+</html>

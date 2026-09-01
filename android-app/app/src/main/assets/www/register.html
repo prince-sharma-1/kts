@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now | KTS Academy</title>
+    <link rel="stylesheet" href="kts style.css"> <style>
+        .enroll-container { max-width: 500px; margin: 50px auto; padding: 20px; background: #1a1a1a; color: white; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #333; background: #000; color: #fff; }
+        .btn-submit { width: 100%; padding: 12px; background: #00a8ff; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-submit:hover { background: #0086cc; }
+    </style>
+</head>
+<body>
+
+<div class="enroll-container">
+    <h2>Student Enrollment 2026-27</h2>
+    <p>Complete the form below to secure your seat in the **Power Batch**.</p>
+    <hr>
+    <form id="enrollForm">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="studentName" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="studentPhone" placeholder="Enter mobile number" required>
+        </div>
+        <div class="form-group">
+            <label>Target Course</label>
+            <select id="course">
+                <option value="NEET Power Batch">NEET Power Batch</option>
+                <option value="JEE Velocity Batch">JEE Velocity Batch</option>
+            </select>
+        </div>
+        <button type="submit" class="btn-submit">Submit Enrollment</button>
+    </form>
+    <div id="status"></div>
+</div>
+
+<script type="module">
+  import { db } from './firebase.js';
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const enrollForm = document.getElementById('enrollForm');
+  
+  enrollForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('status');
+    
+    try {
+      await addDoc(collection(db, "enrollments"), {
+        name: document.getElementById('studentName').value,
+        phone: document.getElementById('studentPhone').value,
+        course: document.getElementById('course').value,
+        timestamp: new Date()
+      });
+      status.innerText = "Enrollment Successful! We will contact you shortly.";
+      status.style.color = "#00ff00";
+      enrollForm.reset();
+    } catch (error) {
+      status.innerText = "Error: " + error.message;
+      status.style.color = "#ff0000";
+    }
+  });
+</script>
+
+</body>
+</html>

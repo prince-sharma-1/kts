@@ -1,0 +1,31 @@
+{
+  "test_title": "Aspire Mock Test - Unit 01",
+  "subject": "Physics",
+  "duration_minutes": 180,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "A particle moves in a straight line with a constant acceleration. If it covers 10m in the first 2s, what is its acceleration?",
+      "options": ["2.5 m/s²", "5.0 m/s²", "7.5 m/s²", "10 m/s²"],
+      "correct_index": 1,
+      "explanation": "Using $s = ut + 1/2at^2$, where $u=0$, $10 = 0.5 * a * 4$, hence $a = 5$."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "Which of the following is the SI unit of luminous intensity?",
+      "options": ["Mole", "Ampere", "Candela", "Kelvin"],
+      "correct_index": 2,
+      "explanation": "Candela is the base SI unit for luminous intensity."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "The dimensions of Planck's constant are the same as those of:",
+      "options": ["Energy", "Linear Momentum", "Angular Momentum", "Force"],
+      "correct_index": 2,
+      "explanation": "Both Planck's constant ($h$) and Angular Momentum ($L$) have dimensions $[M L^2 T^{-1}]$."
+    }
+  ]
+}

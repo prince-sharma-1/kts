@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-venture="academy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPIRE Exam Engine | KTS Academy</title>
+    <script type="module" src="auth-guard.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --sidebar-bg: #1e293b;
+            --accent-cyan: #0ea5e9;
+            --text-main: #f8fafc;
+            --btn-hover: #0284c7;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header / Timer Bar */
+        .exam-header {
+            position: fixed;
+            top: 0; width: 100%;
+            height: 60px;
+            background: #111827;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            border-bottom: 2px solid var(--accent-cyan);
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        /* Main Layout */
+        .main-content {
+            margin-top: 60px;
+            display: flex;
+            width: 100%;
+        }
+
+        /* Question Area */
+        .question-section {
+            flex: 3;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        .question-box {
+            background: var(--sidebar-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .option-item {
+            background: #0f172a;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option-item:hover { border-color: var(--accent-cyan); }
+
+        /* Sidebar / Palette */
+        .sidebar {
+            flex: 1;
+            background: var(--sidebar-bg);
+            border-left: 1px solid #334155;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .q-num {
+            width: 40px;
+            height: 40px;
+            background: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .q-num.active { background: var(--accent-cyan); color: white; }
+
+        .footer-btns {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 75%;
+            padding: 1.5rem;
+            background: #111827;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-next { background: var(--accent-cyan); color: white; }
+        .btn-clear { background: #475569; color: white; }
+        .btn-submit { background: #059669; color: white; margin-left: auto; }
+    </style>
+</head>
+<body>
+
+    <div class="exam-header">
+        <div><strong>KTS Academy:</strong> Aspire Mock Test 04</div>
+        <div id="timer" style="font-size: 1.2rem; color: var(--accent-cyan); font-weight: bold;">Time Left: 02:59:59</div>
+    </div>
+
+    <div class="main-content">
+        <div class="question-section">
+            <div class="question-box">
+                <span style="color: var(--accent-cyan)">Question 01</span>
+                <p id="q-text" style="font-size: 1.1rem; line-height: 1.6;">
+                    A ball is thrown vertically upward with a velocity of 20 m/s from the top of a multistorey building. 
+                    The height of the point from where the ball is thrown is 25.0 m from the ground. 
+                    How high will the ball rise? (Take $g = 10 \text{ m/s}^2$)
+                </p>
+                
+                <div class="option-item"><input type="radio" name="q1"> A) 15 m</div>
+                <div class="option-item"><input type="radio" name="q1"> B) 20 m</div>
+                <div class="option-item"><input type="radio" name="q1"> C) 25 m</div>
+                <div class="option-item"><input type="radio" name="q1"> D) 45 m</div>
+            </div>
+
+            <div class="footer-btns">
+                <button class="btn btn-clear">Clear Response</button>
+                <button class="btn btn-next">Save & Next</button>
+                <button class="btn btn-submit">Submit Test</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Question Palette</h3>
+            <div class="palette-grid">
+                <div class="q-num active">1</div>
+                <div class="q-num">2</div>
+                <div class="q-num">3</div>
+                <div class="q-num">4</div>
+                <div class="q-num">5</div>
+                <div class="q-num">6</div>
+                <div class="q-num">7</div>
+                <div class="q-num">8</div>
+                <div class="q-num">9</div>
+                <div class="q-num">10</div>
+            </div>
+            
+            <div style="margin-top: auto; font-size: 0.8rem; color: var(--text-gray);">
+                <p>🟢 Answered</p>
+                <p>⚪ Not Visited</p>
+                <p>🔴 Marked for Review</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple 3-hour timer logic
+        let time = 180 * 60;
+        const timerEl = document.getElementById('timer');
+
+        setInterval(() => {
+            let hours = Math.floor(time / 3600);
+            let mins = Math.floor((time % 3600) / 60);
+            let secs = time % 60;
+            timerEl.innerHTML = `Time Left: ${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            if(time > 0) time--;
+        }, 1000);
+    </script>
+
+</body>
+</html>

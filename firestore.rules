@@ -62,5 +62,28 @@ service cloud.firestore {
         && request.resource.data.venture == 'academy';
       allow delete: if false;
     }
+
+    match /counseling_requests/{requestId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'name', 'email', 'phone', 'goal', 'studentClass', 'message',
+          'venture', 'status', 'timestamp'
+        ])
+        && request.resource.data.venture == 'academy'
+        && request.resource.data.status == 'new'
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 100
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 150
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() >= 10
+        && request.resource.data.phone.size() <= 15
+        && request.resource.data.goal in ['jee', 'neet', 'foundation']
+        && request.resource.data.studentClass in ['9', '10', '11', '12', 'dropper']
+        && request.resource.data.message is string
+        && request.resource.data.message.size() <= 1000
+        && request.resource.data.timestamp is timestamp;
+      allow read, update, delete: if false;
+    }
   }
 }
