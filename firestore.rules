@@ -10,6 +10,28 @@ service cloud.firestore {
       return ventureId in ['academy', 'education', 'scorehigh', 'it', 'marketing'];
     }
 
+    function staffRole() {
+      return request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
+          in ['enterprise_owner', 'operations_manager', 'business_development', 'developer', 'specialist'];
+    }
+
+    function operationsManagerOrOwner() {
+      return request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
+          in ['enterprise_owner', 'operations_manager'];
+    }
+
+    function canReadEnterpriseRecord(record) {
+      return operationsManagerOrOwner()
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
+          && record.accessGroup == 'sales')
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['developer', 'specialist']
+          && record.accessGroup == 'delivery');
+    }
+
     match /users/{userId} {
       allow create: if request.auth != null
         && request.auth.uid == userId
@@ -19,9 +41,52 @@ service cloud.firestore {
         && request.auth.uid == userId
         && validVenture(request.resource.data.venture)
         && (
+          ('role' in resource.data && request.resource.data.role == resource.data.role)
+          || (!('role' in resource.data) && !('role' in request.resource.data))
+        )
+        && (
           !('venture' in resource.data)
           || request.resource.data.venture == resource.data.venture
         );
+    }
+
+    // Shared KTS Enterprise operations records. Academy and Digital Solutions
+    // live in this same Firebase project's Firestore database.
+    match /enterpriseOperations/{recordId} {
+      allow read: if staffRole() && canReadEnterpriseRecord(resource.data);
+      allow create: if request.resource.data.organization == 'KTS Enterprise'
+        && request.resource.data.venture in ['academy', 'digital']
+        && operationsManagerOrOwner()
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
+          && request.resource.data.organization == 'KTS Enterprise'
+          && request.resource.data.venture == 'digital'
+          && request.resource.data.type == 'lead'
+          && request.resource.data.accessGroup == 'sales');
+      allow update: if request.resource.data.organization == 'KTS Enterprise'
+        && operationsManagerOrOwner()
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
+          && resource.data.venture == 'digital'
+          && resource.data.accessGroup == 'sales'
+          && request.resource.data.organization == 'KTS Enterprise'
+          && request.resource.data.venture == 'digital'
+          && request.resource.data.type == 'lead'
+          && request.resource.data.accessGroup == 'sales')
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['developer', 'specialist']
+          && resource.data.venture == 'digital'
+          && resource.data.accessGroup == 'delivery'
+          && request.resource.data.organization == 'KTS Enterprise'
+          && request.resource.data.venture == 'digital'
+          && request.resource.data.type == 'project'
+          && request.resource.data.accessGroup == 'delivery');
+      allow delete: if operationsManagerOrOwner()
+        || (request.auth != null
+          && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
+          && resource.data.venture == 'digital'
+          && resource.data.type == 'lead'
+          && resource.data.accessGroup == 'sales');
     }
 
     match /tests/{testId} {
