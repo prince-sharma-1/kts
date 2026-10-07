@@ -1,5 +1,15 @@
 (() => {
   const origin = 'https://www.ktsacademy.in';
+  const path = decodeURIComponent(window.location.pathname).toLowerCase();
+  const educationPages = ['kts education center.html','adca.html','advance_tally.html','ai.html','block_chain_tech.html','ccc.html','cloud_computing.html','cybersecurity.html','data_science.html','digital_marketing.html','graphic_designing.html','java.html','mobile_app_dev.html','o level.html','project_management.html','python.html','soft_skill.html','web_developement.html'];
+  const favicon = path.includes('score high') ? 'favicon-scorehigh.svg'
+    : path.includes('kts_it_') || path.includes('kts_talent_') ? 'favicon-it.svg'
+    : path.includes('kts group') ? 'favicon-enterprise.svg'
+    : educationPages.some(page => path.endsWith(`/${page}`)) ? 'favicon-education.svg'
+    : 'favicon-academy.svg';
+  let icon = document.head.querySelector('link[rel="icon"]');
+  if (!icon) { icon = document.createElement('link'); icon.rel = 'icon'; icon.type = 'image/svg+xml'; document.head.appendChild(icon); }
+  icon.href = favicon;
   const pageData = {
     '/': ['KTS Academy | JEE & NEET Coaching in Etawah', 'Prepare for JEE and NEET with KTS Academy in Etawah. Explore batches, expert guidance, demo classes, and counselling.'],
     '/index.html': ['KTS Academy | JEE & NEET Coaching in Etawah', 'Prepare for JEE and NEET with KTS Academy in Etawah. Explore batches, expert guidance, demo classes, and counselling.'],

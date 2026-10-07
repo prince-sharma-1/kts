@@ -97,3 +97,4 @@ onAuthStateChanged(auth, async currentUser => {
     showMessage('We could not verify your KTS staff access. Please try again or contact your administrator.');
   }
 });
+const favicon=document.createElement('link');favicon.rel='icon';favicon.type='image/svg+xml';favicon.href='favicon-enterprise.svg';document.head.appendChild(favicon);

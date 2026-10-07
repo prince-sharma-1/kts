@@ -7,6 +7,8 @@ document.documentElement.style.visibility = 'hidden';
 const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 const returnTo = `${currentFile}${window.location.search}${window.location.hash}`;
 const venture = document.documentElement.dataset.venture || 'academy';
+const faviconByVenture={academy:'favicon-academy.svg',education:'favicon-education.svg',scorehigh:'favicon-scorehigh.svg',it:'favicon-it.svg',marketing:'favicon-marketing.svg'};
+const favicon=document.createElement('link');favicon.rel='icon';favicon.type='image/svg+xml';favicon.href=faviconByVenture[venture]||faviconByVenture.academy;document.head.appendChild(favicon);
 const portalPages = { academy:'academy-login.html', education:'education-login.html', scorehigh:'score-high-login.html', it:'it-login.html', marketing:'marketing-login.html' };
 const portalPage = portalPages[venture] || portalPages.academy;
 const loginUrl = `${portalPage}?redirect=${encodeURIComponent(returnTo)}`;

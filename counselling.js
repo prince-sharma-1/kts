@@ -1,6 +1,12 @@
 import { db } from './firebase.js';
 import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
+const favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/svg+xml';
+favicon.href = 'favicon-academy.svg';
+document.head.appendChild(favicon);
+
 const form = document.querySelector('#counsellingForm');
 const status = document.querySelector('#formStatus');
 const submit = form.querySelector('.submit-button');

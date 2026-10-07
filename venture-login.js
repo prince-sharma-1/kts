@@ -13,6 +13,8 @@ const portals = {
 const venture = document.body.dataset.venture;
 const portal = portals[venture];
 if (!portal) throw new Error('Unknown KTS venture portal.');
+const faviconByVenture={academy:'favicon-academy.svg',education:'favicon-education.svg',scorehigh:'favicon-scorehigh.svg',it:'favicon-it.svg',marketing:'favicon-marketing.svg'};
+const favicon=document.createElement('link');favicon.rel='icon';favicon.type='image/svg+xml';favicon.href=faviconByVenture[venture];document.head.appendChild(favicon);
 
 const params = new URLSearchParams(location.search);
 const safeRedirect = (() => {
