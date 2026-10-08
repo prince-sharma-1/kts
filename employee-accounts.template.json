@@ -1,0 +1,36 @@
+{
+  "purpose": "Template for provisioning KTS Enterprise employee profiles in Firebase Authentication and Cloud Firestore.",
+  "instructions": [
+    "Create the employee in Firebase Authentication first.",
+    "Copy the Firebase Authentication UID.",
+    "In Firestore, create a document inside the users collection using that UID as the document ID.",
+    "Copy only the profile fields below into that Firestore document.",
+    "Never store employee passwords in this file or commit real employee personal data to the repository."
+  ],
+  "allowedRoles": [
+    "enterprise_owner",
+    "operations_manager",
+    "business_development",
+    "developer",
+    "specialist"
+  ],
+  "allowedVentures": [
+    "academy",
+    "education",
+    "scorehigh",
+    "it",
+    "marketing"
+  ],
+  "employeeTemplate": {
+    "firebaseAuthUid": "REPLACE_WITH_FIREBASE_AUTH_UID",
+    "firestoreCollection": "users",
+    "firestoreDocumentId": "REPLACE_WITH_THE_SAME_FIREBASE_AUTH_UID",
+    "profile": {
+      "email": "employee@example.com",
+      "username": "Employee Name",
+      "role": "operations_manager",
+      "venture": "academy",
+      "active": true
+    }
+  }
+}
