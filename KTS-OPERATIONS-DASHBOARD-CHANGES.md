@@ -1,6 +1,6 @@
 # KTS Operations Dashboard — Change Log
 
-Last updated: 8 October 2026
+Last updated: 9 October 2026
 
 ## Overview
 
@@ -25,12 +25,15 @@ This document records the employee-access and operations-dashboard work complete
 - Primary venture: `academy`
 - Managed ventures: `academy`, `education`, `scorehigh`, `it`, `marketing`, and `digital`
 - Account status: active
-- The existing Firebase Authentication account was connected to a new matching Firestore employee profile.
+- A Firebase Authentication account was created and linked to the matching Firestore profile at `users/bY1nvxeVekYD1N1MZ7eak0TWRhm1`.
+- The earlier standalone Firestore profile at `users/MQPfEGVGzbPWqGto2C18IWmsjNx2` was preserved for safe review and was not deleted.
+- The temporary password is intentionally not stored in this file.
 - This role receives full KTS Enterprise Operations access, including Academy operations, Digital projects, sales pipeline records, daily tracking, project reports, approvals, and management controls.
 
 ## Employee login and dashboard access
 
 - The employee portal validates the authenticated user's Firestore role before granting access.
+- Dashboard navigation was hardened on 9 October 2026: menu buttons now use explicit button types, the mobile drawer has a dismissible backdrop and Escape-key support, and the dashboard script is cache-busted so signed-in users receive the corrected controls immediately.
 - Approved staff roles are:
   - `enterprise_owner`
   - `operations_manager`
