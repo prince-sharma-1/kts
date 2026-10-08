@@ -17,6 +17,17 @@ This document records the employee-access and operations-dashboard work complete
 - Firebase Authentication and the matching `users/{uid}` Firestore profile were created.
 - The temporary password is intentionally not stored in this file.
 
+### Enterprise Owner account
+
+- Employee: Prince Sharma
+- Work email: `sharmaprince768@gmail.com`
+- Role: `enterprise_owner`
+- Primary venture: `academy`
+- Managed ventures: `academy`, `education`, `scorehigh`, `it`, `marketing`, and `digital`
+- Account status: active
+- The existing Firebase Authentication account was connected to a new matching Firestore employee profile.
+- This role receives full KTS Enterprise Operations access, including Academy operations, Digital projects, sales pipeline records, daily tracking, project reports, approvals, and management controls.
+
 ## Employee login and dashboard access
 
 - The employee portal validates the authenticated user's Firestore role before granting access.
