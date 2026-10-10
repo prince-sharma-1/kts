@@ -33,6 +33,17 @@ service cloud.firestore {
         );
     }
 
+    function itStaff() {
+      return staffRole()
+        && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.venture == 'it'
+          || (
+            'managedVentures' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+            && 'it' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data.managedVentures
+          )
+        );
+    }
+
     function canReadEnterpriseRecord(record) {
       return operationsManagerOrOwner()
         || (request.auth != null
@@ -107,6 +118,58 @@ service cloud.firestore {
       allow create, update: if educationManagerOrOwner()
         && request.resource.data.organization == 'KTS Education Center'
         && request.resource.data.venture == 'education';
+      allow delete: if false;
+    }
+
+    // KTS IT Solutions recruitment CRM. Access remains isolated to staff
+    // explicitly assigned to the IT venture.
+    match /itCrm/{documentId} {
+      allow read: if itStaff();
+      allow create, update: if itStaff()
+        && request.resource.data.organization == 'KTS IT Solutions'
+        && request.resource.data.venture == 'it';
+      allow delete: if false;
+    }
+
+    match /itEmployerLeads/{leadId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'name', 'company', 'phone', 'email', 'role', 'model', 'details',
+          'status', 'source', 'venture', 'createdAt'
+        ])
+        && request.resource.data.venture == 'it'
+        && request.resource.data.status == 'new'
+        && request.resource.data.source == 'it-homepage'
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 100
+        && request.resource.data.company is string
+        && request.resource.data.company.size() >= 2
+        && request.resource.data.company.size() <= 120
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() >= 8
+        && request.resource.data.phone.size() <= 18
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 150
+        && request.resource.data.role is string
+        && request.resource.data.role.size() >= 2
+        && request.resource.data.role.size() <= 120
+        && request.resource.data.model is string
+        && request.resource.data.model.size() <= 80
+        && request.resource.data.details is string
+        && request.resource.data.details.size() <= 1000
+        && request.resource.data.createdAt is timestamp;
+      allow read, update: if itStaff();
+      allow delete: if false;
+    }
+
+    match /itCandidateProfiles/{userId} {
+      allow create, update: if request.auth != null
+        && request.auth.uid == userId
+        && belongsTo('it')
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.venture == 'it';
+      allow read: if (request.auth != null && request.auth.uid == userId && belongsTo('it'))
+        || itStaff();
       allow delete: if false;
     }
 

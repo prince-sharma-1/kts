@@ -23,7 +23,7 @@ function clearMessage() {
 function goToWorkspace() {
   const requested = new URLSearchParams(location.search).get('redirect');
   // Employee sessions may only redirect to approved staff workspaces on this site.
-  const approvedWorkspaces = new Set(['kts-enterprise-operations.html', 'kts-education-crm.html']);
+  const approvedWorkspaces = new Set(['kts-enterprise-operations.html', 'kts-education-crm.html', 'kts-it-crm.html']);
   location.replace(approvedWorkspaces.has(requested) ? requested : 'kts-enterprise-operations.html');
 }
 

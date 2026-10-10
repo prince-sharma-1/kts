@@ -29,6 +29,8 @@ Created: 10 October 2026
 - The KTS Education Center footer routes employees through the employee login page and safely returns them to the CRM.
 - Student rows now include an Edit action for name, phone, course, batch, joining date, status and course progress.
 - Student edits use the same `educationCrm/main` Firestore synchronization path as new student records.
+- Education Center login now routes active Education `operations_manager` and `enterprise_owner` accounts directly to `kts-education-crm.html` instead of the generic Enterprise Operations dashboard.
+- When an approved employee such as Yash is already signed in, the Education Center homepage changes “Student login” to “Staff dashboard” and links directly to the CRM.
 
 ## Sample-data notice
 

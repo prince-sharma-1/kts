@@ -1,0 +1,1 @@
+const role=document.body.dataset.role;document.querySelectorAll('[data-role]').forEach(x=>x.textContent=role);document.querySelectorAll('[data-enquire]').forEach(x=>x.href=`kts_it_home.html#contact`);document.getElementById('year').textContent=new Date().getFullYear();

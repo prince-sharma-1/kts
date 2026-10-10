@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#12233f">
   <title>KTS Education Center CRM</title>
-  <script>document.documentElement.classList.add('crm-auth-pending')</script><style>.crm-auth-pending body{visibility:hidden}.sidebar-foot .logout-button{width:100%;margin-top:12px;padding:9px;border:1px solid #354967;border-radius:8px;background:transparent;color:#e9f1ff;font-weight:700;text-align:left}</style>
+  <script>document.documentElement.classList.add('crm-auth-pending');try{if(localStorage.getItem('ktsEducationCrmTheme')==='dark')document.documentElement.dataset.theme='dark'}catch{}</script><style>.crm-auth-pending body{visibility:hidden}.sidebar-foot .logout-button{width:100%;margin-top:12px;padding:9px;border:1px solid #354967;border-radius:8px;background:transparent;color:#e9f1ff;font-weight:700;text-align:left}</style>
   <link rel="icon" type="image/svg+xml" href="favicon-education.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +31,7 @@
         <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
         <div><small>KTS Education Center</small><strong id="pageTitle">Dashboard</strong></div>
         <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search name, phone or course" aria-label="Search records"></label>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><span aria-hidden="true">☾</span></button>
         <button class="primary" id="quickAdd">＋ Add enquiry</button>
         <div class="profile"><span id="staffInitials">KS</span><div><b id="staffName">KTS Staff</b><small id="staffRole">Verifying access…</small></div></div>
       </header>
@@ -40,6 +41,6 @@
   <div id="modalRoot"></div>
   <div id="toastRoot" aria-live="polite"></div>
   <script type="module" src="education-crm-guard.js?v=20261010-2"></script>
-  <script type="module" src="kts-education-crm.js?v=20261010-2"></script>
+  <script type="module" src="kts-education-crm.js?v=20261010-4"></script>
 </body>
 </html>

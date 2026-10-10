@@ -6,7 +6,7 @@ const portals = {
   academy: { name:'KTS Academy', mark:'A+', audience:'JEE & NEET students', home:'index.html', destination:'index.html' },
   education: { name:'KTS Education Center', mark:'</>', audience:'career-course learners', home:'kts education center.html', destination:'kts education center.html' },
   scorehigh: { name:'Score High', mark:'SH', audience:'banking aspirants', home:'Score High.html', destination:'Testseries.html' },
-  it: { name:'KTS IT Solutions', mark:'IT', audience:'technology candidates', home:'kts_it_home.html', destination:'kts_it_home.html' },
+  it: { name:'KTS IT Solutions', mark:'IT', audience:'technology candidates', home:'kts_it_home.html', destination:'it-candidate-profile.html' },
   marketing: { name:'KTS Digital Marketing', mark:'DM', audience:'marketing candidates and clients', home:'kts group.html#ventures', destination:'marketing-portal.html' }
 };
 
@@ -14,7 +14,12 @@ const venture = document.body.dataset.venture;
 const portal = portals[venture];
 if (!portal) throw new Error('Unknown KTS venture portal.');
 const staffRoles = new Set(['enterprise_owner', 'operations_manager', 'business_development', 'developer', 'specialist']);
-const staffDestination = 'kts-enterprise-operations.html';
+const staffDestinationFor = profile => venture === 'education'
+  && ['enterprise_owner', 'operations_manager'].includes(profile?.role)
+  ? 'kts-education-crm.html'
+  : venture === 'it'
+    ? 'kts-it-crm.html'
+    : 'kts-enterprise-operations.html';
 const faviconByVenture={academy:'favicon-academy.svg',education:'favicon-education.svg',scorehigh:'favicon-scorehigh.svg',it:'favicon-it.svg',marketing:'favicon-marketing.svg'};
 const favicon=document.createElement('link');favicon.rel='icon';favicon.type='image/svg+xml';favicon.href=faviconByVenture[venture];document.head.appendChild(favicon);
 
@@ -43,7 +48,7 @@ if(params.get('error')==='wrong-venture')show(`This account belongs to another K
 
 const inferLegacyVenture=profile=>profile?.venture || (profile?.batch==='KTS Academy Student'?'academy':profile?.batch==='Banking Aspirant'?'scorehigh':null);
 async function verifyMembership(user){const ref=doc(db,'users',user.uid),snapshot=await getDoc(ref),profile=snapshot.exists()?snapshot.data():null;const assigned=inferLegacyVenture(profile),isStaff=staffRoles.has(profile?.role),managedVentures=Array.isArray(profile?.managedVentures)?profile.managedVentures:[],hasVentureAccess=assigned===venture||(isStaff&&managedVentures.includes(venture));if(assigned&&!hasVentureAccess){await signOut(auth);throw Object.assign(new Error('wrong-venture'),{code:'venture/wrong-portal'});}if(!assigned){const createdProfile={email:user.email,venture,role:venture==='it'?'candidate':'student',createdAt:serverTimestamp(),profileCompleted:false};await setDoc(ref,createdProfile,{merge:true});return createdProfile;}if(!profile.venture)await setDoc(ref,{venture},{merge:true});return {...profile,venture:profile.venture||venture};}
-const destinationFor=profile=>staffRoles.has(profile?.role)?staffDestination:safeRedirect;
+const destinationFor=profile=>staffRoles.has(profile?.role)?staffDestinationFor(profile):safeRedirect;
 const errorText=error=>error.code==='venture/wrong-portal'?`This account is registered with another KTS venture. Open that venture’s login portal.`:({'auth/invalid-credential':'Incorrect email or password.','auth/email-already-in-use':'An account already exists for this email.','auth/weak-password':'Choose a password with at least 6 characters.','auth/invalid-email':'Enter a valid email address.','auth/too-many-requests':'Too many attempts. Please try again later.'}[error.code]||'Unable to continue. Please try again.');
 
 document.querySelector('#signIn').addEventListener('submit',async event=>{event.preventDefault();const button=event.submitter,email=document.querySelector('#loginEmail').value.trim(),password=document.querySelector('#loginPassword').value;if(!email||!password){show('Enter your email and password.','error');return;}setLoading(button,true);try{const credential=await signInWithEmailAndPassword(auth,email,password),profile=await verifyMembership(credential.user);show(staffRoles.has(profile?.role)?'Signed in. Opening your staff dashboard…':'Signed in. Opening your portal…','success');location.href=destinationFor(profile);}catch(error){show(errorText(error),'error');setLoading(button,false);}});

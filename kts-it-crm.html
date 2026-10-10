@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <title>KTS IT Solutions CRM</title>
+  <script>document.documentElement.classList.add('crm-auth-pending');try{if(localStorage.getItem('ktsItCrmTheme')==='dark')document.documentElement.dataset.theme='dark'}catch{}</script>
+  <style>.crm-auth-pending body{visibility:hidden}</style>
+  <link rel="icon" type="image/svg+xml" href="favicon-it.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kts-education-crm.css">
+  <link rel="stylesheet" href="kts-it-crm.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="kts_it_home.html"><span class="it-brand-mark">KTS</span><span>KTS IT Solutions<small>TALENT CRM</small></span></a>
+      <nav id="crmNav" aria-label="IT CRM navigation">
+        <button class="active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button data-view="candidates"><span>♙</span> Candidates <b id="candidateBadge">0</b></button>
+        <button data-view="leads"><span>◎</span> Employer leads <b id="leadBadge">0</b></button>
+        <button data-view="clients"><span>◇</span> Clients</button>
+        <button data-view="roles"><span>▣</span> Open roles</button>
+        <button data-view="interviews"><span>◷</span> Interviews</button>
+        <button data-view="tasks"><span>✓</span> Tasks</button>
+      </nav>
+      <div class="sidebar-foot"><p>IT recruitment workspace</p><small>Records synchronize with KTS Firestore.</small><a href="kts-enterprise-operations.html">← Enterprise operations</a><button class="logout-button" id="crmLogout" type="button">Sign out</button></div>
+    </aside>
+    <button class="backdrop" id="backdrop" aria-label="Close menu"></button>
+    <main>
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+        <div><small>KTS IT Solutions</small><strong id="pageTitle">Dashboard</strong></div>
+        <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search candidates, clients or skills" aria-label="Search CRM records"></label>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
+        <button class="primary" id="quickAdd">＋ Add candidate</button>
+        <div class="profile"><span id="staffInitials">KS</span><div><b id="staffName">KTS Staff</b><small id="staffRole">Verifying access…</small></div></div>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+  <div id="modalRoot"></div><div id="toastRoot" aria-live="polite"></div>
+  <script type="module" src="it-crm-guard.js?v=20261010-1"></script>
+  <script type="module" src="kts-it-crm.js?v=20261010-2"></script>
+</body>
+</html>
