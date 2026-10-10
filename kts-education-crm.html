@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#12233f">
   <title>KTS Education Center CRM</title>
-  <script>document.documentElement.classList.add('crm-auth-pending')</script><style>.crm-auth-pending body{visibility:hidden}</style>
+  <script>document.documentElement.classList.add('crm-auth-pending')</script><style>.crm-auth-pending body{visibility:hidden}.sidebar-foot .logout-button{width:100%;margin-top:12px;padding:9px;border:1px solid #354967;border-radius:8px;background:transparent;color:#e9f1ff;font-weight:700;text-align:left}</style>
   <link rel="icon" type="image/svg+xml" href="favicon-education.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
         <button data-view="fees"><span>₹</span> Fee tracking</button>
         <button data-view="followups"><span>✓</span> Follow-ups</button>
       </nav>
-      <div class="sidebar-foot"><p>Sample CRM workspace</p><small>Data is stored only in this browser.</small><a href="kts education center.html">← Education Center home</a></div>
+      <div class="sidebar-foot"><p>Education CRM workspace</p><small>Records synchronize with KTS Firestore.</small><a href="kts-enterprise-operations.html">← Enterprise operations</a><button class="logout-button" id="crmLogout" type="button">Sign out</button></div>
     </aside>
     <button class="backdrop" id="backdrop" aria-label="Close menu"></button>
     <main>
@@ -39,7 +39,7 @@
   </div>
   <div id="modalRoot"></div>
   <div id="toastRoot" aria-live="polite"></div>
-  <script type="module" src="education-crm-guard.js"></script>
-  <script type="module" src="kts-education-crm.js"></script>
+  <script type="module" src="education-crm-guard.js?v=20261010-2"></script>
+  <script type="module" src="kts-education-crm.js?v=20261010-2"></script>
 </body>
 </html>

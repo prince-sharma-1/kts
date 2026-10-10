@@ -25,6 +25,10 @@ Created: 10 October 2026
 - Yash Bhadauriya's existing `operations_manager` profile already includes the Education Center, so it is authorized without creating a duplicate account.
 - The employee login page supports a safe redirect back to `kts-education-crm.html` after successful authentication.
 - The CRM header displays the authenticated employee's name, initials and role instead of a hard-coded administrator.
+- The sidebar now includes a working Firebase Sign out button and a return link to KTS Enterprise Operations.
+- The KTS Education Center footer routes employees through the employee login page and safely returns them to the CRM.
+- Student rows now include an Edit action for name, phone, course, batch, joining date, status and course progress.
+- Student edits use the same `educationCrm/main` Firestore synchronization path as new student records.
 
 ## Sample-data notice
 

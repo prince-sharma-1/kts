@@ -16,6 +16,11 @@ function showWorkspace(user, profile) {
   document.documentElement.classList.remove('crm-auth-pending');
 }
 
+document.querySelector('#crmLogout').addEventListener('click', async () => {
+  await signOut(auth);
+  location.replace('employee-login.html?redirect=kts-education-crm.html');
+});
+
 onAuthStateChanged(auth, async user => {
   if (!user) {
     location.replace(loginUrl);
