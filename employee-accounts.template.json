@@ -22,14 +22,21 @@
     "marketing"
   ],
   "employeeTemplate": {
-    "firebaseAuthUid": "REPLACE_WITH_FIREBASE_AUTH_UID",
+    "firebaseAuthUid": "Sfujq7yLHQVFxnAtNZRxl1UWY3y2",
     "firestoreCollection": "users",
-    "firestoreDocumentId": "REPLACE_WITH_THE_SAME_FIREBASE_AUTH_UID",
+    "firestoreDocumentId": "Sfujq7yLHQVFxnAtNZRxl1UWY3y2",
     "profile": {
-      "email": "employee@example.com",
-      "username": "Employee Name",
+      "email": "yashbhadauriyaofficial@gmail.com",
+      "username": "Yash Bhadauriya",
       "role": "operations_manager",
       "venture": "academy",
+      "managedVentures": [
+        "academy",
+        "education",
+        "scorehigh",
+        "it",
+        "marketing"
+      ],
       "active": true
     }
   }
