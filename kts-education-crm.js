@@ -1,4 +1,9 @@
+import { db } from './firebase.js';
+import { doc, getDoc, serverTimestamp, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
 const STORAGE_KEY='ktsEducationCrmSampleV1';
+const CRM_REF=doc(db,'educationCrm','main');
+let firebaseReady=false,currentUser=null;
 const seed={
  enquiries:[
   {id:'E-1048',name:'Aarav Singh',phone:'9876543210',course:'ADCA',source:'Website',stage:'Counselling',owner:'Neha',next:'2026-10-10',created:'2026-10-08'},
@@ -25,7 +30,10 @@ const seed={
 let state=load(),view='dashboard',query='',filter='all';
 const $=s=>document.querySelector(s),content=$('#content');
 function load(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||structuredClone(seed)}catch{return structuredClone(seed)}}
-function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
+async function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state));if(!firebaseReady||!currentUser)return;try{await setDoc(CRM_REF,{organization:'KTS Education Center',venture:'education',state,updatedBy:currentUser.uid,updatedByEmail:currentUser.email||'',updatedAt:serverTimestamp()},{merge:true})}catch(error){console.error('CRM Firestore save failed:',error);toast('Could not sync with Firebase. Check CRM rules.')}}
+async function connectFirebase(session){if(firebaseReady)return;currentUser=session.user;try{const snapshot=await getDoc(CRM_REF);firebaseReady=true;if(snapshot.exists()&&snapshot.data().state){state=snapshot.data().state;localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}else{await save()}render();toast(snapshot.exists()?'CRM synced with Firebase':'Existing CRM data added to Firebase')}catch(error){console.error('CRM Firestore load failed:',error);toast('Firebase CRM data could not be loaded')}}
+window.addEventListener('kts-crm-authorized',event=>connectFirebase(event.detail));
+if(window.ktsEducationCrmSession)connectFirebase(window.ktsEducationCrmSession);
 const money=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n||0);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const initials=n=>n.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase();

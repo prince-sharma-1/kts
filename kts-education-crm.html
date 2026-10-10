@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#12233f">
   <title>KTS Education Center CRM</title>
+  <script>document.documentElement.classList.add('crm-auth-pending')</script><style>.crm-auth-pending body{visibility:hidden}</style>
   <link rel="icon" type="image/svg+xml" href="favicon-education.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +32,14 @@
         <div><small>KTS Education Center</small><strong id="pageTitle">Dashboard</strong></div>
         <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search name, phone or course" aria-label="Search records"></label>
         <button class="primary" id="quickAdd">＋ Add enquiry</button>
-        <div class="profile"><span>PS</span><div><b>Prince Sharma</b><small>Center Administrator</small></div></div>
+        <div class="profile"><span id="staffInitials">KS</span><div><b id="staffName">KTS Staff</b><small id="staffRole">Verifying access…</small></div></div>
       </header>
       <div class="content" id="content"></div>
     </main>
   </div>
   <div id="modalRoot"></div>
   <div id="toastRoot" aria-live="polite"></div>
-  <script src="kts-education-crm.js"></script>
+  <script type="module" src="education-crm-guard.js"></script>
+  <script type="module" src="kts-education-crm.js"></script>
 </body>
 </html>

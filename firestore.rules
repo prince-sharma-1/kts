@@ -22,6 +22,17 @@ service cloud.firestore {
           in ['enterprise_owner', 'operations_manager'];
     }
 
+    function educationManagerOrOwner() {
+      return operationsManagerOrOwner()
+        && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.venture == 'education'
+          || (
+            'managedVentures' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+            && 'education' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data.managedVentures
+          )
+        );
+    }
+
     function canReadEnterpriseRecord(record) {
       return operationsManagerOrOwner()
         || (request.auth != null
@@ -87,6 +98,16 @@ service cloud.firestore {
           && resource.data.venture == 'digital'
           && resource.data.type == 'lead'
           && resource.data.accessGroup == 'sales');
+    }
+
+    // Shared KTS Education Center CRM state. Only Education management and
+    // enterprise ownership can read or change these administrative records.
+    match /educationCrm/{documentId} {
+      allow read: if educationManagerOrOwner();
+      allow create, update: if educationManagerOrOwner()
+        && request.resource.data.organization == 'KTS Education Center'
+        && request.resource.data.venture == 'education';
+      allow delete: if false;
     }
 
     match /tests/{testId} {

@@ -18,6 +18,16 @@ Created: 10 October 2026
 - Follow-up task creation and completion
 - Search, stage filters and responsive mobile navigation
 
+## Employee access
+
+- The CRM now requires Firebase employee authentication.
+- Access is granted only to active `enterprise_owner` or `operations_manager` profiles that have `education` as their primary venture or inside `managedVentures`.
+- Yash Bhadauriya's existing `operations_manager` profile already includes the Education Center, so it is authorized without creating a duplicate account.
+- The employee login page supports a safe redirect back to `kts-education-crm.html` after successful authentication.
+- The CRM header displays the authenticated employee's name, initials and role instead of a hard-coded administrator.
+
 ## Sample-data notice
 
-This version is a front-end sample. Changes are saved in the current browser using `localStorage` under `ktsEducationCrmSampleV1`. It is not yet connected to Firebase and should not be used for sensitive or production student information until authentication, Firestore storage and security rules are added.
+The CRM is now configured to synchronize its complete state with Firestore at `educationCrm/main`. On the first authorized load, existing browser data under `ktsEducationCrmSampleV1` is migrated into that document if the Firebase document does not yet exist. Later changes are written to both Firestore and the browser cache.
+
+The updated `firestore.rules` was deployed to Firebase project `kts-academy-16860` on 10 October 2026. Active Education Center Operations Managers and Enterprise Owners can now read and update `educationCrm/main`; deletion remains disabled.
