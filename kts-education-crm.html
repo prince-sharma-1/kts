@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12233f">
+  <title>KTS Education Center CRM</title>
+  <link rel="icon" type="image/svg+xml" href="favicon-education.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kts-education-crm.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="kts education center.html"><img src="KTS EDUCENTER LOGO.png" alt=""><span>KTS Education Center<small>ADMISSIONS CRM</small></span></a>
+      <nav id="crmNav" aria-label="CRM navigation">
+        <button class="active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button data-view="enquiries"><span>◎</span> Enquiries <b id="leadBadge">0</b></button>
+        <button data-view="students"><span>♙</span> Students</button>
+        <button data-view="fees"><span>₹</span> Fee tracking</button>
+        <button data-view="followups"><span>✓</span> Follow-ups</button>
+      </nav>
+      <div class="sidebar-foot"><p>Sample CRM workspace</p><small>Data is stored only in this browser.</small><a href="kts education center.html">← Education Center home</a></div>
+    </aside>
+    <button class="backdrop" id="backdrop" aria-label="Close menu"></button>
+    <main>
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+        <div><small>KTS Education Center</small><strong id="pageTitle">Dashboard</strong></div>
+        <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search name, phone or course" aria-label="Search records"></label>
+        <button class="primary" id="quickAdd">＋ Add enquiry</button>
+        <div class="profile"><span>PS</span><div><b>Prince Sharma</b><small>Center Administrator</small></div></div>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" aria-live="polite"></div>
+  <script src="kts-education-crm.js"></script>
+</body>
+</html>
