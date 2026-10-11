@@ -4,6 +4,7 @@
   const educationPages = ['kts education center.html','adca.html','advance_tally.html','ai.html','block_chain_tech.html','ccc.html','cloud_computing.html','cybersecurity.html','data_science.html','digital_marketing.html','graphic_designing.html','java.html','mobile_app_dev.html','o level.html','project_management.html','python.html','soft_skill.html','web_developement.html'];
   const favicon = path.includes('score high') ? 'favicon-scorehigh.svg'
     : path.includes('kts_it_') || path.includes('kts_talent_') ? 'favicon-it.svg'
+    : path.includes('kts-digital-solution') ? 'favicon-digital-solution.svg'
     : path.includes('kts group') ? 'favicon-enterprise.svg'
     : educationPages.some(page => path.endsWith(`/${page}`)) ? 'favicon-education.svg'
     : 'favicon-academy.svg';
@@ -40,7 +41,8 @@
     '/project_management.html': ['Project Management Course in Etawah | KTS Education Center', 'Learn project management at KTS Education Center in Etawah. Explore practical training and course information.'],
     '/python.html': ['Python Course in Etawah | KTS Education Center', 'Learn Python programming at KTS Education Center in Etawah. Explore practical training and course information.'],
     '/Web_developement.html': ['Web Development Course in Etawah | KTS Education Center', 'Learn web development at KTS Education Center in Etawah. Explore practical training and course information.'],
-    '/kts%20group.html': ['KTS Enterprise | Education and Talent Solutions', 'Explore KTS Enterprise services, including education, talent solutions, and IT services in Etawah.'],
+    '/kts%20group.html': ['KTS Enterprise | Six Ventures for Learning and Business Growth', 'Explore six KTS ventures across education, career skills, banking exams, hiring, digital marketing and business software.'],
+    '/kts-digital-solution.html': ['KTS Digital Solution | Digitize. Automate. Grow.', 'Websites, CRM, custom software and workflow automation for education businesses and SMEs. Explore KTS Launch, Growth, Transform and Edu.'],
     '/kts_it_home.html': ['KTS IT Solutions | IT Services and Hiring', 'Explore IT services and hiring support from KTS IT Solutions.'],
     '/kts_talent_solution.html': ['KTS Talent Solutions | Recruitment and Hiring Support', 'Explore recruitment and talent-hiring support from KTS Talent Solutions.'],
     '/Score%20High.html': ['Score High | Banking Exam Preparation', 'Prepare for banking exams with Score High: practice resources, mock tests, and exam-preparation support.']
