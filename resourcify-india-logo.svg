@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="720" viewBox="140 175 745 680" role="img" aria-labelledby="title desc">
+  <title id="title">Resourcify India</title>
+  <desc id="desc">Blue supporting hands and a shield, with a green gear and leaf, above the Resourcify India wordmark. Vector recreation of the supplied brand image.</desc>
+  <defs><linearGradient id="blue" x1="360" y1="190" x2="650" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#1F7095"/><stop offset="1" stop-color="#104773"/></linearGradient><linearGradient id="green" x1="560" y1="280" x2="620" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#78B44B"/><stop offset="1" stop-color="#469E42"/></linearGradient></defs>
+  <g fill="none" stroke="url(#blue)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><path d="M657 259L513 197L367 258C360 339 390 408 450 456C486 425 515 380 526 326H376"/><path d="M480 215V326"/></g>
+  <path fill="url(#green)" fill-rule="evenodd" d="M600 270H616L620 281L630 285L640 279L652 291L646 302L650 313L661 317V333L650 337L646 347L652 357L640 369L630 363L620 367L616 378H600L596 367L585 363L575 369L563 357L569 347L565 337L554 333V317L565 313L569 302L563 291L575 279L585 285L596 281ZM609 297A24 24 0 1 0 609 345A24 24 0 1 0 609 297Z"/>
+  <path fill="url(#green)" d="M579 443C581 399 607 382 641 374C666 368 684 357 693 338C703 402 676 469 591 460C610 430 650 422 668 389C637 415 608 411 579 443Z"/>
+  <path fill="url(#green)" d="M534 407L507 434L545 457L569 437ZM475 466L458 481L511 514C538 500 560 486 578 471L585 439C563 458 539 474 511 488Z"/>
+  <g fill="url(#blue)"><path d="M506 617H456C451 594 433 585 410 572C362 546 345 510 330 455C327 445 329 439 336 440C346 442 354 462 361 477C378 512 402 532 440 543C450 545 436 531 426 522C414 511 399 495 405 487C411 476 425 491 437 500C453 511 476 519 490 540C506 561 508 586 506 617Z"/><path d="M518 617H568C573 594 591 585 614 572C662 546 679 510 694 455C697 445 695 439 688 440C678 442 670 462 663 477C646 512 622 532 584 543C574 545 588 531 598 522C610 511 625 495 619 487C613 476 599 491 587 500C571 511 548 519 534 540C518 561 516 586 518 617Z"/></g>
+  <text x="512" y="754" text-anchor="middle" fill="#104D74" font-family="Arial, Helvetica, sans-serif" font-size="131" font-weight="700" letter-spacing="-4">Resourcify</text>
+  <text x="516" y="838" text-anchor="middle" fill="#58A344" font-family="Arial, Helvetica, sans-serif" font-size="68" letter-spacing="8">INDIA</text>
+</svg>

@@ -6,7 +6,7 @@
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   document.querySelectorAll('[data-solution]').forEach(link => link.addEventListener('click', () => { document.getElementById('solution').value = link.dataset.solution; }));
-  document.getElementById('solution-form').addEventListener('submit', event => {
+  document.getElementById('solution-form')?.addEventListener('submit', event => {
     event.preventDefault();
     if (!event.currentTarget.reportValidity()) return;
     const data = new FormData(event.currentTarget);

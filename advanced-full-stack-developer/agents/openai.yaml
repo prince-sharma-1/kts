@@ -1,0 +1,4 @@
+interface:
+  display_name: "Advanced Full-Stack Developer"
+  short_description: "Build and debug complete web application features"
+  default_prompt: "Use $advanced-full-stack-developer to implement and verify this web application feature across all affected layers."
