@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Secretary"
+  short_description: "Organize schedules, tasks, meetings, and correspondence"
+  default_prompt: "Use $personal-secretary to organize my priorities, prepare correspondence, and help manage today's commitments."

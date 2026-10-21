@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finance Analyst"
+  short_description: "Analyze budgets, cash flow, valuations, and investments"
+  default_prompt: "Use $finance-analyst to analyze my financial question with clear calculations, sourced facts, and explicit assumptions."
