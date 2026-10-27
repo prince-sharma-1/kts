@@ -2,7 +2,7 @@
 // Import Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
@@ -46,10 +46,11 @@ export async function signupUser(email, password, username) {
     await setDoc(doc(db, "users", user.uid), {
       email: email,
       username: username,
+      venture: "academy",
       role: "student",          // default role
       batch: "Unassigned",      // can be updated later
       enrollmentID: generateEnrollmentID(),
-      createdAt: new Date(),
+      createdAt: serverTimestamp(),
       testsAttempted: [],
       profileCompleted: false
     });

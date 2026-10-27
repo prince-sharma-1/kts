@@ -67,17 +67,17 @@
             </div>
 
             <div class="lg:col-span-2 p-10">
-                <form id="enrollmentForm" class="space-y-8">
+                <form onsubmit="return false" id="enrollmentForm" class="space-y-8">
                     <section>
                         <h2 class="text-xl font-bold flex items-center mb-6">
                             <span class="w-8 h-8 rounded-full kts-blue text-white flex items-center justify-center text-sm mr-3">1</span>
                             Personal Information
                         </h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Full Name" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
-                            <input type="email" placeholder="Email Address" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
-                            <input type="tel" placeholder="Guardian's Contact No." class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
-                            <select class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            <input type="text" name="name" aria-label="Student full name" minlength="2" maxlength="100" placeholder="Full Name" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <input type="email" name="email" aria-label="Email address" maxlength="150" placeholder="Email Address" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <input type="tel" name="phone" aria-label="Guardian contact number" maxlength="18" placeholder="Guardian's Contact No." class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition" required>
+                            <select name="studentClass" aria-label="Current class" class="p-3 border rounded-xl bg-gray-50 focus:bg-white outline-none focus:ring-2 focus:ring-blue-500 transition">
                                 <option>Targeting JEE 2028</option>
                                 <option>Targeting NEET 2028</option>
                             </select>
@@ -107,11 +107,11 @@
 
                     <div class="bg-gray-900 rounded-2xl p-6 text-white flex flex-col md:flex-row justify-between items-center">
                         <div>
-                            <p class="text-gray-400 text-sm italic">Immediate Registration Amount:</p>
+                            <p class="text-gray-400 text-sm italic">Registration fee reference (not collected here):</p>
                             <h4 class="text-3xl font-black">₹10,000</h4>
                         </div>
                         <button type="submit" class="mt-4 md:mt-0 kts-blue px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
-                            Proceed to Payment
+                            Send Enrollment Enquiry
                         </button>
                     </div>
                 </form>
@@ -119,34 +119,6 @@
         </div>
     </main>
 
-    <div id="enrollSuccess" class="fixed inset-0 bg-slate-900/95 hidden items-center justify-center z-[100] p-6 text-center text-white">
-        <div class="max-w-md">
-            <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
-                <i data-lucide="party-popper" class="w-12 h-12 text-white"></i>
-            </div>
-            <h2 class="text-4xl font-black mb-4">Online checkout is not enabled</h2>
-            <p class="text-blue-200 mb-8 leading-relaxed">Your details have not been submitted and no payment has been taken. Please contact KTS Academy to complete your Power NEET admission.</p>
-            <button onclick="window.location.reload()" class="bg-white text-slate-900 font-bold px-8 py-3 rounded-full hover:bg-blue-100 transition">Return to form</button>
-        </div>
-    </div>
-
-    <script>
-        lucide.createIcons();
-        const form = document.getElementById('enrollmentForm');
-        const success = document.getElementById('enrollSuccess');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Simulate payment processing
-            const btn = e.target.querySelector('button');
-            btn.innerHTML = 'Processing...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                success.classList.remove('hidden');
-                success.classList.add('flex');
-            }, 1500);
-        });
-    </script>
-</body>
-</html>
+<p style="text-align:center;padding:16px">This form requests admission guidance. Fees, availability and payment arrangements will be confirmed by KTS; submitting does not reserve a seat or collect payment.</p>
+<script>window.lucide?.createIcons();</script><script type="module" src="enquiry-forms.js"></script>
+</body></html>

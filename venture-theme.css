@@ -17,3 +17,77 @@ html[data-native-theme="dark"][data-venture-theme="light"] .program-card h3,html
 html[data-native-theme="dark"][data-venture-theme="light"] .program-card p,html[data-native-theme="dark"][data-venture-theme="light"] .method-steps p,html[data-native-theme="dark"][data-venture-theme="light"] .story-grid blockquote{color:#66758b}
 @media(max-width:560px){.venture-theme-toggle{right:12px;bottom:12px;width:44px;padding:0;justify-content:center}.venture-theme-toggle b{display:none}}
 @media(prefers-reduced-motion:reduce){.venture-theme-toggle{transition:none}}
+
+/* Separate surface colors from text colors: graphics must not inherit --ink backgrounds. */
+html[data-venture-theme="light"]{color-scheme:light;--theme-surface:#fff;--theme-soft:#edf3fa;--theme-text:#172b46;--theme-muted:#52657d;--theme-border:#d7e2ef;--theme-accent:#075da8}
+html[data-venture-theme="dark"]{--theme-surface:#121f32;--theme-soft:#182b43;--theme-text:#e8eef8;--theme-muted:#b4c4d8;--theme-border:#344b66;--theme-accent:#8bd5ff;--muted:#b4c4d8}
+html[data-venture-theme] :is(input,select,textarea){color:var(--theme-text);background:var(--theme-surface);border-color:var(--theme-border)}
+html[data-venture-theme] input::placeholder,html[data-venture-theme] textarea::placeholder{color:var(--theme-muted);opacity:1}
+html[data-venture-theme="dark"] :is(.navlinks,.nav-links.open){background:#0c1829;border-color:var(--theme-border);color:var(--theme-text)}
+html[data-venture-theme="dark"] :is(.navlinks>a:not(.btn):not(.button),.brand-text,.menu,.menu-btn){color:var(--theme-text)}
+html[data-venture-theme="dark"] :is(.network,.story-section,.trust,.section.soft){background:#0e1b2d;border-color:var(--theme-border)}
+html[data-venture-theme="dark"] :is(.hero-card,.course,.feature,.quote,.faq,.search,.job,.service-card,.form-card,.filter){background:var(--theme-surface);color:var(--theme-text);border-color:var(--theme-border)}
+html[data-venture-theme="dark"] :is(.course-float,.hero-badges span,.skills span,.pills span){background:var(--theme-soft);color:var(--theme-text);border-color:var(--theme-border)}
+html[data-venture-theme="dark"] :is(.quote>p,.mini-proof,.course-meta){color:var(--theme-muted)}
+html[data-venture-theme="dark"] :is(.path-icon,.icon){background:#1c3553;color:#9ddcff}
+html[data-venture-theme="dark"] :is(.course-link,.path-card a,.kicker,.brand small){color:var(--theme-accent)}
+html[data-venture-theme="dark"] .filter.active{background:#2668af;color:#fff;border-color:#4988ca}
+html[data-venture-theme="dark"] .rating{color:#ffd080!important}
+html[data-venture-theme="dark"] .btn:not(.light):not(.ghost):not(.secondary){color:#fff}
+/* Education: match the illustration frame, labels and page surface. */
+html[data-venture-page="education"][data-venture-theme="dark"]{--blue:#8bc4ff;--blue2:#1769d2;--sky:#1c3553}
+html[data-venture-page="education"][data-venture-theme="dark"] .hero{background:linear-gradient(118deg,#0d1b30,#102843 56%,#192639);color:#e8eef8}
+html[data-venture-page="education"][data-venture-theme="dark"] .eyebrow{background:#162c46;border-color:#365478;color:#9ddcff}
+html[data-venture-page="education"][data-venture-theme="dark"] .button{background:#195fc4;color:#fff}
+html[data-venture-page="education"][data-venture-theme="dark"] .button.outline{background:transparent;color:#a8d7ff;border-color:#55769c}
+html[data-venture-page="education"][data-venture-theme="dark"] .cta-band{background:#174e91}
+html[data-venture-page="education"][data-venture-theme="dark"] .cta-band .button{background:#fff;color:#124e96}
+html[data-venture-page="education"][data-venture-theme="dark"] .laptop{background:#355371}
+html[data-venture-page="education"][data-venture-theme="dark"] .screen{background:#142e49}
+/* IT: --ink is also used for headings, so keep dark section backgrounds independent. */
+html[data-venture-page="it"][data-venture-theme="dark"] :is(.hero,.contact,.topbar,.brand-mark,.step-num){background:#071426}
+html[data-venture-page="it"][data-venture-theme="dark"] .btn{color:#071426!important}
+html[data-venture-page="it"][data-venture-theme="dark"] .btn.secondary{color:#fff!important}
+html[data-venture-page="it"][data-venture-theme="dark"] .btn.dark{background:#174c78;color:#fff!important}
+html[data-venture-page="it"][data-venture-theme="dark"] .avatar{color:#071426}
+html[data-venture-page="it"][data-venture-theme="dark"] .text-link{color:#70dbea}
+html[data-venture-page="it"][data-venture-theme="dark"] .service-card .number{color:#91a9c5}
+/* Academy and Aspire: a complete light palette, including the console graphics. */
+html[data-venture-page="academy"][data-venture-theme="light"]{--primary:#075da8;--accent:#087c56;--muted:#52657d}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.hero-console,.aspire-scorecard,.results-panel,.aspire-story){background:linear-gradient(145deg,#fff,#eaf3ff);color:var(--theme-text);border-color:var(--theme-border);box-shadow:0 24px 60px #183c6620}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.console-grid div,.score-metrics div,.result-metrics div,.method-steps article,.aspire-steps article,.aspire-feature-grid article,.test-grid article){background:var(--theme-surface);color:var(--theme-text);border-color:var(--theme-border)}
+html[data-venture-page="academy"][data-venture-theme="light"] .focus-card{background:linear-gradient(135deg,#daeaff,#e7f7fc);color:#15324e}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.hero-copy>p,.hero-proof,.console-top,.console-grid span,.focus-card span,.focus-card small,.scorecard-top,.score-ring span,.score-metrics span,.aspire-hero p,.aspire-trust span,.aspire-feature-grid p,.test-grid p,.test-grid li,.aspire-steps p,.method-steps p,.program-meta,.aspire-story blockquote,.story-score span,.result-metrics span,.trust-grid span){color:var(--theme-muted)}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.eyebrow,.section-kicker,.score-metrics b,.test-grid small,.aspire-feature-grid article>span,.story-score b,.aspire-story strong,.result-metrics strong,.story-grid cite){color:var(--theme-accent)}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.method-steps h3,.aspire-feature-grid h3,.program-card h3){color:var(--theme-text)}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.trust-strip,.aspire-trust,.method-section,.aspire-structure){background:var(--theme-soft);border-color:var(--theme-border)}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.method-steps b,.aspire-steps b,.program-level){background:#deedfc;color:#075da8}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.console-top b,.scorecard-top b){background:#d8f2e5;color:#0b6545}
+html[data-venture-page="academy"][data-venture-theme="light"] .progress-track{background:#b8cde2}
+html[data-venture-page="academy"][data-venture-theme="light"] .score-ring{border-color:#c2d8ed;border-top-color:#075da8;border-right-color:#087c56}
+html[data-venture-page="academy"][data-venture-theme="light"] .program-switch{background:#e8eff8;border-color:var(--theme-border)}
+html[data-venture-page="academy"][data-venture-theme="light"] .program-switch button{color:var(--theme-muted)}
+html[data-venture-page="academy"][data-venture-theme="light"] .program-switch button.active{background:#075da8;color:#fff}
+html[data-venture-page="academy"][data-venture-theme="light"] .program-actions a{background:#e2ebf6;color:#15324e}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.academy-button,.program-actions a:last-child){background:#075da8;color:#fff!important}
+html[data-venture-page="academy"][data-venture-theme="light"] .academy-button.secondary{background:transparent;color:#075da8!important;border-color:#7098bc}
+html[data-venture-page="academy"][data-venture-theme="light"] .final-cta .academy-button.light{background:#fff;color:#06345f!important}
+html[data-venture-page="academy"][data-venture-theme="light"] .academy-button.ghost{background:transparent;color:#fff!important}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.menu-button,.logout){background:#e8eff8;color:#15324e;border-color:#b9cde3}
+html[data-venture-page="academy"][data-venture-theme="light"] .nav-links{background:#f7f9fc;color:#172b46}
+html[data-venture-page="academy"][data-venture-theme="light"] .nav-links>a:hover{color:#075da8}
+html[data-venture-page="academy"][data-venture-theme="light"] :is(.hero-proof span:before,.program-meta span:before){color:#087c56}
+/* Digital Solutions graphics use a deliberate teal surface in either theme. */
+html[data-venture-page="digital"][data-venture-theme="dark"] :is(.hero,.contact){background:#071f22}
+html[data-venture-page="digital"][data-venture-theme="dark"] .system-preview{background:#102f32;border-color:#547b76;color:#f0fbf6}
+html[data-venture-page="digital"][data-venture-theme="dark"] .workflow>div{background:#193d3a;border-color:#52756b}
+html[data-venture-page="digital"][data-venture-theme="dark"] .btn{color:#12342c}
+html[data-venture-page="digital"][data-venture-theme="dark"] .contact-grid>div>p:not(.eyebrow){color:#c2d9d1}
+html[data-venture-page="enterprise"][data-venture-theme="dark"] :is(.pills span,.venture-tag){color:#d5e8fa;background:#1c334c;border-color:#365574}
+html[data-venture-page="score"][data-venture-theme="dark"] .menu{color:#e8eef8}
+html[data-venture-page="score"][data-venture-theme="dark"] .btn-light{color:#1455b4}
+html[data-venture-page="score"][data-venture-theme="dark"] .card a{color:#8bc4ff}
+html[data-venture-page="education"][data-venture-theme="dark"] .contact-card .button.outline{color:#e8eef8}
+/* Branded banners and footers retain light lettering in both page themes. */
+html[data-venture-page="academy"][data-venture-theme] .final-cta{color:#fff}
+html[data-venture-page="academy"][data-venture-theme] footer .academy-brand{color:#fff}

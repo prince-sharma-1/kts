@@ -1,6 +1,14 @@
 (() => {
   const KEY = 'ktsVentureTheme';
   const root = document.documentElement;
+  const pageName = decodeURIComponent(location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const pages = {
+    'index.html': 'academy', 'aspire_ts.html': 'academy',
+    'kts education center.html': 'education', 'kts_it_home.html': 'it',
+    'kts group.html': 'enterprise', 'score high.html': 'score',
+    'kts-digital-solution.html': 'digital', 'kts-digital-solution-clients.html': 'digital'
+  };
+  root.dataset.venturePage = pages[pageName] || 'default';
   const nativeDark = Boolean(document.querySelector('link[href*="academy-home.css"]'));
   root.dataset.nativeTheme = nativeDark ? 'dark' : 'light';
   let saved = null;
@@ -22,6 +30,6 @@
     try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch {}
   }
 
-  apply(saved || (nativeDark ? 'dark' : 'light'));
+  apply(saved === 'dark' || saved === 'light' ? saved : (nativeDark ? 'dark' : 'light'));
   button.addEventListener('click', () => apply(root.dataset.ventureTheme === 'dark' ? 'light' : 'dark'));
 })();

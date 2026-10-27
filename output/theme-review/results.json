@@ -1,0 +1,174 @@
+[
+  {
+    "file": "index.html",
+    "page": "academy",
+    "theme": "light",
+    "panels": [
+      {
+        "class": "hero-console",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(145deg, rgb(255, 255, 255), rgb(234, 243, 255)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(23, 43, 70)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "index.html",
+    "page": "academy",
+    "theme": "dark",
+    "panels": [
+      {
+        "class": "hero-console",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(150deg, rgba(32, 48, 70, 0.88), rgba(13, 28, 48, 0.9)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(232, 238, 248)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "aspire_ts.html",
+    "page": "academy",
+    "theme": "light",
+    "panels": [
+      {
+        "class": "aspire-scorecard",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(145deg, rgb(255, 255, 255), rgb(234, 243, 255)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(23, 43, 70)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "aspire_ts.html",
+    "page": "academy",
+    "theme": "dark",
+    "panels": [
+      {
+        "class": "aspire-scorecard",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(150deg, rgba(32, 48, 70, 0.9), rgba(13, 28, 48, 0.94)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(232, 238, 248)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts education center.html",
+    "page": "education",
+    "theme": "light",
+    "panels": [
+      {
+        "class": "hero-card",
+        "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(18, 35, 63)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts education center.html",
+    "page": "education",
+    "theme": "dark",
+    "panels": [
+      {
+        "class": "hero-card",
+        "background": "rgb(18, 31, 50) none repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(232, 238, 248)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts group.html",
+    "page": "enterprise",
+    "theme": "light",
+    "panels": [],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts group.html",
+    "page": "enterprise",
+    "theme": "dark",
+    "panels": [],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts_it_home.html",
+    "page": "it",
+    "theme": "light",
+    "panels": [
+      {
+        "class": "talent-card",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(150deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(255, 255, 255)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts_it_home.html",
+    "page": "it",
+    "theme": "dark",
+    "panels": [
+      {
+        "class": "talent-card",
+        "background": "rgba(0, 0, 0, 0) linear-gradient(150deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04)) repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(255, 255, 255)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "Score High.html",
+    "page": "score",
+    "theme": "light",
+    "panels": [],
+    "mobileOverflow": false
+  },
+  {
+    "file": "Score High.html",
+    "page": "score",
+    "theme": "dark",
+    "panels": [],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts-digital-solution.html",
+    "page": "digital",
+    "theme": "light",
+    "panels": [
+      {
+        "class": "system-preview",
+        "background": "rgb(18, 58, 52) none repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(238, 251, 240)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts-digital-solution.html",
+    "page": "digital",
+    "theme": "dark",
+    "panels": [
+      {
+        "class": "system-preview",
+        "background": "rgb(16, 47, 50) none repeat scroll 0% 0% / auto padding-box border-box",
+        "color": "rgb(240, 251, 246)"
+      }
+    ],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts-digital-solution-clients.html",
+    "page": "digital",
+    "theme": "light",
+    "panels": [],
+    "mobileOverflow": false
+  },
+  {
+    "file": "kts-digital-solution-clients.html",
+    "page": "digital",
+    "theme": "dark",
+    "panels": [],
+    "mobileOverflow": false
+  }
+]

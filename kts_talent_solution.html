@@ -155,15 +155,15 @@
     <!-- Contact -->
     <section class="section container" id="contact">
       <h2>Hire Talent Today</h2>
-      <form>
-        <label>Name</label>
-        <input type="text" required />
-        <label>Email</label>
-        <input type="email" required />
-        <label>Company</label>
-        <input type="text" required />
-        <label>Role Needed</label>
-        <input type="text" required />
+      <form id="talentForm" onsubmit="return false">
+        <label for="talent-name">Name</label>
+        <input id="talent-name" name="name" type="text" maxlength="100" required />
+        <label for="talent-email">Email</label>
+        <input id="talent-email" name="email" type="email" maxlength="150" required />
+        <label for="talent-company">Company</label>
+        <input id="talent-company" name="company" type="text" maxlength="100" required />
+        <label for="talent-role">Role Needed</label>
+        <input id="talent-role" name="role" type="text" maxlength="90" required />
         <button type="submit" class="cta">Submit</button>
       </form>
     </section>
@@ -183,5 +183,5 @@
       hamburger.classList.toggle("active");
     });
   </script>
-</body>
+<script type="module" src="enquiry-forms.js"></script></body>
 </html>

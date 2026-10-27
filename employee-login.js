@@ -23,13 +23,13 @@ function clearMessage() {
 function goToWorkspace() {
   const requested = new URLSearchParams(location.search).get('redirect');
   // Employee sessions may only redirect to approved staff workspaces on this site.
-  const approvedWorkspaces = new Set(['kts-enterprise-operations.html', 'kts-education-crm.html', 'kts-it-crm.html']);
+  const approvedWorkspaces = new Set(['kts-enterprise-operations.html', 'kts-education-crm.html', 'kts-it-crm.html', 'enquiry-inbox.html']);
   location.replace(approvedWorkspaces.has(requested) ? requested : 'kts-enterprise-operations.html');
 }
 
 async function hasStaffAccess(user) {
   const profile = await getDoc(doc(db, 'users', user.uid));
-  return profile.exists() && allowedRoles.has(profile.data().role);
+  return profile.exists() && profile.data().active !== false && allowedRoles.has(profile.data().role);
 }
 
 form.addEventListener('submit', async event => {
@@ -37,6 +37,7 @@ form.addEventListener('submit', async event => {
   clearMessage();
   const email = emailInput.value.trim();
   const password = passwordInput.value;
+  if (submitting) return;
   if (!email || !password) {
     showMessage('Enter your work email and password to continue.');
     return;

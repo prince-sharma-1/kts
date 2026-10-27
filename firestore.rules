@@ -12,12 +12,13 @@ service cloud.firestore {
 
     function staffRole() {
       return request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('active', true) == true
         && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
           in ['enterprise_owner', 'operations_manager', 'business_development', 'developer', 'specialist'];
     }
 
     function operationsManagerOrOwner() {
-      return request.auth != null
+      return staffRole()
         && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
           in ['enterprise_owner', 'operations_manager'];
     }
@@ -57,11 +58,21 @@ service cloud.firestore {
     match /users/{userId} {
       allow create: if request.auth != null
         && request.auth.uid == userId
-        && validVenture(request.resource.data.venture);
+        && request.resource.data.keys().hasOnly([
+          'username', 'email', 'venture', 'role', 'batch', 'createdAt',
+          'profileCompleted', 'enrollmentID', 'testsAttempted'
+        ])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.createdAt == request.time
+        && validVenture(request.resource.data.venture)
+        && request.resource.data.role == (request.resource.data.venture == 'it' ? 'candidate' : 'student');
       allow read: if request.auth != null && request.auth.uid == userId;
       allow update: if request.auth != null
         && request.auth.uid == userId
         && validVenture(request.resource.data.venture)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'username', 'phone', 'profileCompleted', 'venture'
+        ])
         && (
           ('role' in resource.data && request.resource.data.role == resource.data.role)
           || (!('role' in resource.data) && !('role' in request.resource.data))
@@ -69,7 +80,64 @@ service cloud.firestore {
         && (
           !('venture' in resource.data)
           || request.resource.data.venture == resource.data.venture
+        )
+        && (
+          'venture' in resource.data
+          || (resource.data.role == 'student'
+            && ((resource.data.batch == 'KTS Academy Student' && request.resource.data.venture == 'academy')
+              || (resource.data.batch == 'Banking Aspirant' && request.resource.data.venture == 'scorehigh')))
         );
+    }
+
+    function canManageEnquiry(ventureId) {
+      let profile = get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+      return staffRole() && (profile.role == 'enterprise_owner'
+        || (profile.role in ['operations_manager', 'business_development']
+          && (profile.venture == ventureId
+            || ventureId in profile.get('managedVentures', [])
+            || (ventureId == 'digital' && (profile.venture == 'marketing'
+              || 'marketing' in profile.get('managedVentures', [])))
+            || (ventureId == 'enterprise' && profile.role == 'operations_manager'))));
+    }
+
+    function validFollowUp() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status', 'notes', 'updatedAt', 'updatedBy'
+        ])
+        && request.resource.data.status in ['new', 'contacted', 'scheduled', 'closed']
+        && request.resource.data.notes is string
+        && request.resource.data.notes.size() <= 2000
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid;
+    }
+
+    match /enquiryRequests/{enquiryId} {
+      allow create: if request.resource.data.keys().hasOnly([
+          'name', 'email', 'phone', 'interest', 'message', 'venture', 'type',
+          'source', 'status', 'consent', 'createdAt'
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 100
+        && request.resource.data.email is string && request.resource.data.email.size() <= 150
+        && request.resource.data.phone is string && request.resource.data.phone.size() <= 18
+        && (request.resource.data.phone.matches('^[+0-9() -]{8,18}$')
+          || request.resource.data.email.matches('^[^ @]+@[^ @]+[.][^ @]+$'))
+        && request.resource.data.interest is string
+        && request.resource.data.interest.size() >= 2 && request.resource.data.interest.size() <= 200
+        && request.resource.data.message is string && request.resource.data.message.size() <= 1000
+        && request.resource.data.venture in ['academy', 'education', 'scorehigh', 'it', 'marketing', 'digital', 'enterprise']
+        && request.resource.data.type in ['demo', 'enrollment', 'general', 'hiring', 'project']
+        && request.resource.data.source in ['book_a_demo.html', 'book_a_demo_neet.html', 'register.html', 'kts group.html', 'kts_talent_solution.html', 'kts-digital-solution.html',
+          'enroll_now_impulse_jee.html', 'enroll_now_impulse_neet.html',
+          'enroll_now_momentum_jee.html', 'enroll_now_momentum_neet.html',
+          'enroll_now_power_jee.html', 'enroll_now_power_neet.html',
+          'enroll_now_velocity_jee.html', 'enroll_now_velocity_neet.html']
+        && request.resource.data.status == 'new'
+        && request.resource.data.consent == true
+        && request.resource.data.createdAt == request.time;
+      allow read: if request.auth != null && canManageEnquiry(resource.data.venture);
+      allow update: if request.auth != null && canManageEnquiry(resource.data.venture) && validFollowUp();
+      allow delete: if false;
     }
 
     // Shared KTS Enterprise operations records. Academy and Digital Solutions
@@ -79,7 +147,7 @@ service cloud.firestore {
       allow create: if request.resource.data.organization == 'KTS Enterprise'
         && request.resource.data.venture in ['academy', 'digital']
         && operationsManagerOrOwner()
-        || (request.auth != null
+        || (staffRole()
           && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
           && request.resource.data.organization == 'KTS Enterprise'
           && request.resource.data.venture == 'digital'
@@ -87,7 +155,7 @@ service cloud.firestore {
           && request.resource.data.accessGroup == 'sales');
       allow update: if request.resource.data.organization == 'KTS Enterprise'
         && operationsManagerOrOwner()
-        || (request.auth != null
+        || (staffRole()
           && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
           && resource.data.venture == 'digital'
           && resource.data.accessGroup == 'sales'
@@ -95,7 +163,7 @@ service cloud.firestore {
           && request.resource.data.venture == 'digital'
           && request.resource.data.type == 'lead'
           && request.resource.data.accessGroup == 'sales')
-        || (request.auth != null
+        || (staffRole()
           && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['developer', 'specialist']
           && resource.data.venture == 'digital'
           && resource.data.accessGroup == 'delivery'
@@ -104,7 +172,7 @@ service cloud.firestore {
           && request.resource.data.type == 'project'
           && request.resource.data.accessGroup == 'delivery');
       allow delete: if operationsManagerOrOwner()
-        || (request.auth != null
+        || (staffRole()
           && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business_development'
           && resource.data.venture == 'digital'
           && resource.data.type == 'lead'
@@ -232,7 +300,9 @@ service cloud.firestore {
         && request.resource.data.message is string
         && request.resource.data.message.size() <= 1000
         && request.resource.data.timestamp is timestamp;
-      allow read, update, delete: if false;
+      allow read: if request.auth != null && canManageEnquiry('academy');
+      allow update: if request.auth != null && canManageEnquiry('academy') && validFollowUp();
+      allow delete: if false;
     }
   }
 }

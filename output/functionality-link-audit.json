@@ -1,0 +1,48 @@
+{
+  "htmlPages": 74,
+  "missingReferences": [
+    {
+      "file": "kts group.html",
+      "url": "kts-digital-marketing/index.html"
+    },
+    {
+      "file": "kts group.html",
+      "url": "kts-digital-marketing/index.html"
+    },
+    {
+      "file": "kts group.html",
+      "url": "kts-digital-marketing/index.html"
+    }
+  ],
+  "emptyLinkCount": 7,
+  "emptyLinks": [
+    {
+      "file": "book_a_demo.html",
+      "url": "#"
+    },
+    {
+      "file": "book_a_demo.html",
+      "url": "#"
+    },
+    {
+      "file": "book_a_demo_neet.html",
+      "url": "#"
+    },
+    {
+      "file": "book_a_demo_neet.html",
+      "url": "#"
+    },
+    {
+      "file": "kts-digital-marketing-index.html",
+      "url": "#"
+    },
+    {
+      "file": "kts-digital-marketing-index.html",
+      "url": "#"
+    },
+    {
+      "file": "Testseries.html",
+      "url": "#"
+    }
+  ]
+}

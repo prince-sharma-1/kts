@@ -1,6 +1,6 @@
 import { auth, db } from './firebase.js';
-import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+import { ensureMembership } from './account-profile.js';
 
 document.documentElement.style.visibility = 'hidden';
 
@@ -36,16 +36,7 @@ onAuthStateChanged(
       return;
     }
     try {
-      const profileRef = doc(db, 'users', user.uid);
-      const snapshot = await getDoc(profileRef);
-      const profile = snapshot.exists() ? snapshot.data() : {};
-      const assigned = profile.venture || (profile.batch === 'KTS Academy Student' ? 'academy' : profile.batch === 'Banking Aspirant' ? 'scorehigh' : null);
-      if (assigned && assigned !== venture) {
-        await signOut(auth);
-        window.location.replace(`${portalPage}?error=wrong-venture&redirect=${encodeURIComponent(returnTo)}`);
-        return;
-      }
-      if (!profile.venture) await setDoc(profileRef, { venture }, { merge:true });
+      await ensureMembership(user, venture);
       document.documentElement.style.visibility = '';
       if (venture === 'academy') attachAcademyDashboardLink();
     } catch {

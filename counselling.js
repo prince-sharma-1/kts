@@ -1,5 +1,5 @@
 import { db } from './firebase.js';
-import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
 const favicon = document.createElement('link');
 favicon.rel = 'icon';
@@ -28,7 +28,7 @@ navigation.addEventListener('click', () => {
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
-  if (!form.reportValidity()) return;
+  if (submit.disabled || !form.reportValidity()) return;
 
   const originalLabel = submit.innerHTML;
   submit.disabled = true;
@@ -38,7 +38,7 @@ form.addEventListener('submit', async event => {
 
   try {
     await addDoc(collection(db, 'counseling_requests'), {
-      name: form.name.value.trim(),
+      name: form.elements.namedItem('name').value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
       goal: form.goal.value,
@@ -46,7 +46,7 @@ form.addEventListener('submit', async event => {
       message: form.message.value.trim(),
       venture: 'academy',
       status: 'new',
-      timestamp: new Date()
+      timestamp: serverTimestamp()
     });
 
     form.reset();

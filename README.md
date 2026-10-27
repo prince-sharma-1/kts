@@ -15,6 +15,8 @@ The website includes content for:
 
 ## Notes
 
+Account permission and enquiry workflow changes are documented in [ACCOUNT-AND-ENQUIRY-SETUP.md](ACCOUNT-AND-ENQUIRY-SETUP.md). The implementation is local; Firestore rules testing and deployment are still required.
+
 - The project is currently a static HTML/CSS website with multiple course and payment pages.
 - A Razorpay payment gateway integration is desired.
 - A backend/database system is recommended for storing user and payment data.

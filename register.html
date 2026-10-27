@@ -16,55 +16,30 @@
 
 <div class="enroll-container">
     <h2>Student Enrollment 2026-27</h2>
-    <p>Complete the form below to secure your seat in the **Power Batch**.</p>
+    <p>Request enrollment guidance. KTS will contact you to confirm availability and next steps.</p>
     <hr>
-    <form id="enrollForm">
+    <form id="enrollForm" onsubmit="return false">
         <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" id="studentName" placeholder="Enter your name" required>
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" name="name" minlength="2" maxlength="100" placeholder="Enter your name" required>
         </div>
         <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="studentPhone" placeholder="Enter mobile number" required>
+            <label for="studentPhone">Phone Number</label>
+            <input type="tel" id="studentPhone" name="phone" pattern="[+0-9\(\) \-]{8,18}" maxlength="18" placeholder="Enter mobile number" required>
         </div>
         <div class="form-group">
-            <label>Target Course</label>
-            <select id="course">
+            <label for="course">Target Course</label>
+            <select id="course" name="course">
                 <option value="NEET Power Batch">NEET Power Batch</option>
                 <option value="JEE Velocity Batch">JEE Velocity Batch</option>
             </select>
         </div>
-        <button type="submit" class="btn-submit">Submit Enrollment</button>
+        <button type="submit" class="btn-submit">Request Enrollment</button>
     </form>
     <div id="status"></div>
 </div>
 
-<script type="module">
-  import { db } from './firebase.js';
-  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-  const enrollForm = document.getElementById('enrollForm');
-  
-  enrollForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const status = document.getElementById('status');
-    
-    try {
-      await addDoc(collection(db, "enrollments"), {
-        name: document.getElementById('studentName').value,
-        phone: document.getElementById('studentPhone').value,
-        course: document.getElementById('course').value,
-        timestamp: new Date()
-      });
-      status.innerText = "Enrollment Successful! We will contact you shortly.";
-      status.style.color = "#00ff00";
-      enrollForm.reset();
-    } catch (error) {
-      status.innerText = "Error: " + error.message;
-      status.style.color = "#ff0000";
-    }
-  });
-</script>
+<script type="module" src="enquiry-forms.js"></script>
 
 </body>
 </html>

@@ -35,13 +35,13 @@
       </div>
       <div class="form-card">
         <div class="form-heading"><span>PERSONAL GUIDANCE</span><h2>Book your free session</h2><p>Complete the form and our team will contact you shortly.</p></div>
-        <form id="counsellingForm">
-          <div class="field full-field"><label for="fullName">Student name</label><input id="fullName" name="name" type="text" autocomplete="name" placeholder="Enter your full name" minlength="2" required></div>
-          <div class="field"><label for="emailAddress">Email address</label><input id="emailAddress" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
-          <div class="field"><label for="phoneNumber">Phone number</label><input id="phoneNumber" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="10-digit number" pattern="[0-9 +()-]{10,15}" required></div>
+        <form id="counsellingForm" onsubmit="return false">
+          <div class="field full-field"><label for="fullName">Student name</label><input id="fullName" name="name" type="text" autocomplete="name" placeholder="Enter your full name" minlength="2" maxlength="100" required></div>
+          <div class="field"><label for="emailAddress">Email address</label><input id="emailAddress" name="email" type="email" maxlength="150" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="phoneNumber">Phone number</label><input id="phoneNumber" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="10-digit number" pattern="[+0-9\(\) \-]{10,15}" required></div>
           <div class="field"><label for="goalSelect">Preparation goal</label><select id="goalSelect" name="goal" required><option value="" disabled selected>Choose your goal</option><option value="jee">IIT-JEE</option><option value="neet">NEET</option><option value="foundation">Foundation (Class 9–10)</option></select></div>
           <div class="field"><label for="classSelect">Current class</label><select id="classSelect" name="studentClass" required><option value="" disabled selected>Choose your class</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option><option value="dropper">Class 12 passed</option></select></div>
-          <div class="field full-field"><label for="messageText">What would you like help with? <span>Optional</span></label><textarea id="messageText" name="message" rows="4" placeholder="Tell us about your preparation, questions, or preferred call time"></textarea></div>
+          <div class="field full-field"><label for="messageText">What would you like help with? <span>Optional</span></label><textarea id="messageText" name="message" maxlength="1000" rows="4" placeholder="Tell us about your preparation, questions, or preferred call time"></textarea></div>
           <button class="submit-button full-field" type="submit"><span>Request a callback</span><b>→</b></button>
           <p class="privacy-note full-field">By submitting, you agree to be contacted by KTS Academy about your counselling request. We respect your privacy.</p>
           <div class="form-status full-field" id="formStatus" role="status" aria-live="polite" hidden></div>

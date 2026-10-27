@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --experimental-vm-modules --test tests/account-and-enquiry.test.cjs",
+    "test:rules": "npx --yes firebase-tools emulators:exec --only firestore --project demo-kts --config firebase.emulator.json \"node --test tests/firestore-rules.test.cjs\""
   },
   "dependencies": {
     "firebase": "^12.12.0"
