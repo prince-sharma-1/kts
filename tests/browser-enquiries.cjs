@@ -130,6 +130,7 @@ async function run() {
     await page.goto(`${base}/enquiry-inbox.html`); await page.locator('.request').waitFor();
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Inbox fits mobile viewport');
     await page.screenshot({ path: path.join(root, 'output/enquiry-inbox-mobile.png'), fullPage: true });
+    await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto(`${base}/kts-enterprise-operations.html`);
     await page.locator('[data-page="digital"]').click();
     await page.waitForFunction(() => document.querySelector('#view').textContent.includes('No Digital projects yet.'));

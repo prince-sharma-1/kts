@@ -15,7 +15,7 @@ The website includes content for:
 
 ## Notes
 
-Account permission and enquiry workflow changes are documented in [ACCOUNT-AND-ENQUIRY-SETUP.md](ACCOUNT-AND-ENQUIRY-SETUP.md). The implementation is local; Firestore rules testing and deployment are still required.
+Account permission and enquiry workflow changes are documented in [ACCOUNT-AND-ENQUIRY-SETUP.md](ACCOUNT-AND-ENQUIRY-SETUP.md). Firestore emulator tests passed and the rules were deployed and verified on 27 October 2026. Website file publishing is a separate hosting step.
 
 - The project is currently a static HTML/CSS website with multiple course and payment pages.
 - A Razorpay payment gateway integration is desired.

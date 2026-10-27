@@ -66,5 +66,38 @@ test('Firestore account and enquiry boundaries', { skip: !host }, async t => {
       await denied(fs.getDoc(fs.doc(manager, 'counseling_requests/old-request')));
       await fs.updateDoc(fs.doc(owner, 'counseling_requests/old-request'), { status: 'scheduled', notes: 'Callback arranged', updatedAt: fs.serverTimestamp(), updatedBy: 'owner' });
     });
+    await t.test('IT signup permits candidates and rejects other profile identities', async () => {
+      const candidate = client('candidate');
+      const data = { email: 'candidate@example.com', venture: 'it', role: 'candidate', createdAt: fs.serverTimestamp() };
+      await denied(fs.setDoc(fs.doc(candidate, 'users/candidate'), { ...data, role: 'student' }));
+      await denied(fs.setDoc(fs.doc(candidate, 'users/candidate'), { ...data, email: 'someone-else@example.com' }));
+      await denied(fs.setDoc(fs.doc(candidate, 'users/other-user'), data));
+      await fs.setDoc(fs.doc(candidate, 'users/candidate'), data);
+    });
+    await t.test('assigned managers can query only their allowed enquiry ventures', async () => {
+      await fs.setDoc(fs.doc(publicDb, 'enquiryRequests/education'), { ...enquiry(), venture: 'education', type: 'general', source: 'kts group.html' });
+      await fs.getDocs(fs.query(fs.collection(manager, 'enquiryRequests'), fs.where('venture', 'in', ['education', 'enterprise'])));
+      await denied(fs.getDocs(fs.collection(manager, 'enquiryRequests')));
+      await denied(fs.getDocs(fs.query(fs.collection(manager, 'enquiryRequests'), fs.where('venture', 'in', ['education', 'academy']))));
+      await fs.updateDoc(fs.doc(manager, 'enquiryRequests/education'), { status: 'contacted', notes: 'Education callback', updatedBy: 'manager', updatedAt: fs.serverTimestamp() });
+    });
+    await t.test('managed ventures and marketing-to-digital access match the inbox', async () => {
+      await seed('users/sales', { email: 'sales@example.com', role: 'business_development', venture: 'marketing', managedVentures: ['academy'] });
+      const sales = client('sales');
+      await fs.getDocs(fs.query(fs.collection(sales, 'enquiryRequests'), fs.where('venture', 'in', ['marketing', 'digital', 'academy'])));
+      await fs.getDocs(fs.collection(sales, 'counseling_requests'));
+      await denied(fs.getDoc(fs.doc(sales, 'enquiryRequests/education')));
+      await denied(fs.updateDoc(fs.doc(sales, 'users/sales'), { managedVentures: ['education'] }));
+    });
+    await t.test('inactive staff cannot write enterprise records or reactivate themselves', async () => {
+      const record = { organization: 'KTS Enterprise', venture: 'digital', type: 'lead', accessGroup: 'sales' };
+      await denied(fs.setDoc(fs.doc(inactive, 'enterpriseOperations/inactive-write'), record));
+      await denied(fs.updateDoc(fs.doc(inactive, 'users/inactive'), { active: true }));
+      await fs.setDoc(fs.doc(owner, 'enterpriseOperations/owner-write'), record);
+    });
+    await t.test('follow-up writes cannot forge authors or delete enquiry records', async () => {
+      await denied(fs.updateDoc(fs.doc(owner, 'enquiryRequests/demo'), { status: 'closed', notes: 'Forged', updatedBy: 'manager', updatedAt: fs.serverTimestamp() }));
+      await denied(fs.deleteDoc(fs.doc(owner, 'enquiryRequests/demo')));
+    });
   } finally { await Promise.all(apps.map(deleteApp)); }
 });

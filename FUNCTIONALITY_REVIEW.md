@@ -1,6 +1,6 @@
 # KTS website functionality review
 
-Implementation update (27 October 2026): account permission, registration/recovery and enquiry-flow fixes are now prepared locally. See `ACCOUNT-AND-ENQUIRY-SETUP.md` for completed changes, verification and remaining deployment requirements. The findings below record the original audit, not verified production status.
+Implementation update (27 October 2026): account permission, registration/recovery and enquiry-flow fixes are prepared. The real Firestore rules tests passed, and the rules were deployed and read back to verify an exact source match. See `ACCOUNT-AND-ENQUIRY-SETUP.md` for verification and the separate website publishing step. The findings below record the original audit.
 
 Reviewed: 27 October 2026. Scope: local website source and supplied Firebase rules; 74 top-level HTML pages checked for literal local href/src targets. Android copies and the separate hotel website are outside this review. No production database, deployed rules, payment account, or authenticated browser journey was verified. Findings about access assume the supplied rules are deployed.
 

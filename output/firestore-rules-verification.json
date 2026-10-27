@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-27",
+  "java": "Eclipse Temurin 21.0.12.1+1-LTS (Windows x64)",
+  "firebaseCli": "15.34.1",
+  "firestoreEmulator": "1.22.0",
+  "testProject": "demo-kts",
+  "rulesFile": "firestore.rules",
+  "rulesSha256": "AE3C23B2D4D0861C2E18DD9542DCFC4EBBB2442B3B45303BE6CCCBEFEFA8A1AA",
+  "permissionScenarios": 11,
+  "nodeTestPassCountIncludingParent": 12,
+  "failed": 0,
+  "skipped": 0,
+  "emulatorCommandExitCode": 0,
+  "deployment": "Deployed and active source verified",
+  "project": "kts-academy-16860",
+  "release": "projects/kts-academy-16860/releases/cloud.firestore",
+  "ruleset": "projects/kts-academy-16860/rulesets/b223e7b7-1f5c-4673-a412-8ca93715962c",
+  "releaseUpdateTime": "2026-10-27T17:33:57.528291Z",
+  "activeRulesSha256": "AE3C23B2D4D0861C2E18DD9542DCFC4EBBB2442B3B45303BE6CCCBEFEFA8A1AA"
+}
